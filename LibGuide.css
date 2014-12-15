@@ -1,0 +1,89 @@
+<style>
+
+/* styling the header on the main page */
+#s-lg-hp-nav {     
+    background:url(http://www1.kingsborough.edu/service_learning/gallery/MLK/images/MLK%202008%20001.jpg); /* does not seem to work well with .png files */     
+    background-color:#258;     
+    background-size:100%;     
+    height:190px;
+}
+
+#s-lg-hp-nav-bottom {
+    background-color:rgba(255,255,255,0.55); 
+    border-radius:0;
+} 
+
+#nav-spacer {
+    height:55px;
+    width:400px;
+}
+
+#nav-title-spacer {
+    height:42px; 
+    width:365px; 
+    padding:0px 0px 0px 20px; 
+    margin-bottom:10px;
+    background-color:rgba(0,0,0,0.65);
+    color:white;
+}
+
+/* Making the pills the right color */
+
+a.label.label-info:hover {
+    background-color:#003466;
+} 
+
+.label-info {
+   background-color:#003466;
+}
+
+.nav-pills > li.active > a {
+    background-color:#003466;
+}
+
+.nav-pills>li.active>a:hover {
+    background-color:#003466;
+}
+
+.nav-pills > li > a {
+    color:#003466;
+}
+
+.btn {
+    background-color:#003466;
+    border:1px solid #003466;
+}
+
+.btn:hover {
+    background-color:#003466;
+    border:1px solid #003466;
+}
+
+.btn-default {
+    background-color:#fff;
+    border:1px solid #ccc;
+}
+
+/* Making the Kingsborough banner */
+
+#bannerimage {
+    width:100%;
+    height: 125px;
+}
+
+#innerbannercont {
+    color:gray;
+    position:absolute;
+    top: 10px;
+    right: 17px;
+}
+
+#innerbannercont a:link {
+    color:gray;
+}
+
+#innerbannercont a:visited {
+    color:gray;
+}
+
+</style>
