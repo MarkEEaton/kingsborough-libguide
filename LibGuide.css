@@ -27,6 +27,16 @@
     color:white;
 }
 
+/* makes the heading smaller on very small screens */
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 25px;
+    }
+   #nav-title-spacer {
+        width: inherit;
+    }
+}
 /* Making the pills the right color */
 
 a.label.label-info:hover {
