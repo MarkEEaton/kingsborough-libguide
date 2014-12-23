@@ -2,7 +2,7 @@
 
 /* styling the header on the main page */
 #s-lg-hp-nav {     
-    background:url(http://www1.kingsborough.edu/service_learning/gallery/MLK/images/MLK%202008%20001.jpg); /* does not seem to work well with .png files */     
+    background:url(http://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg); /* does not seem to work well with .png files */ 
     background-color:#258;     
     background-size:100%;     
     height:190px;
@@ -37,6 +37,7 @@
         width: inherit;
     }
 }
+
 /* Making the pills the right color */
 
 a.label.label-info:hover {
