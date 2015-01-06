@@ -52,7 +52,11 @@ a.label.label-info:hover {
     background-color:#003466;
 }
 
-.nav-pills>li.active>a:hover {
+.nav-pills > li.active > a:hover {
+    background-color:#003466;
+}
+
+.nav-pills > li.active > a:focus {
     background-color:#003466;
 }
 
