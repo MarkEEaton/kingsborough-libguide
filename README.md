@@ -1,5 +1,7 @@
 # About this repository
 
+### As of 3/24/2017, I've stopped updating this repository because our library bought LibGuides CMS. CMS has allowed our library to do a lot more customization of our LibGuides code in various places. As a result, this repo has become really difficult to maintain. So I'll leave it as it is.
+
 The files here are copied from Kingsborough Library's LibGuides Admin interface. They will not produce a workable site on their own, but when pasted into the appropriate
 fields of the LibGuides Admin pages, they will modify the default LibGuide homepage to produce a page that looks like this:
 
