@@ -1,16 +1,4 @@
 <body class="s-lib-public-body">
-	<!-- BEGIN: Page Header -->
-		{{public_header}}
-	<!-- END: Page Header -->
-	<!-- BEGIN: Content Header -->
-	<div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
-		<div id="s-lib-bc">
-			{{breadcrumbs}}
-		</div>
-		<h1 id="s-lib-public-header-title">{{title}}</h1>
-		<div id="s-lib-public-header-desc">{{system_intro}}</div>
-	</div>
-	<!-- END: Content Header -->
 	<!-- BEGIN: Nav Bar -->
 	<div id="s-lib-public-nav" class="container s-lib-side-borders">
 		{{page_nav}}
@@ -19,6 +7,11 @@
 	<!-- BEGIN: content -->
 	<div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
 		<div  id="s-lg-index-cols" class="row container-fluid">
+                        <div class="row">
+                                <div class="col-xs-12">
+                                        {{public_header}}
+                                </div>
+                        </div>
 			<div class="row">
                                  <div class="col-sm-8">
 				         <div class="jumbotron">
@@ -36,7 +29,7 @@
                                   </div>
 			</div>
                         <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm-6">
                                        <div class="panel panel-default hide-body-border">
                                                <div class="panel-heading show-panel">
                                                        <span class="panel-title content-panel-title">A list of links</span>
@@ -72,14 +65,17 @@
                                                </div>
                                         </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                        <div class="panel panel-default hide-body-border">
                                                <div class="panel-heading show-panel">
-                                                       <span class="panel-title content-panel-title">Other Content</span>
+                                                       <span class="panel-title content-panel-title">Gallery</span>
                                                </div>
                                                <div class="panel-body">
-                                                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                      <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                      <div class="gallery-div">
+                                                              <div class="gallery-text">
+                                                                  <h2><span class="chevron-left"><</span>Gallery goes here<span class="chevron-right">></span></h2>
+                                                              </div>
+                                                      </div>
                                                </div>
                                         </div>
                                 </div>
