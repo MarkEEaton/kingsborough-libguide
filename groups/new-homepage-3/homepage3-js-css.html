@@ -84,12 +84,14 @@ img {
         outline: 0;
 }
 
-/* style the hours div */
-.hours-div {
-        background-color: #bbb;
-        height: 150px;
-        text-align: center;
-        padding-top: 35px;
+/* style the hours */
+.hours {
+        text-align:right;
+        border-top: solid white 0px !important;
+}
+
+.date {
+        border-top: solid white 0px !important;
 }
 
 /* style the yamm menu */
@@ -132,17 +134,16 @@ window.onload = function () {
         const h = JSON.parse(hours)
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         for (var i = 0; i < h.length; i++) {
-                var targetDate = new Date(h[i]["Date"] + "T00:00:00.000-05:00");
-                var today = new Date();
+                let targetDate = new Date(h[i]["Date"] + "T00:00:00.000-05:00");
+                let today = new Date();
                 if (targetDate.getFullYear() === today.getFullYear() &&
                     targetDate.getMonth() === today.getMonth() &&
                     targetDate.getDate() === today.getDate()) {
-                           document.getElementById('hours0').innerHTML = targetDate.toLocaleDateString("en-US", options) + " - " +  h[i]["Hours"]
-                           start = true;
-                           count = 1;
-                    };
-                if (start === true && count < 4) {
-                        document.getElementById('hours' + count).innerHTML = targetDate.toLocaleDateString("en-US", options) + " - " +  h[i]["Hours"]
+                           document.getElementById('hours0').innerHTML = "<td class='hours col-xs-7'>" + targetDate.toLocaleDateString("en-US", options) + "</td><td class='date col-xs-5'>" + h[i]["Hours"] + "</td>"
+                           var start = true;
+                           var count = 1
+                } else if (start === true && count < 7) {
+                        document.getElementById('hours' + count).innerHTML = "<td class='hours col-xs-7'>" + targetDate.toLocaleDateString("en-US", options) + "</td><td class='date col-xs-5'>" + h[i]["Hours"] + "</td>"
                         count++
                  }
         };
