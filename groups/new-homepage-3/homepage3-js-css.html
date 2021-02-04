@@ -124,3 +124,27 @@ img {
 }
 /* End of Yamm */
 </style>
+
+<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/hours.js"></script>
+
+<script type="text/javascript">
+window.onload = function () {
+        const h = JSON.parse(hours)
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        for (var i = 0; i < h.length; i++) {
+                var targetDate = new Date(h[i]["Date"] + "T00:00:00.000-05:00");
+                var today = new Date();
+                if (targetDate.getFullYear() === today.getFullYear() &&
+                    targetDate.getMonth() === today.getMonth() &&
+                    targetDate.getDate() === today.getDate()) {
+                           document.getElementById('hours0').innerHTML = targetDate.toLocaleDateString("en-US", options) + " - " +  h[i]["Hours"]
+                           start = true;
+                           count = 1;
+                    };
+                if (start === true && count < 4) {
+                        document.getElementById('hours' + count).innerHTML = targetDate.toLocaleDateString("en-US", options) + " - " +  h[i]["Hours"]
+                        count++
+                 }
+        };
+};
+</script>
