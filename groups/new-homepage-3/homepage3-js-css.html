@@ -169,7 +169,7 @@ img {
 <script type="text/javascript">
 window.onload = function () {
         const h = JSON.parse(hours)
-        const options_weekday = { weekday: 'short' };
+        const options_weekday = { weekday: 'long' };
         const options_date = { month: 'short', day: 'numeric' }
         for (var i = 0; i < h.length; i++) {
                 let targetDate = new Date(h[i]["Date"] + "T00:00:00.000-05:00");
