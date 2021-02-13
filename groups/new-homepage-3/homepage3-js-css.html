@@ -10,7 +10,7 @@ body {
         background-color: #bbb;
         border: none;
         font-size: 1.4em;
-        color: black;
+        color: #111;
         margin-top: -15px;
         margin-bottom: 28px;
         border-radius: 0px;
@@ -18,7 +18,7 @@ body {
 
 
 .navbar-default .navbar-nav>li>a {
-        color: black;
+        color: #111;
 }
 
 .faux-card {
@@ -40,15 +40,24 @@ body {
 
 /* style for nav by the jumbotron */
 .nav-by-jumbotron {
-        margin-top: -4px;
+        margin-top: -6px;
 }
 
 .nav-divs-by-jumbotron {
         background-color: #bbb;
-        margin: 4px 0px;
-        padding: 8px;
-        font-size: 1.5em;
         text-align: center;
+        padding: 8px;
+        margin: 6px 0px;
+}
+
+.nav-divs-by-jumbotron>h2 {
+        font-size: 1.5em;
+        margin-bottom: 4px;
+        margin-top: 4px;
+}
+
+.nav-divs-by-jumbotron:hover {
+       background-color: #ddd;
 }
 
 /* style the panels with the text content */
@@ -69,6 +78,11 @@ body {
 .content-panel-title {
         color: white;
         font-size: 2em;
+}
+
+.content-panel-title>h2 {
+        margin: 7px 0px;
+        font-size: 1em;
 }
 
 .panel-heading {
@@ -142,6 +156,10 @@ img {
         margin-right: 50px;
 }
 
+.yamm-item {
+        min-height: 100px;
+}
+
 /*!
  * Yamm!3 - Yet another megamenu for Bootstrap 3
  * http://geedmo.github.com/yamm3
@@ -185,16 +203,20 @@ window.onload = function () {
                 if (targetDate.getFullYear() === today.getFullYear() &&
                     targetDate.getMonth() === today.getMonth() &&
                     targetDate.getDate() === today.getDate()) {
-                           document.getElementById('hours0').innerHTML = "<p><span style='color:red;'>Today</span><br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p>"
+                           document.getElementById('hours0').innerHTML = "<p><strong>Today</strong><br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p>"
                            var start = true;
                            var count = 1;
                 } else if (start === true && count < 5 && h[i]["Hours"] === "Closed" ) {
                         document.getElementById('hours' + count).innerHTML = "<span style='color:#777;'><p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p></span>"
                         count++;
-                } else if (start === true && count < 5 && h[i]["Hours"] != "Closed") {
+               } else if (start === true && count < 5 && h[i]["Hours"] != "Closed") {
                         document.getElementById('hours' + count).innerHTML = "<p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p>"
                         count++;
-                };
+               };
         };
 };
 </script>
+
+<!-- Load bootstrap accessibility libraries (https://github.com/paypal/bootstrap-accessibility-plugin) -->
+<link rel="stylesheet" type="text/css" href="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.css">	
+<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.js"></script>
