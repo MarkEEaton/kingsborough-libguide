@@ -1,0 +1,245 @@
+<style>
+
+body {
+        color: #111;
+}
+
+/* style navbar */
+
+.navbar-default {
+        background-color: #eee;
+        border: none;
+        font-size: 1.4em;
+        color: #111;
+        margin-top: -15px;
+        margin-bottom: 28px;
+        border-radius: 0px;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+        color: #111;
+}
+
+.faux-card {
+        margin-left: 16px;
+}
+
+/* style jumbotron */
+
+.jumbotron {
+        color: #003466;
+        border-radius: 0px !important;
+        background-color: white;
+}
+
+.zero-margin {
+        margin-left: -4px;
+        margin-right: -4px;
+}
+
+#dropdownMenu1 {
+        border-radius: 0px;
+}
+
+/* style link list */
+.link-list {
+        font-size: 2em;
+}
+
+/* style for nav by the jumbotron */
+.nav-by-jumbotron {
+        margin-top: -6px;
+}
+
+.nav-divs-by-jumbotron {
+        border: solid #003466 1px;
+        text-align: center;
+        padding: 8px;
+        margin: 6px 0px;
+        color: #003466;
+}
+
+.nav-divs-by-jumbotron>h2 {
+        font-size: 1.5em;
+        margin-bottom: 4px;
+        margin-top: 4px;
+}
+
+.nav-divs-by-jumbotron:hover {
+       background-color: #ddd;
+}
+
+/* style the panels with the text content */
+.panel>.show-panel > .panel-title { 
+        color: #003466;
+        text-align: center;
+}
+
+.panel > .show-panel {
+        background-color: white;
+        border-bottom: solid #003466 7px;
+}
+
+.hide-body-border {
+       border: none;
+       box-shadow: none;
+}
+
+.glyphicon-panel-title {
+        font-size: 2em;
+}
+
+.content-panel-title {
+        color: white;
+        font-size: 2em;
+}
+
+.content-panel-title>h2 {
+        margin: 7px 0px;
+        font-size: 1em;
+}
+
+.panel-heading {
+       padding: 2px;
+}
+
+.slick-slide img {
+        padding: 2px;
+}
+
+/* style the gallery */
+img {
+        max-height: 350px !important;
+        object-fit: contain;
+        margin: 0px;
+}
+
+.s-lib-public-side-header {
+        display: none;
+}
+
+.slick-active {
+        outline: 0;
+}
+
+/* style the hours */
+.hours {
+        text-align:center;
+}
+
+.hours-panel-body {
+        padding: 10px 5px 10px 5px;
+}
+
+.padding-0 {
+        padding-left: 4px;
+        padding-right: 4px;
+        flex:1 1 auto;
+        display: flex;
+}
+
+.equal {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+}
+
+.panel {
+        flex:1 0 100%;
+}
+
+.panel-outline-color {
+        border: solid #003466 1px;
+}
+
+.vertical-align {
+        display: flex;
+        align-items: center;
+        height: 100%;
+}
+
+.more-link {
+        text-align: center;
+        width: 100%;
+}
+
+/* style the yamm menu */
+.dropdown-margin {
+        margin-right: 50px;
+}
+
+.yamm1 {
+        max-width: 900px;
+}
+
+.yamm2 {
+        max-width: 675px;
+}
+
+.yamm3 {
+        max-width: 300px;
+}
+
+/*!
+ * Yamm!3 - Yet another megamenu for Bootstrap 3
+ * http://geedmo.github.com/yamm3
+ *
+ * @geedmo - Licensed under the MIT license
+ */
+.yamm .nav,
+.yamm .collapse,
+.yamm .dropup,
+.yamm .dropdown {
+  position: static;
+}
+.yamm .container {
+  position: relative;
+}
+.yamm .dropdown-menu {
+  left: auto;
+}
+.yamm .yamm-content {
+  padding: 20px 30px;
+}
+.yamm .dropdown.yamm-fw .dropdown-menu {
+  left: 0;
+  right: 0;
+}
+/* End of Yamm */
+</style>
+
+<!-- the configuration file for the hours widget -->
+<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/hours.js"></script>
+
+<!-- the code for the hours widget -->
+<script type="text/javascript">
+window.onload = function () {
+        const h = JSON.parse(hours)
+        const options_weekday = { weekday: 'long' };
+        const options_date = { month: 'short', day: 'numeric' }
+        for (var i = 0; i < h.length; i++) {
+                let targetDate = new Date(h[i]["Date"] + "T00:00:00.000-05:00");
+                let today = new Date();
+                if (targetDate.getFullYear() === today.getFullYear() &&
+                    targetDate.getMonth() === today.getMonth() &&
+                    targetDate.getDate() === today.getDate()) {
+                           document.getElementById('hours0').innerHTML = "<p><strong>Today</strong><br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p>"
+                           var start = true;
+                           var count = 1;
+                } else if (start === true && count < 5 && h[i]["Hours"] === "Closed" ) {
+                        document.getElementById('hours' + count).innerHTML = "<span style='color:#666;'><p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p></span>"
+                        count++;
+               } else if (start === true && count < 5 && h[i]["Hours"] != "Closed") {
+                        document.getElementById('hours' + count).innerHTML = "<p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p>"
+                        count++;
+               };
+        };
+};
+</script>
+
+<!-- Load bootstrap accessibility libraries (https://github.com/paypal/bootstrap-accessibility-plugin) -->
+<link rel="stylesheet" type="text/css" href="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.css">	
+<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.js"></script>
