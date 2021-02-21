@@ -27,6 +27,11 @@ body {
 
 /* style jumbotron */
 
+.onesearch-jumbotron {
+        text-align: center;
+        margin-top: 45px;
+}
+
 #onesearch-header {
         color: #003466;
 }
@@ -52,12 +57,13 @@ a.searchmenu {
 /* style for nav by the jumbotron */
 .nav-by-jumbotron {
         margin-top: -6px;
+        margin-bottom: 40px;
 }
 
 .nav-divs-by-jumbotron {
         border: solid #003466 1px;
         text-align: center;
-        padding: 8px;
+        padding: 6px;
         margin: 6px 0px;
         color: #003466;
 }
@@ -249,7 +255,7 @@ window.onload = function () {
 <!-- script to make OneSearch dropdown work -->
 <script>
 customizeSearch = function(facet) {
-    document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';    
+    document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';
 }
 </script>
 
