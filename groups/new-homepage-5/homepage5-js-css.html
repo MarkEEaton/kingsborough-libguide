@@ -246,6 +246,13 @@ window.onload = function () {
 };
 </script>
 
+<!-- script to make OneSearch dropdown work -->
+<script>
+customizeSearch = function(facet) {
+    document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';    
+}
+</script>
+
 <!-- Load bootstrap accessibility libraries (https://github.com/paypal/bootstrap-accessibility-plugin) -->
 <link rel="stylesheet" type="text/css" href="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.css">	
 <script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.js"></script>
