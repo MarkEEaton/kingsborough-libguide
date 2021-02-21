@@ -253,9 +253,18 @@ window.onload = function () {
 </script>
 
 <!-- script to make OneSearch dropdown work -->
-<script>
+<script type="text/javascript">
 customizeSearch = function(facet) {
     document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';
+}
+</script>
+
+<!-- OneSearch widget script from OLS -->
+<script type="text/javascript">
+function addPrimoQuery() {
+	document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+	/* If you changed the form name at the top, change it below to match */
+	document.forms["searchPrimoForm1"].submit();
 }
 </script>
 

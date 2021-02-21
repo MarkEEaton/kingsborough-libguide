@@ -178,7 +178,18 @@
                 <div class="container">
 			<div class="row">
                                  <div class="col-sm-8">
-                                         <form class="form-inline yamm onesearch-jumbotron">
+                                         <form class="form-inline yamm onesearch-jumbotron" name="searchPrimoForm1" role="search" method="get" action="https://cuny-kb.primo.exlibrisgroup.com/discovery/search" onsubmit="addPrimoQuery();" enctype="application/x-www-form-urlencoded; charset=utf-8">
+                                                 <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" /><!-- "everything"  option suggested from OLS widget builder" -->
+                                                 <input name="tab" value="Everything" type="hidden" />
+                                                 <input name="search_scope" value="MyInst_and_CI" type="hidden" />
+                                                 <input name="mode" value="basic" type="hidden" />
+                                                 <input name="highlight" value="true" type="hidden" />
+                                                 <input name="displayMode" value="full" type="hidden" />
+                                                 <input name="bulkSize" value="10" type="hidden" />
+                                                 <input name="dum" value="true" type="hidden" />
+                                                 <input name="displayField" value="all" type="hidden" />
+                                                 <input name="pcAvailabiltyMode" value="false" type="hidden" />
+                                                 <input name="query" id="primoQuery" type="hidden" />
                                                  <h1 id="onesearch-header">OneSearch</h1>
                                                  <div class="form-group">
                                                          <div class="dropdown input-group zero-margin">
@@ -227,12 +238,12 @@
                                                                          <li>
                                                                  </ul>
                                                          </div>
-                                                         <label class="sr-only" for="searchterms">Search terms</label>
+                                                         <label class="sr-only" for="primoQueryTemp">Search terms</label>
                                                          <div class="input-group zero-margin">
-                                                                 <input type="text" class="form-control" id="searchterms" placeholder="Search terms">
+                                                                 <input type="text" class="form-control" name="queryTemp" id="primoQueryTemp" type="search" value="" placeholder="Enter search term here">
                                                          </div>
                                                          <div class="input-group zero-margin">
-                                                                 <button type="submit" class="btn btn-default form-control">Search</button>
+                                                                 <input type="submit" class="btn btn-default form-control" value="Search" type="submit" onclick="addPrimoQuery();" />
                                                          </div>
                                                  </div>
                                          </form>
