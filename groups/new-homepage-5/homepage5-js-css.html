@@ -254,9 +254,12 @@ window.onload = function () {
 
 <!-- script to make OneSearch dropdown work -->
 <script type="text/javascript">
-customizeSearch = function(facet) {
-    document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';
-}
+function customizeSearch(facet) {
+        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';
+        if (facet === "Books") {
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />');
+        };
+};
 </script>
 
 <!-- OneSearch widget script from OLS -->
