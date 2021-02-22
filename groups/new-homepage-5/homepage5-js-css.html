@@ -252,23 +252,37 @@ window.onload = function () {
 };
 </script>
 
-<!-- script to make OneSearch dropdown work -->
+<!-- script to make OneSearch dropdown customizations work -->
 <script type="text/javascript">
 function customizeSearch(facet) {
-        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';        
-        document.querySelectorAll('.deleteWithDropdownChange').forEach(e => e.remove());
 
+        // re-render the dropdown menu with the current pick
+        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';        
+        
+        // reset any previously selected facets
+        document.querySelectorAll('.deleteWithDropdownChange').forEach(e => e.remove());
+        document.getElementById("formToAppendInputsTo").setAttribute("action", "https://cuny-kb.primo.exlibrisgroup.com/discovery/search");
+        document.getElementById("tabSetting").setAttribute("value", "Everything");
+
+        // add the facet that matches the user's dropdown selection
         if (facet === "Books") {
                 document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Articles") {
-                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="mfacet" value="rtype,include,newspaper_articles,1" type="hidden" class="deleteWithDropdownChange"/>');
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="mfacet" value="rtype,include,newspaper_articles,1" type="hidden" class="deleteWithDropdownChange" />');
+        } else if (facet === "Videos") {
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,videos" type="hidden" class="deleteWithDropdownChange" />');
+        } else if (facet === "Journals") {
+                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://onesearch.cuny.edu/discovery/jsearch');
+                document.getElementById("tabSetting").setAttribute("value", "jsearch_slot");
+        } else if (facet === "Newspapers") {
+                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://onesearch.cuny.edu/discovery/npsearch');
         } else {
                 console.log("no match")
         };
 };
 </script>
 
-<!-- OneSearch widget script from OLS -->
+<!-- OneSearch widget script from OLS. Used without modification -->
 <script type="text/javascript">
 function addPrimoQuery() {
 	document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
