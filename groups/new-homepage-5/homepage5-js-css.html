@@ -255,9 +255,15 @@ window.onload = function () {
 <!-- script to make OneSearch dropdown work -->
 <script type="text/javascript">
 function customizeSearch(facet) {
-        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';
+        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';        
+        document.querySelectorAll('.deleteWithDropdownChange').forEach(e => e.remove());
+
         if (facet === "Books") {
                 document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />');
+        } else if (facet === "Articles") {
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="mfacet" value="rtype,include,newspaper_articles,1" type="hidden" class="deleteWithDropdownChange"/>');
+        } else {
+                console.log("no match")
         };
 };
 </script>
