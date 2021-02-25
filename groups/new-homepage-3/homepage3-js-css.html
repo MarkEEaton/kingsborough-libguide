@@ -7,7 +7,7 @@ body {
 /* style navbar */
 
 .navbar-default {
-        background-color: #bbb;
+        background-color: #ccc;
         border: none;
         font-size: 1.4em;
         color: #111;
@@ -27,10 +27,26 @@ body {
 
 /* style jumbotron */
 
-.jumbotron {
-        color: white;
-        background-color: #003466;
-        border-radius: 0px !important;
+.onesearch-jumbotron {
+        text-align: center;
+        margin-top: 45px;
+}
+
+#onesearch-header {
+        color: #003466;
+}
+
+.zero-margin {
+        margin-left: -2px;
+        margin-right: -2px;
+}
+
+#dropdownMenu1 {
+        border-radius: 0px;
+}
+
+a.searchmenu {
+        color: #111;
 }
 
 /* style link list */
@@ -41,13 +57,15 @@ body {
 /* style for nav by the jumbotron */
 .nav-by-jumbotron {
         margin-top: -6px;
+        margin-bottom: 40px;
 }
 
 .nav-divs-by-jumbotron {
-        background-color: #bbb;
         text-align: center;
-        padding: 8px;
+        padding: 6px;
         margin: 6px 0px;
+        color: #111;
+        background-color: #ccc;
 }
 
 .nav-divs-by-jumbotron>h2 {
@@ -168,6 +186,10 @@ img {
         max-width: 300px;
 }
 
+.yamm4 {
+        max-width: 450px;
+}
+
 /*!
  * Yamm!3 - Yet another megamenu for Bootstrap 3
  * http://geedmo.github.com/yamm3
@@ -223,6 +245,44 @@ window.onload = function () {
                };
         };
 };
+</script>
+
+<!-- script to make OneSearch dropdown work -->
+<script type="text/javascript">
+function customizeSearch(facet) {
+        // re-render the dropdown menu with the current pick
+        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';        
+        
+        // reset any previously selected facets
+        document.querySelectorAll('.deleteWithDropdownChange').forEach(e => e.remove());
+        document.getElementById("formToAppendInputsTo").setAttribute("action", "https://cuny-kb.primo.exlibrisgroup.com/discovery/search");
+        document.getElementById("tabSetting").setAttribute("value", "Everything");
+
+        // add the facet that matches the user's dropdown selection
+        if (facet === "Books") {
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />');
+        } else if (facet === "Articles") {
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="mfacet" value="rtype,include,newspaper_articles,1" type="hidden" class="deleteWithDropdownChange" />');
+        } else if (facet === "Videos") {
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,videos" type="hidden" class="deleteWithDropdownChange" />');
+        } else if (facet === "Journals") {
+                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://onesearch.cuny.edu/discovery/jsearch');
+                document.getElementById("tabSetting").setAttribute("value", "jsearch_slot");
+        } else if (facet === "Newspapers") {
+                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://onesearch.cuny.edu/discovery/npsearch');
+        } else {
+                console.log("no match")
+        };
+};
+</script>
+
+<!-- OneSearch widget script from OLS. Used without modification -->
+<script type="text/javascript">
+function addPrimoQuery() {
+	document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+	/* If you changed the form name at the top, change it below to match */
+	document.forms["searchPrimoForm1"].submit();
+}
 </script>
 
 <!-- Load bootstrap accessibility libraries (https://github.com/paypal/bootstrap-accessibility-plugin) -->
