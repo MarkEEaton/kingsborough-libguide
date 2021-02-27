@@ -29,16 +29,39 @@ body {
 
 .onesearch-jumbotron {
         text-align: center;
-        margin-top: 45px;
+        margin-top: 25px;
 }
 
 #onesearch-header {
         color: #003466;
+        font-size: 6em;
 }
 
 .zero-margin {
         margin-left: -2px;
         margin-right: -2px;
+}
+
+@media only screen and (min-width: 992px) {
+        .form-width {
+                width: 350px;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+        .form-width {
+                width: 220px;
+        }
+}
+
+@media only screen and (max-width: 767px)  {
+        .form-width {
+                width: 300px;
+        }
+        .zero-margin {
+                margin: auto;
+        }
+
 }
 
 #dropdownMenu1 {
