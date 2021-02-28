@@ -194,10 +194,7 @@
                                                  <h1 id="onesearch-header">OneSearch</h1>
                                                  <div class="form-group">
                                                          <div class="dropdown input-group zero-margin">
-                                                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                                         Define Your Search
-                                                                         <span class="caret"></span>
-                                                                 </button>
+                                                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Define Your Search <span class="caret"></span></button>
                                                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                                                          <li>
                                                                                  <div class="yamm-content yamm4">
@@ -266,7 +263,7 @@
                                                                  <input type="text" class="form-control form-width" name="queryTemp" id="primoQueryTemp" type="search" value="" placeholder="Enter search term here">
                                                          </div>
                                                          <div class="input-group zero-margin">
-                                                                 <input type="submit" class="btn btn-default form-control" value="Search" type="submit" onclick="addPrimoQuery();" />
+                                                                 <input type="submit" class="btn btn-default form-control" value="Search" type="submit" onclick="return addPrimoQuery(event);" />
                                                          </div>
                                                  </div>
                                          </form>
