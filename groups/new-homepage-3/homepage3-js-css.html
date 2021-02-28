@@ -1,4 +1,4 @@
-i<style>
+<style>
 
 body {
         color: #111;
@@ -313,13 +313,17 @@ function customizeSearch(facet) {
 <!-- OneSearch widget script from OLS, modified -->
 <script type="text/javascript">
 function addPrimoQuery(e) {
-        // prevent the user from submitting the form if no dropdown item has been selected
+        // prevent the user from submitting the form if no dropdown item has been selected. Added by ME.
         e.preventDefault();
         e.stopPropagation();
         if (document.getElementById("dropdownMenu1").innerHTML === 'Define Your Search <span class="caret"></span>') {
                 $("#dropdownMenu1").trigger('click.bs.dropdown.data-api');
+                document.getElementById("primoQueryTemp").value = "";
+                document.getElementById("primoQueryTemp").setAttribute("placeholder", "Please make a selection");
                 return true;
         };
+
+       // original OLS widget
        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
         /* If you changed the form name at the top, change it below to match */
         document.forms["searchPrimoForm1"].submit();
