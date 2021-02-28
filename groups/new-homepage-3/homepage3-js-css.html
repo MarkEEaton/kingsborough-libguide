@@ -258,26 +258,26 @@ img {
 <!-- the code for the hours widget -->
 <script type="text/javascript">
 window.onload = function () {
-        const h = JSON.parse(hours)
+        const h = JSON.parse(hours);
         const options_weekday = { weekday: 'long' };
-        const options_date = { month: 'short', day: 'numeric' }
+        const options_date = { month: 'short', day: 'numeric' };
         for (var i = 0; i < h.length; i++) {
-                let targetDate = new Date(h[i]["Date"] + "T00:00:00.000-05:00");
+                let targetDate = new Date(h[i].Date + "T00:00:00.000-05:00");
                 let today = new Date();
                 if (targetDate.getFullYear() === today.getFullYear() &&
                     targetDate.getMonth() === today.getMonth() &&
                     targetDate.getDate() === today.getDate()) {
-                           document.getElementById('hours0').innerHTML = "<p><strong>Today</strong><br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p>"
+                           document.getElementById('hours0').innerHTML = "<p><strong>Today</strong><br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i].Hours + "</p>";
                            var start = true;
                            var count = 1;
-                } else if (start === true && count < 5 && h[i]["Hours"] === "Closed" ) {
-                        document.getElementById('hours' + count).innerHTML = "<span style='color:#666;'><p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p></span>"
+                } else if (start === true && count < 5 && h[i].Hours === "Closed" ) {
+                        document.getElementById('hours' + count).innerHTML = "<span style='color:#666;'><p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i].Hours + "</p></span>";
                         count++;
-               } else if (start === true && count < 5 && h[i]["Hours"] != "Closed") {
-                        document.getElementById('hours' + count).innerHTML = "<p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i]["Hours"] + "</p>"
+               } else if (start === true && count < 5 && h[i].Hours != "Closed") {
+                        document.getElementById('hours' + count).innerHTML = "<p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "</p><p>" + h[i].Hours + "</p>";
                         count++;
-               };
-        };
+               }
+        }
 };
 </script>
 
@@ -305,9 +305,9 @@ function customizeSearch(facet) {
         } else if (facet === "Newspapers") {
                 document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://onesearch.cuny.edu/discovery/npsearch');
         } else {
-                console.log("no match")
-        };
-};
+                console.log("no match");
+        }
+}
 </script>
 
 <!-- OneSearch widget script from OLS, modified -->
@@ -321,12 +321,12 @@ function addPrimoQuery(e) {
                 document.getElementById("primoQueryTemp").value = "";
                 document.getElementById("primoQueryTemp").setAttribute("placeholder", "Please make a selection");
                 return true;
-        };
+        }
 
        // original OLS widget
        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
         /* If you changed the form name at the top, change it below to match */
-        document.forms["searchPrimoForm1"].submit();
+        document.forms.searchPrimoForm1.submit();
 }
 </script>
 
