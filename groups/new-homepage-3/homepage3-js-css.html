@@ -285,7 +285,8 @@ window.onload = function () {
 <script type="text/javascript">
 function customizeSearch(facet) {
         // re-render the dropdown menu with the current pick
-        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';        
+        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';
+        document.getElementById("primoQueryTemp").setAttribute("placeholder", "Enter search term here");      
         
         // reset any previously selected facets
         document.querySelectorAll('.deleteWithDropdownChange').forEach(e => e.remove());
@@ -316,17 +317,17 @@ function addPrimoQuery(e) {
         // prevent the user from submitting the form if no dropdown item has been selected. Added by ME.
         e.preventDefault();
         e.stopPropagation();
-        if (document.getElementById("dropdownMenu1").innerHTML === 'Define Your Search <span class="caret"></span>') {
+        if (document.getElementById("dropdownMenu1").innerHTML.includes('Define') === true) {
                 $("#dropdownMenu1").trigger('click.bs.dropdown.data-api');
                 document.getElementById("primoQueryTemp").value = "";
                 document.getElementById("primoQueryTemp").setAttribute("placeholder", "Please make a selection");
                 return true;
-        }
+        };
 
        // original OLS widget
        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-        /* If you changed the form name at the top, change it below to match */
-        document.forms.searchPrimoForm1.submit();
+       /* If you changed the form name at the top, change it below to match */
+       document.forms.searchPrimoForm1.submit();
 }
 </script>
 
