@@ -232,16 +232,67 @@ a.no-underline {
         margin: -15px 0px;
 }
 
+/* style footer */
+
+#orange-line {
+        height:10px; 
+        background-color: #ff4e00;
+}
+
+#main-blue-footer {
+        background-color: #003466; 
+        color: white; 
+        padding: 30px;
+}
+
+.whiteahrefs a:link, .whiteahrefs a:hover, .whiteahrefs a:visited, .whiteahrefs a:active { 
+        color: white;
+        text-decoration:none;
+}
+
+.whiteahrefs {
+        margin-top: 10px;
+}
+
+#lighthouse-logo > img {     
+        max-width: 300px;
+}
+
 /* media queries */
+
 @media only screen and (min-width: 992px) {
         .form-width {
                 width: 350px;
+        }
+        #cuny-logo {
+                float: right;
+        }
+        .library-address {
+                display: inline-block;
+                margin: 30px;
+                font-size: 1.1em;
+                vertical-align: -40px;
+        }
+        #lighthouse-logo {
+                display: inline-block;
         }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
         .form-width {
                 width: 220px;
+        }
+        #cuny-logo {
+                float: right;
+        }
+        .library-address {
+                display: inline-block;
+                margin: 30px;
+                font-size: 1.1em;
+                vertical-align: -40px;
+        }
+        #lighthouse-logo {
+                display: inline-block;
         }
 }
 
@@ -257,6 +308,15 @@ a.no-underline {
         }
         #onesearch-header {
                 font-size: 5em;
+        }
+        #main-blue-footer {
+                min-height: 500px;
+        }
+        .library-address {
+                float: left;
+        }
+        #cuny-logo {
+                float: left;
         }
 }
 
