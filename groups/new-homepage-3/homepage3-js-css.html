@@ -363,16 +363,16 @@ a.no-underline {
 window.onload = function () {
         const h = JSON.parse(hours);
         const options_weekday = { weekday: 'long' };
+        const options_weekday_short = { weekday: 'short' };
         const options_date = { month: 'short', day: 'numeric' };
         for (var i = 0; i < h.length; i++) {
                 let targetDate = new Date(h[i].Date + "T00:00:00.000-05:00");
                 let today = new Date();
-                if (targetDate.toLocaleDateString("en-US", options_weekday) === "Wednesday") {
-                    weekday = "Wed"
+                if (window.innerWidth < 500) {
+                    weekday = targetDate.toLocaleDateString("en-US", options_weekday_short)
                 } else { 
                     weekday = targetDate.toLocaleDateString("en-US", options_weekday)
                 }
-                console.log(weekday);
                 if (targetDate.getFullYear() === today.getFullYear() &&
                     targetDate.getMonth() === today.getMonth() &&
                     targetDate.getDate() === today.getDate()) {
