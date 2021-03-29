@@ -367,6 +367,12 @@ window.onload = function () {
         for (var i = 0; i < h.length; i++) {
                 let targetDate = new Date(h[i].Date + "T00:00:00.000-05:00");
                 let today = new Date();
+                if (targetDate.toLocaleDateString("en-US", options_weekday) === "Wednesday") {
+                    weekday = "Wed"
+                } else { 
+                    weekday = targetDate.toLocaleDateString("en-US", options_weekday)
+                }
+                console.log(weekday);
                 if (targetDate.getFullYear() === today.getFullYear() &&
                     targetDate.getMonth() === today.getMonth() &&
                     targetDate.getDate() === today.getDate()) {
@@ -374,10 +380,10 @@ window.onload = function () {
                            var start = true;
                            var count = 1;
                 } else if (start === true && count < 3 && h[i].Hours === "Closed" ) {
-                        document.getElementById('hours' + count).innerHTML = "<span style='color:#666;'><p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "<br />" + h[i].Hours + "</p></span>";
+                        document.getElementById('hours' + count).innerHTML = "<span style='color:#666;'><p>" + weekday + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "<br />" + h[i].Hours + "</p></span>";
                         count++;
                } else if (start === true && count < 3 && h[i].Hours != "Closed") {
-                        document.getElementById('hours' + count).innerHTML = "<p>" + targetDate.toLocaleDateString("en-US", options_weekday) + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "<br />" + h[i].Hours + "</p>";
+                        document.getElementById('hours' + count).innerHTML = "<p>" + weekday + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "<br />" + h[i].Hours + "</p>";
                         count++;
                }
         }
