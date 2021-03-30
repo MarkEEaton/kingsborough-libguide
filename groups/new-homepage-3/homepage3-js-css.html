@@ -18,19 +18,15 @@ body {
         font-size: 1.5em;
 }
 
+/* style header */
 #library-name-header {
-        font-size: 4em;
         color: #003466;
         margin-top: 20px;
+        font-size: 4em;
 }
 
-/* style background image */
-.kbcc-background-image {
-        background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 100%), url("https://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg");
-        padding: 20px 0px;
-        border-radius: 5px;
-        background-size: cover;
-        margin: -30px 0px 30px 0px;
+#header-div {
+        padding: 30px 30px;
 }
 
 /* style navbar */
@@ -50,6 +46,15 @@ body {
 
 .faux-card {
         margin-left: 16px;
+}
+
+/* style background image */
+.kbcc-background-image {
+        background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 100%), url("https://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg");
+        padding: 20px 0px;
+        border-radius: 5px;
+        background-size: cover;
+        margin: -30px 0px 30px 0px;
 }
 
 /* style jumbotron */
@@ -297,12 +302,12 @@ a.no-underline {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-        #kb-cuny-logo {
-               max-width: 100%;
+        #library-name-header {
+               text-align: center;
         }
 
-        #library-name-header {
-                float: left;
+        #kb-cuny-logo {
+               max-width: 100%;
         }
         
         .form-width {
@@ -331,12 +336,12 @@ a.no-underline {
 }
 
 @media only screen and (max-width: 767px)  {
-        #kb-cuny-logo {
-               max-width: 100%;
+        #library-name-header {
+               text-align: center;
         }
 
-        #library-name-header {
-                float: left;
+        #kb-cuny-logo {
+               max-width: 100%;
         }
 
         .form-width {
