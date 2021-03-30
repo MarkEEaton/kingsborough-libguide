@@ -9,7 +9,7 @@ body {
 #corona-alert {
         text-align: center;
         background-color: #faf870;
-        margin-bottom: -10px;
+        margin: 0px 5px 0px 10px;
         padding: 5px;
 }
 
@@ -18,13 +18,19 @@ body {
         font-size: 1.5em;
 }
 
+#library-name-header {
+        font-size: 4em;
+        color: #003466;
+        margin-top: 20px;
+}
+
 /* style background image */
 .kbcc-background-image {
         background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 100%), url("https://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg");
         padding: 20px 0px;
         border-radius: 5px;
         background-size: cover;
-        margin: 0px 0px 30px 0px;
+        margin: -30px 0px 30px 0px;
 }
 
 /* style navbar */
@@ -34,7 +40,7 @@ body {
         border: none;
         font-size: 1.4em;
         color: #111;
-        margin-top: -15px;
+        margin-top: 20px;
         border-radius: 0px;
 }
 
@@ -257,21 +263,33 @@ a.no-underline {
 /* media queries */
 
 @media only screen and (min-width: 992px) {
-        .form-width {
+        #kb-cuny-logo {
+               max-width: 40%;
+        }
+
+        #library-name-header {
+               float: right;
+        }
+
+       .form-width {
                 width: 350px;
         }
+
         #lighthouse-logo {
                 display: inline-block;
         }
+
         .library-address {
                 display: inline-block;
                 margin: 0px 30px;
                 font-size: 1.1em;
                 vertical-align: -50px;
         }
+
         #cuny-logo {
                 float: right;
         }
+
         .libapps {
                 float: right; 
                 clear: right;
@@ -279,21 +297,33 @@ a.no-underline {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+        #kb-cuny-logo {
+               max-width: 100%;
+        }
+
+        #library-name-header {
+                float: left;
+        }
+        
         .form-width {
                 width: 220px;
         }
+
         #lighthouse-logo {
                 display: inline-block;
         }
+
         .library-address {
                 display: inline-block;
                 margin: 0px 30px;
                 font-size: 1.1em;
                 vertical-align: -50px;
         }
+
         #cuny-logo {
                 float: right;
         }
+
         .libapps {
                 float: right; 
                 clear: right;
@@ -301,26 +331,40 @@ a.no-underline {
 }
 
 @media only screen and (max-width: 767px)  {
+        #kb-cuny-logo {
+               max-width: 100%;
+        }
+
+        #library-name-header {
+                float: left;
+        }
+
         .form-width {
                 width: 300px;
         }
+
         .zero-margin {
                 margin: 7px auto;
         }
+
         .nav-by-jumbotron {
                 margin-top: 40px !important;
         }
+
         #main-blue-footer {
                 min-height: 450px;
         }
+
         .library-address {
                 float: left;
         }
+
         #cuny-logo {
                 float: left;
                 clear: both;
                 margin-top: 10px;
         }
+
         .libapps {
                 float: left; 
                 clear: left;
