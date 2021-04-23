@@ -267,49 +267,8 @@ a.no-underline {
 
 /* media queries */
 
-@media only screen and (min-width: 992px) {
-        #kb-cuny-logo {
-               max-width: 30%;
-               margin-top: 10px;
-        }
+@media only screen and (min-width: 1px)  {
 
-        #library-logo {
-               float: right;
-               max-width: 60%;
-               margin-top: -70px;
-               margin-right: -80px;
-        }
-
-        #corona-alert {
-                margin: -50px 6px 0px 12px;        
-        }
-
-       .form-width {
-                width: 350px;
-        }
-
-        #lighthouse-logo {
-                display: inline-block;
-        }
-
-        .library-address {
-                display: inline-block;
-                margin: 0px 30px;
-                font-size: 1.1em;
-                vertical-align: -50px;
-        }
-
-        #cuny-logo {
-                float: right;
-        }
-
-        .libapps {
-                float: right; 
-                clear: right;
-        }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
         #library-logo {
                max-width: 100%;
         }
@@ -319,44 +278,6 @@ a.no-underline {
         }
 
         #corona-alert {
-                margin: -25px 6px 0px 12px;        
-        }
-
-        .form-width {
-                width: 220px;
-        }
-
-        #lighthouse-logo {
-                display: inline-block;
-        }
-
-        .library-address {
-                display: inline-block;
-                margin: 0px 30px;
-                font-size: 1.1em;
-                vertical-align: -50px;
-        }
-
-        #cuny-logo {
-                float: right;
-        }
-
-        .libapps {
-                float: right; 
-                clear: right;
-        }
-}
-
-@media only screen and (max-width: 767px)  {
-        #library-logo {
-               max-width: 100%;
-        }
-
-        #kb-cuny-logo {
-               max-width: 100%;
-        }
-        
-       #corona-alert {
                 margin: -25px 6px 0px 12px;        
         }
 
@@ -392,9 +313,72 @@ a.no-underline {
         }
 }
 
-@media only screen and (min-width: 1200px)  {
+@media only screen and (min-width: 767px) {
+
+        .form-width {
+                width: 220px;
+        }
+
+        .zero-margin {
+                margin: 0px -2px;
+        }
+
+        .nav-by-jumbotron {
+                margin-top: 0px !important;
+        }
+
+        #lighthouse-logo {
+                display: inline-block;
+                float: left;
+        }
+
+        #main-blue-footer {
+                min-height: 210px;
+        }
+
+        .library-address {
+                display: inline-block;
+                margin: -10px 30px;
+                font-size: 1.1em;
+        }
+
+        #cuny-logo {
+                float: right;
+                clear: none;
+                margin: -10px 0px;
+        }
+
+        .libapps {
+                float: right; 
+                clear: both;
+        }
+}
+
+
+@media only screen and (min-width: 992px) {
         #kb-cuny-logo {
                max-width: 30%;
+               margin-top: 10px;
+        }
+
+        #library-logo {
+               float: right;
+               max-width: 60%;
+               margin-top: -70px;
+               margin-right: -80px;
+        }
+
+        #corona-alert {
+                margin: -50px 6px 0px 12px;        
+        }
+
+       .form-width {
+                width: 350px;
+        }
+}
+
+@media only screen and (min-width: 1200px)  {
+        #kb-cuny-logo {
                margin-top: 25px;
         }
 }
