@@ -9,7 +9,7 @@ body {
 #corona-alert {
         text-align: center;
         background-color: #faf870;
-        margin: 0px 6px 0px 12px;
+        margin: -50px 6px 0px 12px;
         padding: 5px;
 }
 
@@ -19,11 +19,6 @@ body {
 }
 
 /* style header */
-#library-name-header {
-        color: #003466;
-        margin-top: 20px;
-        font-size: 4em;
-}
 
 #header-div {
         padding: 30px 30px;
@@ -31,7 +26,7 @@ body {
 
 /* style navbar */
 
-.navbar-default {
+nav.navbar-default.yamm {
         background-color: white;
         border: none;
         font-size: 1.4em;
@@ -270,11 +265,15 @@ a.no-underline {
 
 @media only screen and (min-width: 992px) {
         #kb-cuny-logo {
-               max-width: 40%;
+               max-width: 30%;
+               margin-top: 30px;
         }
 
-        #library-name-header {
+        #library-logo {
                float: right;
+               max-width: 60%;
+               margin-top: -50px;
+               margin-right: -80px;
         }
 
        .form-width {
@@ -303,7 +302,7 @@ a.no-underline {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-        #library-name-header {
+        #library-logo {
                text-align: center;
         }
 
@@ -337,7 +336,7 @@ a.no-underline {
 }
 
 @media only screen and (max-width: 767px)  {
-        #library-name-header {
+        #library-logo {
                text-align: center;
         }
 
@@ -374,6 +373,13 @@ a.no-underline {
         .libapps {
                 float: left; 
                 clear: left;
+        }
+}
+
+@media only screen and (min-width: 1200px)  {
+        #kb-cuny-logo {
+               max-width: 30%;
+               margin-top: 45px;
         }
 }
 
