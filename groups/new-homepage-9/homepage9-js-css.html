@@ -22,6 +22,7 @@ body {
 
 #header-div {
         padding: 30px;
+        text-align: center;
 }
 
 /* style navbar */
@@ -267,10 +268,12 @@ a.no-underline {
 
         #library-logo {
                max-width: 100%;
+               max-height: 150px;
         }
 
         #kb-cuny-logo {
                max-width: 100%;
+               max-height: 150px;
         }
 
         #corona-alert {
@@ -312,7 +315,7 @@ a.no-underline {
 @media only screen and (min-width: 767px) {
 
         #corona-alert {
-                margin: -50px 12px 0px 12px;
+                margin: -20px 12px 0px 12px;
         }
 
         .zero-margin {
@@ -352,16 +355,31 @@ a.no-underline {
 
 
 @media only screen and (min-width: 992px) {
+        
+        #header-div {
+                text-align: left;
+        }
+
         #kb-cuny-logo {
                max-width: 40%;
+               max-height: 300px;
                margin-top: -15px;
         }
 
         #library-logo {
                float: right;
                max-width: 50%;
+               max-height: 300px;
                margin-top: -70px;
                margin-right: -40px;
+        }
+
+        #corona-alert {
+                margin-top: -65px;
+        }
+
+        nav.navbar-default.yamm {
+               margin-top: -20px;
         }
 
        .form-width {
