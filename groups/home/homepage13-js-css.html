@@ -475,7 +475,7 @@ function customizeSearch(facet) {
         document.getElementById("primoQueryTemp").setAttribute("placeholder", "Enter search term here");      
         
         // reset any previously selected facets
-        document.querySelectorAll('.deleteWithDropdownChange').forEach(e => e.remove());
+        document.querySelectorAll('.deleteWithDropdownChange').forEach( function(e) { e.remove(); });
         document.getElementById("formToAppendInputsTo").setAttribute("action", "https://cuny-kb.primo.exlibrisgroup.com/discovery/search");
         document.getElementById("tabSetting").setAttribute("value", "Everything");
 
@@ -499,6 +499,12 @@ function customizeSearch(facet) {
 
 <!-- OneSearch widget script from OLS, modified -->
 <script type="text/javascript">
+
+// make .includes backward compatible to IE
+String.prototype.includes = function(match) {
+  return this.indexOf(match) !== -1;
+}
+
 function addPrimoQuery(e) {
         // prevent the user from submitting the form if no dropdown item has been selected. Added by ME.
         e.preventDefault();
@@ -518,8 +524,14 @@ function addPrimoQuery(e) {
 </script>
 
 <!-- Load bootstrap accessibility libraries (https://github.com/paypal/bootstrap-accessibility-plugin) -->
-<link rel="stylesheet" type="text/css" href="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.css">	
-<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.css">-->
+<!--<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/bootstrap-accessibility.min.js"></script>-->
 
 <!-- FontAwesome -->
 <script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/fa.js"></script>
+
+<!-- If browser is IE, run an alternate version of lg-public.min.js with no ECMAscript 6 -->
+<script type="text/javascript">
+    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        document.write('<script src="//libapps.s3.amazonaws.com/sites/2365/include/lg-public.min.js"><\/script>');
+</script>
