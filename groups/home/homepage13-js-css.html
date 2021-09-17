@@ -433,7 +433,7 @@ a.no-underline {
 </style>
 
 <!-- the configuration file for the hours widget -->
-<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/hours.js"></script>
+<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/hours-babel.js"></script>
 
 <!-- the code for the hours widget -->
 <script type="text/javascript">
@@ -532,6 +532,7 @@ function addPrimoQuery(e) {
 
 <!-- If browser is IE, run an alternate version of lg-public.min.js with no ECMAscript 6 -->
 <script type="text/javascript">
-    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
-        document.write('<script src="//libapps.s3.amazonaws.com/sites/2365/include/lg-public.min.js"><\/script>');
+if (window.document.documentMode) {
+  document.write('<script src="//libapps.s3.amazonaws.com/sites/2365/include/lg-public.min.js"><\/script>');
+}
 </script>
