@@ -467,6 +467,18 @@ window.onload = function () {
 };
 </script>
 
+<!-- polyfills to make .forEach and .includes work in IE10 and IE11 -->
+<script type="text/javascript">
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
+String.prototype.includes = function(match) {
+    return this.indexOf(match) !== -1;
+}
+</script>
+
+
 <!-- script to make OneSearch dropdown work -->
 <script type="text/javascript">
 function customizeSearch(facet) {
@@ -499,11 +511,6 @@ function customizeSearch(facet) {
 
 <!-- OneSearch widget script from OLS, modified -->
 <script type="text/javascript">
-
-// make .includes backward compatible to IE
-String.prototype.includes = function(match) {
-  return this.indexOf(match) !== -1;
-}
 
 function addPrimoQuery(e) {
         // prevent the user from submitting the form if no dropdown item has been selected. Added by ME.
