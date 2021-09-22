@@ -1,5 +1,3 @@
 # About this repository
 
-### January 2021: I've started maintaining this repository again, as we will be doing significant LibGuides work this spring
-
-The files here are copied from Kingsborough Library's LibGuides Admin interface. They will not produce a workable site on their own, but when pasted into the appropriate fields of the LibGuides Admin pages, they will modify the default LibGuide homepage.
+The files here are copied from Kingsborough Library's LibGuides Admin interface. They will not produce a workable site on their own, but you can glue them together in LibGuides; and with the relevant JS/CSS libraries added in, you can produce a working site along these lines: https://library.kbcc.cuny.edu
