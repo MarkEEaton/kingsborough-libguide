@@ -5,16 +5,6 @@ body {
         overflow-x: hidden;
 }
 
-/* custom css if images fail to load */
-
-.image-fail {
-        font-size: 3em;
-}
-
-#onesearch-header a img.image-fail {
-        font-size: 0.5em;
-}
-
 /* style alert */
 
 #corona-alert {
@@ -56,6 +46,7 @@ nav.navbar-default.yamm {
 
 /* style background image */
 .kbcc-background-image {
+        /*background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 100%), url("https://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg");*/
         background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) 100%), url("https://libapps.s3.amazonaws.com/accounts/16298/images/library_front_view.jpg");
         background-position: 50% 71%;
         padding: 20px 0px;
@@ -508,10 +499,10 @@ function customizeSearch(facet) {
         } else if (facet === "Videos") {
                 document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,videos" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Journals") {
-                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://onesearch.cuny.edu/discovery/jsearch');
+                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch');
                 document.getElementById("tabSetting").setAttribute("value", "jsearch_slot");
         } else if (facet === "Newspapers") {
-                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://onesearch.cuny.edu/discovery/npsearch');
+                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch');
         } else {
                 console.log("no match");
         }
