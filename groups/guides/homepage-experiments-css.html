@@ -1,0 +1,175 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXHWQX3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<style>
+
+/* In the footer, make links white, even when hovered, active or visited */
+.whiteahrefs a:link, .whiteahrefs a:hover, .whiteahrefs a:visited, .whiteahrefs a:active { 
+        color: white;
+        text-decoration:none;
+}
+
+/* Fix the color of the "Search" button on the subject pages */
+form .btn.btn-info {
+    background-color:#003466;
+    border:1px solid #003466;
+}
+
+/* Make the badges KBCC blue so they doesn't clash
+.s-lg-az-result-badge-new, .s-lg-az-result-badge-popular, .s-lg-az-result-badge-featured {
+    background-color:#003466;
+} */
+
+
+/* CSS to target buttons on the LibGuides homepage more specifically.
+    These had been broken by a LibGuides update, 9/6/2016 */
+
+.s-lg-hp-btn-section, .s-lg-hp-btn-section:hover, .s-lg-hp-btn-section:focus {
+    background-color:#003466;
+    border:1px solid #003466;
+}
+
+/* temporary rule to keep non-working links to librarians pages from displaying on the guides -> course guides page */
+.s-lg-guide-info-account {
+    display:none;
+}
+
+/* styling the header on the main page */
+#s-lg-hp-nav {     
+    /* background:url(https://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg); does not seem to work well with .png files */
+    background:linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 100%), 
+    url(https://libapps.s3.amazonaws.com/accounts/16298/images/library_front_view.jpg); 
+    background-position: 50% 71%;
+    background-color:#258;     
+    background-size:100%;     
+    height:190px;
+}
+
+#s-lg-hp-nav-bottom {
+    background-color:rgba(255,255,255,0.55); 
+    border-radius:0;
+} 
+
+#nav-spacer {
+    height:55px;
+    width:400px;
+}
+
+#nav-title-spacer {
+    height:42px; 
+    width:400px; 
+    padding:0px 0px 0px 20px; 
+    margin-bottom:10px;
+    background-color:rgba(0,0,0,0.65);
+    color:white;
+}
+
+/* makes the heading smaller on very small screens */
+
+@media (max-width: 455px) {
+    h1 {
+        font-size: 25px;
+    }
+   #nav-title-spacer {
+        width: inherit;
+    }
+}
+
+/* Making the pills the right color */
+
+a.label.label-info:hover {
+    background-color:#003466;
+} 
+
+.label-info {
+   background-color:#003466;
+}
+
+/* new nav pills styling (11/17/2016) */
+
+.s-lg-index-nav-btn.active > .btn {
+   background-color:#003466;
+}
+
+.s-lg-index-nav-btn.active > .btn:focus {
+   background-color:#003466;
+}
+
+.s-lg-index-nav-btn.active > .btn:hover {
+   background-color:#003466;
+}
+
+ul.nav.nav-pills > .s-lg-index-nav-btn.active > button.btn:focus {
+    outline: none;
+}
+
+/* New CSS for the Kingsborough banner that was developed by Kwatei */
+
+#bannerwrap {
+top:10px;
+width:100%;
+height:100px;
+position:relative;
+margin:0px auto;
+float:none;
+clear:none;	
+}
+
+#bannerleft {
+background:url(https://libapps.s3.amazonaws.com/accounts/16298/images/KCC_Offical_Logo.jpg);
+background-size:contain;
+width:367px;
+height:105px;
+margin:0px auto;
+position:relative;
+float:left;
+clear:none;
+}
+
+#bannerx {
+	height:105px;
+        background-image:url(https://libapps.s3.amazonaws.com/accounts/16298/images/logo_x_new.png);
+        background-size:contain;
+	background-repeat: repeat-x;
+}
+
+#innerbannercont {
+	width:660px;
+	float:right;
+	clear:left;
+	height:33px;	
+	position:relative;
+	z-index:12;
+	font-size:12px;
+        text-align:right;
+        color:#fff;
+        margin:3px;
+}
+
+#innerbannercont a {
+        color:#fff;
+	text-decoration:none;
+}
+
+#spacer {
+        height:30px;
+}
+
+#s-lib-bc {
+       clear:both;
+}
+
+/* alternate fonts included to accommodate computers that do not have the defaults */
+
+body {
+        font-family: arial, sans-serif;
+}
+
+/* add a bit of space above the blue "Go To A-Z List" button on the LibGuides homepage*/
+a[href^="/az.php"].btn.btn-info.s-lg-hp-btn-section {
+       margin-top:9px;
+}
+
+</style>
