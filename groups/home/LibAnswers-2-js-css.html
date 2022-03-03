@@ -112,9 +112,11 @@ a.no-underline { text-decoration: none; }
         border: none;
 }
 
-#eq_32886:hover,  { background-color: #444; }
+#eq_32886:hover  { background-color: #444; }
 
 .nav-divs-by-jumbotron:hover > h2 > #eq_32886 { background-color: #444; }
+
+#bookastudyroom { cursor: pointer; }
 
 /* style the panels with the text content */
 .panel>.show-panel {
@@ -367,11 +369,11 @@ a.no-underline { text-decoration: none; }
 /* End of Yamm */
 </style>
 
-<!-- script to make the Book a Study Room widget run -->
+<!-- scripts to make the Book a Study Room widget run -->
 <script src="https://kbcc-cuny.libcal.com/js/equipment.min.js"></script>
 <script>
 jQuery(function(){
-   jQuery("#eq_32886").LibCalEquipmentBooking({iid: 5570, gid: 32886, eid: 0, width: 560, height: 680});
+   jQuery("#eq_32886, #bookastudyroom").LibCalEquipmentBooking({iid: 5570, gid: 32886, eid: 0, width: 560, height: 680});
 });
 </script>
 
