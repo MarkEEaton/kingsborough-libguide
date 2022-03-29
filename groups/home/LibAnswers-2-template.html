@@ -4,7 +4,7 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
 	<!-- BEGIN: content -->
-	<div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
+        <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
 		<div  id="s-lg-index-cols">
                          <div class="row">
                                 <div class="col-xs-12" id="header-div">
@@ -13,11 +13,25 @@
                                 </div>
                          </div>
                          <div class="row">
-                                <div class="col-xs-12">
-                                        <div id="corona-alert">
-                                                <span id="corona-alert-text">Reservations are not needed to use the library at this time</span>
-                                        </div>
-                                </div>
+                                 <div class="col-xs-12">
+                                         <div id="corona-alert" style="cursor: pointer; padding-left: 20px; padding-right: 20px;" type="button" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                                 <span id="corona-alert-text">No fines on KBCC books checked out before the pandemic! Just return them to any CUNY Library.</span>
+                                         </div>
+                                 </div>
+
+                                 <!-- Modal -->
+                                 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                         <div class="modal-dialog modal-sm" role="document">
+                                                 <div class="modal-content" style="border-radius: 3px;">
+                                                         <div class="modal-body">
+                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 5px 5px 12px 12px;"><span aria-hidden="true">&times;</span></button>
+                                                                 <h4 class="modal-title" id="myModalLabel">Before returning books to another CUNY library, please make sure you have updated your vaccine information to Cleared4 or checked  rules for visiting that campus.</h4>
+                                                         </div>
+                                                 </div>
+                                         </div>
+                                 </div>
+                                 <!-- End modal -->
+
                          </div>
                          <div class="row">
                                 <div class="col-xs-12">
@@ -201,11 +215,13 @@
                                                                                         </li>
                                                                                 </ul>
                                                                         </li>
+                                                                        <!-- Hide chat with a librarian 
                                                                         <li>
                                                                                 <a class="no-underline chat1" style="cursor: pointer;" onclick="(function() {if (window.document.documentMode || navigator.userAgent.indexOf('Edge/') > -1) { window.location.href = 'http://library.kbcc.cuny.edu/oldbrowser'; return false; } else {window.open('https://kbcc-cuny.libanswers.com/chat/widget/f7d1629a91e178fd0f799322e803b6e7', 'newwindow', 'width=500, height=400, top=100, left=100'); return false;};})()">
                                                                                                 Chat with a Librarian
                                                                                 </a>
                                                                        </li>
+                                                                       -->
                                                                </ul>
                                                        </div>
                                                </div>
@@ -315,11 +331,9 @@
                                  </div>
                                  <div class="col-sm-4">
                                          <div class="nav-by-jumbotron">
-                                                 <a href="https://library.kbcc.cuny.edu/askalibrarian" class="no-underline">
-                                                         <div class="nav-divs-by-jumbotron">
-                                                                 <h2>Contact Us</h2>
-                                                         </div>
-                                                 </a>
+                                                 <div class="nav-divs-by-jumbotron no-underline" id="bookastudyroom">
+                                                         <h2><button id="eq_32886">Book A Study Room</button></h2>
+                                                 </div>
                                                  <a href="https://library.kbcc.cuny.edu/az.php" class="no-underline">
                                                          <div class="nav-divs-by-jumbotron">
                                                                  <h2>Databases</h2>
@@ -330,11 +344,18 @@
                                                                  <h2>Research Guides</h2>
                                                          </div>
                                                  </a>
+                                                 <a href="https://kbcc-cuny.libwizard.com/f/feedback" class="no-underline">
+                                                         <div class="nav-divs-by-jumbotron">
+                                                                 <h2>Send Us Feedback</h2>
+                                                         </div>
+                                                 </a>
+                                                 <!-- hide chat with a librarian 
                                                  <a class="no-underline chat2" style="cursor: pointer;" onclick="(function() {if (window.document.documentMode || navigator.userAgent.indexOf('Edge/') > -1) { window.location.href = 'http://library.kbcc.cuny.edu/oldbrowser'; return false; } else {window.open('https://kbcc-cuny.libanswers.com/chat/widget/f7d1629a91e178fd0f799322e803b6e7', 'newwindow', 'width=500, height=400, top=100, left=100'); return false;};})()">
                                                          <div class="nav-divs-by-jumbotron">
                                                                  <h2>Chat with a Librarian!</h2>
                                                          </div>
                                                  </a>
+                                                 -->
                                           </div>
                                   </div>
 			</div>
@@ -349,7 +370,7 @@
                                                                <div class="col-sm-6">
                                                                        <ul class="link-list">
                                                                                <li><a href="https://library.kbcc.cuny.edu/ENGLISH24">How to Use the Library</a></li>
-                                                                               <li><a href="https://library.kbcc.cuny.edu/ebooks">Find Textbooks and eBooks</a></li>
+                                                                               <li><a href="https://library.kbcc.cuny.edu/ebooks">Find eTextbooks and eBooks</a></li>
                                                                                <li><a href="https://library.kbcc.cuny.edu/social">Social Media</a></li>
                                                                                <li><a href="https://library.kbcc.cuny.edu/faq">FAQ</a></li>
                                                                        </ul>
@@ -471,4 +492,6 @@
 	<!-- BEGIN: Custom Footer -->
 	{{public_footer}}
 	<!-- END: Custom Footer -->
+        <!-- LibChat widget script -->
+        <script src="https://kbcc-cuny.libanswers.com/load_chat.php?hash=f7d1629a91e178fd0f799322e803b6e7"></script>
 </body>
