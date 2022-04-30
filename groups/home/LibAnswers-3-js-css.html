@@ -457,7 +457,21 @@ function customizeSearch(facet) {
         } else {
                 console.log("no match");
         }
+
+        // store the facet, for use on page reload
+        sessionStorage.facet = facet;
 }
+
+// if the stored facet exists on page load, render the dropdown with that facet, then clear the stored facet
+window.onload = function() {
+        if (sessionStorage.facet && sessionStorage.searchTerms) {
+               stored_terms = sessionStorage.searchTerms;
+               document.getElementById("primoQueryTemp").value = stored_terms;
+               stored_facet = sessionStorage.facet;
+               customizeSearch(stored_facet);
+        }
+        sessionStorage.clear();
+};
 </script>
 
 <!-- OneSearch widget script from OLS, modified -->
@@ -475,9 +489,12 @@ function addPrimoQuery(e) {
                 return true;
         };
 
+       // save the search terms, for use on page reload
+       sessionStorage.searchTerms = document.getElementById("primoQueryTemp").value;
+
        // original OLS widget
        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-       /* If you changed the form name at the top, change it below to match */
+       // If you changed the form name at the top, change it below to match
        document.forms.searchPrimoForm1.submit();
 }
 </script>
