@@ -437,6 +437,7 @@ function customizeSearch(facet) {
         document.querySelectorAll('.deleteWithDropdownChange').forEach( function(e) { e.remove(); });
         document.getElementById("formToAppendInputsTo").setAttribute("action", "https://cuny-kb.primo.exlibrisgroup.com/discovery/search");
         document.getElementById("tabSetting").setAttribute("value", "Everything");
+        document.getElementById("SearchScopeSetting").setAttribute("value", "IZ_CI_AW");
 
         // add the facet that matches the user's dropdown selection
         if (facet === "Books") {
@@ -450,6 +451,9 @@ function customizeSearch(facet) {
                 document.getElementById("tabSetting").setAttribute("value", "jsearch_slot");
         } else if (facet === "Newspapers") {
                 document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch');
+        } else if (facet === "Course Reserves") {
+                document.getElementById("tabSetting").setAttribute("value", "CourseReserves");
+                document.getElementById("SearchScopeSetting").setAttribute("value", "CourseReserves");
         } else {
                 console.log("no match");
         }
