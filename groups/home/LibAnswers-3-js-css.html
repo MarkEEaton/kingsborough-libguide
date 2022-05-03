@@ -383,7 +383,7 @@ jQuery(function(){
 <!-- the code for the hours widget -->
 <!-- please forgive the old-timey JS; it is there because we need to support IE10 & IE11 -->
 <script type="text/javascript">
-window.onload = function () {
+function hoursFunction() {
         const h = JSON.parse(hours);
         const options_weekday = { weekday: 'long' };
         const options_weekday_short = { weekday: 'short' };
@@ -463,7 +463,7 @@ function customizeSearch(facet) {
 }
 
 // if the stored facet exists on page load, render the dropdown with that facet, then clear the stored facet
-window.onload = function() {
+function sessionFunction() {
         if (sessionStorage.facet && sessionStorage.searchTerms) {
                stored_terms = sessionStorage.searchTerms;
                document.getElementById("primoQueryTemp").value = stored_terms;
@@ -496,6 +496,14 @@ function addPrimoQuery(e) {
        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
        // If you changed the form name at the top, change it below to match
        document.forms.searchPrimoForm1.submit();
+}
+</script>
+
+<!-- run the hours widget and the sessionStorage stuff on load -->
+<script>
+window.onload = function () {
+        hoursFunction()
+        sessionFunction()
 }
 </script>
 
