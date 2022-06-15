@@ -12,7 +12,7 @@ body {
 #login-div {
         float: right;
         padding-right: 17px;
-        font-size: 1.2em;
+        font-size: 1.21em;  /* I would like to set this at 1.2em, but for some strange reason this breaks the OneSearch dropdown button */
 }
 
 /* style alert */
@@ -154,7 +154,6 @@ a.no-underline { text-decoration: none; }
 }
 
 .panel-heading { padding: 2px; }
-}
 
 /* style the gallery */
 
@@ -266,7 +265,7 @@ a.no-underline { text-decoration: none; }
 
         #corona-alert { margin: -25px 6px 0px 12px; }
 
-        .form-width { width: 220px; }
+        .form-width { width: 210px; }
 
         .zero-margin { margin: 7px auto; }
 
@@ -288,11 +287,27 @@ a.no-underline { text-decoration: none; }
         }
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
 
         #corona-alert { margin: -20px 12px 0px 12px; }
 
         .zero-margin { margin: -2px; }
+
+        #blue-border1 {
+                outline: 5px solid #003466;
+                outline-right: 0px;
+                outline-offset: -1px;
+        }
+
+        #blue-border2 {
+                box-shadow: 0px -4.5px 0 #003466, 0px 4.5px 0 #003466;
+        }
+
+        #blue-border3 {
+                outline: 5px solid #003466;
+                outline-left: 0px;
+                outline-offset: -1px;
+        }
 
         .nav-by-jumbotron { margin-top: 0px !important; }
 
@@ -344,7 +359,7 @@ a.no-underline { text-decoration: none; }
 
         nav.navbar-default.yamm { margin-top: 10px; }
 
-       .form-width { width: 350px; }
+       .form-width { width: 340px; }
 }
 
 @media only screen and (min-width: 1200px)  {
