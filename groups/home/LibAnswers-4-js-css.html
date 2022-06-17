@@ -3,10 +3,11 @@
 :root {
         --kbccblue: #003466;
         --kbccorange: #ff4e00;
+        --text: #111;
 }
 
 body {
-        color: #111;
+        color: var(--text);
         overflow-x: hidden;
 }
 
@@ -29,7 +30,7 @@ body {
 }
 
 #corona-alert-text {
-        color: #111;
+        color: var(--text);
         font-size: 1.5em;
 }
 
@@ -46,12 +47,12 @@ nav.navbar-default.yamm {
         background-color: white;
         border: none;
         font-size: 1.4em;
-        color: #111;
+        color: var(--text);
         margin-top: 20px;
         border-radius: 0px;
 }
 
-.navbar-default .navbar-nav >li >a { color: #111; }
+.navbar-default .navbar-nav >li >a { color: var(--text); }
 
 #navbar-center {
         display: flex;
@@ -92,7 +93,7 @@ nav.navbar-default.yamm {
 
 #dropdownMenu1 { border-radius: 0px; }
 
-a.searchmenu { color: #111; }
+a.searchmenu { color: var(--text); }
 
 .highlight-menu-item { padding: 2px; }
 
