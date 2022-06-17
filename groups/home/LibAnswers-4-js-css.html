@@ -272,8 +272,6 @@ a.no-underline { text-decoration: none; }
 
         #corona-alert { margin: -25px 6px 0px 12px; }
 
-        .mobile-dropdown { max-width: 30%; }
-
         .form-width { width: 210px; }
 
         .zero-margin { margin: 7px auto; }
@@ -294,6 +292,14 @@ a.no-underline { text-decoration: none; }
                 float: left; 
                 clear: left;
         }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+        .mobile-dropdown { max-width: 30%; }
+        .yamm1, .yamm2, .yamm3 { position: absolute; background-color: white; z-index: 5; }
+        .yamm1 { width: 50vw; }
+        .yamm2 { width: 50vw; }
+        .yamm3 { width: 40vw; }
 }
 
 @media only screen and (min-width: 768px) {
