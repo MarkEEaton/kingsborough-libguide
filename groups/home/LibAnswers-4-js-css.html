@@ -15,10 +15,17 @@ body {
 
 #lcs_slide_out_button-21944 { font-size: 1.5em; }
 
+/* style header */
+
+#header-div {
+        padding: 30px;
+        text-align: center;
+}
+
 #login-div {
         float: right;
         padding-right: 17px;
-        font-size: 1.21em;  /* I would like to set this at 1.2em, but for some strange reason this breaks the OneSearch dropdown button */
+        font-size: 1.21em;
 }
 
 /* style alert */
@@ -26,19 +33,13 @@ body {
 #corona-alert {
         text-align: center;
         background-color: #faf870;
-        padding: 5px;
+        padding: 5px 15px;
+        cursor: pointer;
 }
 
 #corona-alert-text {
         color: var(--text);
         font-size: 1.5em;
-}
-
-/* style header */
-
-#header-div {
-        padding: 30px;
-        text-align: center;
 }
 
 /* style navbar */
@@ -48,16 +49,19 @@ nav.navbar-default.yamm {
         border: none;
         font-size: 1.4em;
         color: var(--text);
-        margin-top: 20px;
         border-radius: 0px;
 }
 
-.navbar-default .navbar-nav >li >a { color: var(--text); }
+.navbar-default .navbar-nav > li > a { color: var(--text); }
 
 #navbar-center {
         display: flex;
         justify-content: center;
         float: none;
+}
+
+.ga-main-navbar { 
+        font-size: 1.3em;
 }
 
 .faux-card {
@@ -102,9 +106,6 @@ a.searchmenu { color: var(--text); }
         cursor: pointer;
 }
 
-/* style link list */
-.link-list { font-size: 1.5em; }
-
 /* style for nav by the jumbotron */
 .nav-divs-by-jumbotron {
         text-align: center;
@@ -115,7 +116,7 @@ a.searchmenu { color: var(--text); }
         border-radius: 3px;
 }
 
-.nav-divs-by-jumbotron>h2 {
+.nav-divs-by-jumbotron > h2 {
         font-size: 1.5em;
         margin-bottom: 4px;
         margin-top: 4px;
@@ -130,14 +131,15 @@ a.no-underline { text-decoration: none; }
         border: none;
 }
 
-#eq_32886:hover  { background-color: #444; }
-
-.nav-divs-by-jumbotron:hover > h2 > #eq_32886 { background-color: #444; }
+.nav-divs-by-jumbotron:hover > h2 > #eq_32886, #eq_32886:hover { background-color: #444; }
 
 #bookastudyroom { cursor: pointer; }
 
+/* style link list */
+.link-list { font-size: 1.7em; }
+
 /* style the panels with the text content */
-.panel>.show-panel {
+.panel > .show-panel {
         background-color: var(--kbccblue);
         text-align: center;
 }
@@ -154,7 +156,7 @@ a.no-underline { text-decoration: none; }
         font-size: 2em;
 }
 
-.content-panel-title>h2 {
+.content-panel-title > h2 {
         margin: 7px 0px;
         font-size: 1em;
 }
@@ -265,12 +267,7 @@ a.no-underline { text-decoration: none; }
                max-height: 150px;
         }
 
-        #kb-cuny-logo {
-               max-width: 100%;
-               max-height: 150px;
-        }
-
-        #corona-alert { margin: -25px 6px 0px 12px; }
+        nav.navbar-default.yamm { margin-top: -20px; }
 
         .form-width { width: 210px; }
 
@@ -295,16 +292,16 @@ a.no-underline { text-decoration: none; }
 }
 
 @media only screen and (min-width: 1px) and (max-width: 767px) {
-        .mobile-dropdown { max-width: 30%; }
+        .mobile-dropdown { max-width: 33.3%; }
         .yamm1, .yamm2, .yamm3 { position: absolute; background-color: white; z-index: 5; border: 1px solid #ccc; margin-top: -4px; }
         .yamm1 { max-width: 50vw; }
         .yamm2 { max-width: 50vw; }
         .yamm3 { max-width: 40vw; }
+
+        #corona-alert { margin-top: 10px; }
 }
 
 @media only screen and (min-width: 768px) {
-
-        #corona-alert { margin: -20px 12px 0px 12px; }
 
         .zero-margin { margin: -2px; }
 
@@ -350,33 +347,18 @@ a.no-underline { text-decoration: none; }
 
 @media only screen and (min-width: 992px) {
         
-        #header-div { text-align: left; }
-
-        #kb-cuny-logo {
-               max-width: 38%;
-               max-height: 300px;
-               margin-top: -15px;
-        }
+        #header-div { text-align: center; }
 
         #library-logo {
-               float: right;
-               max-width: 62%;
-               max-height: 300px;
-               margin-top: -15px;
-               margin-right: -32px;
+               max-width: 100%;
+               max-height: 350px;
         }
-
-        #corona-alert { margin-top: -10px; }
-
-        nav.navbar-default.yamm { margin-top: 10px; }
 
        .form-width { width: 340px; }
 }
 
 @media only screen and (min-width: 1200px)  {
-        #kb-cuny-logo { margin-top: 0px; }
-
-        #library-logo { margin-top: -3px; }
+         #library-logo { margin-top: -3px; }
 }
 
 /*!
