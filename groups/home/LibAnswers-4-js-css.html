@@ -41,8 +41,11 @@ body {
         opacity: 1;
 }
 .fade {
-    -webkit-transition-duration: 5s; /* Safari */
-    transition-duration: 0.5s;
+        -webkit-transition-duration: 5s; /* Safari */
+        transition-duration: 0.5s;
+}
+.dropdown:hover .dropdown-menu {
+        display: block;
 }
 
 /* style the login at the top right */
@@ -273,7 +276,7 @@ a.no-underline { text-decoration: none; }
         }
 }
 
-@media only screen and (min-width: 1px) and (max-width: 768px) {
+@media only screen and (min-width: 1px) and (max-width: 767px) {
 
         #hamburger-alternative { display: none; }
 
@@ -370,6 +373,23 @@ a.no-underline { text-decoration: none; }
 /* End of Yamm */
 
 </style>
+
+<!-- trigger click event when you hover over dropdowns -->
+<script>
+$(document).ready(function(){
+       // on tablets, trigger the dropdown on touchend, since there is no hover
+       if (navigator.userAgent.match(/iPad/i) != null) {
+               $('.dropdown.main-nav-dropdown').on('touchend', function() {
+                       $(this).click();
+                });
+        } else {
+        // else trigger dropdown on hover
+                $('.dropdown.main-nav-dropdown').hover(function() {
+                        $('.dropdown-toggle', this).trigger('click');
+                });
+        };
+});
+</script>
 
 <!-- scripts to make the Book a Study Room widget run -->
 <script src="https://kbcc-cuny.libcal.com/js/equipment.min.js"></script>
