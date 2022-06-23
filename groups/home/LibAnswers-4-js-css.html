@@ -24,7 +24,12 @@ body {
 
 #hamburger-container { float: left; }
 
-#hamburger { border: none; }
+#hamburger, #hamburger:active { 
+        border: none;
+        outline: none;
+        background-color: #fff;
+        color: var(--kbccblue)
+}
 
 #login-div {
         float: right;
@@ -296,11 +301,6 @@ a.no-underline { text-decoration: none; }
 }
 
 @media only screen and (min-width: 1px) and (max-width: 768px) {
-        .mobile-dropdown { max-width: 33.3%; }
-        .yamm1, .yamm2, .yamm3 { position: absolute; background-color: white; z-index: 5; border: 1px solid #ccc; margin-top: -4px; }
-        .yamm1 { max-width: 50vw; }
-        .yamm2 { max-width: 50vw; }
-        .yamm3 { max-width: 40vw; }
 
         #hamburger-alternative { display: none; }
 
