@@ -388,8 +388,11 @@ $(document).ready(function(){
                 });
         } else {
         // else trigger dropdown on hover
-                $('.dropdown.main-nav-dropdown').hover(function() {
-                        $('.dropdown-toggle', this).trigger('click');
+                $('.dropdown.main-nav-dropdown').mouseenter(function() {
+                        $(this).addClass('open');
+                });
+                $('.dropdown.main-nav-dropdown').mouseleave(function() {
+                        $(this).removeClass('open');
                 });
         };
 });
