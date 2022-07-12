@@ -83,7 +83,7 @@ nav.navbar-default.yamm {
 .navbar-default .navbar-nav > li > a { color: var(--text); }
 #navbar-center {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         float: none;
 }
 .ga-main-navbar { 
@@ -217,8 +217,8 @@ a.no-underline { text-decoration: none; }
 .dropdown-margin { padding: 20px 0px; }
 .bigger-fancy-text { font-size: 1.2em; padding: 5px; }
 .bigger-icon { font-size: 1.5em; margin-right: 8px; }
-.caret-text { display: inline-block; }
-.fancy-caret { display: inline-block; margin-left: 2px; }
+.caret-text { display: inline-block; color: var(--kbccblue); font-weight: bold; }
+.fancy-caret { display: inline-block; margin-left: 2px; color: var(--kbccblue); }
 .open > a > .fancy-caret { margin-bottom: -4px; vertical-align: -4px; display: inline-block; }
 .open > a > .caret-text { vertical-align: -1px; }
 
@@ -378,7 +378,7 @@ a.no-underline { text-decoration: none; }
 
 </style>
 
-<!-- trigger click event when you hover over dropdowns -->
+<!-- trigger menu open when you hover over dropdowns -->
 <script>
 $(document).ready(function(){
        // on tablets, trigger the dropdown on touchend, since there is no hover
