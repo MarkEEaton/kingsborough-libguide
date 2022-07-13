@@ -250,98 +250,72 @@ a.no-underline { text-decoration: none; }
 /* media queries */
 
 @media only screen and (min-width: 1px)  {
-
         #library-logo {
                max-width: 100%;
                max-height: 150px;
         }
-
         nav.navbar-default.yamm { margin-top: -20px; }
-
         .form-width { width: 210px; }
-
         .zero-margin { margin: 7px auto; }
-
         .nav-by-jumbotron { margin-top: 40px !important; }
-
         #main-blue-footer { min-height: 450px; }
-
         .library-address { float: left; }
-
         #cuny-logo {
                 float: left;
                 clear: both;
                 margin-top: 10px;
         }
-
         .libapps {
                 float: left; 
                 clear: left;
         }
 }
 
-@media only screen and (min-width: 1px) and (max-width: 767px) {
-
-        #hamburger-alternative { display: none; }
-
-        #corona-alert { margin-top: 10px; }
-}
-
 @media only screen and (min-width: 768px) {
-
-        #hamburger, #hamburger-ul { display: none; }
-
         .zero-margin { margin: -2px; }
-
         #blue-border1 {
                 box-shadow: 0px 5px 0 var(--kbccblue), 0px -5px 0 var(--kbccblue), -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
         }
-
         #blue-border2 {
                 box-shadow: 0px -5px 0 var(--kbccblue), 0px 5px 0 var(--kbccblue);
         }
-
         #blue-border3 {
                 box-shadow: 0px 5px 0 var(--kbccblue), 0px -5px 0 var(--kbccblue), 5px -5px 0 var(--kbccblue), 5px 5px 0 var(--kbccblue);
         }
-
         .nav-by-jumbotron { margin-top: 0px !important; }
-
         #lighthouse-logo {
                 display: inline-block;
                 float: left;
         }
-
         #main-blue-footer { min-height: 210px; }
-
         .library-address {
                 display: inline-block;
                 margin: -10px 30px;
                 font-size: 1.1em;
         }
-
         #cuny-logo {
                 float: right;
                 clear: none;
                 margin: -10px 0px;
         }
-
         .libapps {
                 float: right; 
                 clear: both;
         }
 }
 
+@media only screen and (min-width: 1px) and (max-width: 991px) {
+        #hamburger-alternative { display: none; }
+        #corona-alert { margin-top: 10px; }
+}
 
 @media only screen and (min-width: 992px) {
-        
         #header-div { text-align: center; }
-
+        #hamburger, #hamburger-ul { display: none; }
         #library-logo {
                max-width: 100%;
                max-height: 350px;
         }
-
        .form-width { width: 340px; }
 }
 
@@ -378,7 +352,7 @@ a.no-underline { text-decoration: none; }
 
 </style>
 
-<!-- trigger menu open when you hover over dropdowns -->
+<!-- trigger menu open when you hover over dropdowns
 <script>
 $(document).ready(function(){
        // on tablets, trigger the dropdown on touchend, since there is no hover
@@ -397,6 +371,7 @@ $(document).ready(function(){
         };
 });
 </script>
+-->
 
 <!-- scripts to make the Book a Study Room widget run -->
 <script src="https://kbcc-cuny.libcal.com/js/equipment.min.js"></script>
