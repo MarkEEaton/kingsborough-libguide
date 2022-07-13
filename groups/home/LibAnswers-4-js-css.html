@@ -273,6 +273,14 @@ a.no-underline { text-decoration: none; }
 
 @media only screen and (min-width: 768px) {
         .zero-margin { margin: -2px; }
+
+        /* add flex so that blue box-shadows line up */
+        #flex-search-form {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+        }
+ 
         #blue-border1 {
                 box-shadow: 0px 5px 0 var(--kbccblue), 0px -5px 0 var(--kbccblue), -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
         }
