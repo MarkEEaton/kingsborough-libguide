@@ -132,6 +132,27 @@ a.searchmenu { color: var(--text); }
         margin-right: -2px;
 }
 
+.zero-margin { margin: -2px; }
+
+/* add flex so that blue box-shadows line up */
+#flex-search-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+}
+.inherit-height-from-flex { height: inherit; }
+ 
+/* shadow for the search bar */
+#blue-border1 {
+        box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
+}
+#blue-border2 {
+        box-shadow: 0 -5px 0 var(--kbccblue), 0 5px 0 var(--kbccblue);
+}
+#blue-border3 {
+        box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), 5px -5px 0 var(--kbccblue), 5px 5px 0 var(--kbccblue);
+}
+
 /* style for nav by the jumbotron */
 .nav-divs-by-jumbotron {
         text-align: center;
@@ -264,7 +285,6 @@ a.no-underline { text-decoration: none; }
         }
         nav.navbar-default.yamm { margin-top: -20px; }
         .form-width { width: 210px; }
-        .zero-margin { margin: 7px auto; }
         .nav-by-jumbotron { margin-top: 40px !important; }
         #main-blue-footer { min-height: 450px; }
         .library-address { float: left; }
@@ -281,32 +301,10 @@ a.no-underline { text-decoration: none; }
 
 @media only screen and (max-width: 768px) {
         #login-text { display: none; }
-        #lcs_slide_out_button-21944 { }
+        #defineYourSearch { display: none; }
 }
 
 @media only screen and (min-width: 768px) {
-        .zero-margin { margin: -2px; }
-
-        /* add flex so that blue box-shadows line up */
-        #flex-search-form {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-        }
-        .inherit-height-from-flex {
-                height: inherit;
-        }
- 
-        /* shadow for the search bar */
-        #blue-border1 {
-                box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
-        }
-        #blue-border2 {
-                box-shadow: 0 -5px 0 var(--kbccblue), 0 5px 0 var(--kbccblue);
-        }
-        #blue-border3 {
-                box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), 5px -5px 0 var(--kbccblue), 5px 5px 0 var(--kbccblue);
-        }
 
         .nav-by-jumbotron { margin-top: 0 !important; }
         #lighthouse-logo {
