@@ -1,7 +1,5 @@
 <style>
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
 :root {
         --kbccblue: #003466;
         --kbccorange: #ff4e00;
@@ -10,7 +8,6 @@
 
 body {
         color: var(--text);
-        font-family: 'Open Sans', sans-serif;
         overflow-x: hidden;
 }
 
@@ -437,7 +434,7 @@ function customizeSearch(facet) {
         if (facet === "Books") {
                 document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Articles") {
-                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="mfacet" value="rtype,include,newspaper_articles,1" type="hidden" class="deleteWithDropdownChange" />');
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Videos") {
                 document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,videos" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Journals") {
