@@ -4,34 +4,34 @@
 
 $(document).ready(function(){
 
-	$.ajax({
-		url: "https://kbcc-cuny.libcal.com/widget/hours/grid?iid=5570&format=json&weeks=1&systemTime=0",
-		type: 'GET',
-		cache: false,
-		dataType: 'jsonp'
-	})
-		.done( function (data) {
-			for (i = 0; i < data.locations.length; i++) {
-                            if (data.locations[i].lid === 16733) {
-                                for (let key in data.locations[i].weeks[0]) {
-                                     hours = data.locations[i].weeks[0][key]["rendered"];
-                                     date = new Date(data.locations[i].weeks[0][key]["date"] + "T00:00:00.000-05:00");
-                                     today = new Date()
-                                     const isToday = (today.toDateString() == date.toDateString());
-                                     if (isToday) {
-                                             parsed_date = date.toLocaleDateString("en-US", { weekday: 'long', month: 'long', day: 'numeric' });
-                                             //document.getElementById("hours-content").innerHTML += "The library is currently " + open + "<br />"
-                                            document.getElementById("hours-content").innerHTML += parsed_date + ": " + hours + "<br />"
-                                     } 
-                                }   
-                            }
-                        }
-		})
-		.fail( function (xhr, status, error) {
-			if (typeof console != "undefined") {
-				console.error("LibCalJSON: HTTP-GET failure. Status: " + status + ", Error: " + error);
-			}
-		});
-	});
+$.ajax({
+  url: "https://kbcc-cuny.libcal.com/widget/hours/grid?iid=5570&format=json&weeks=1&systemTime=0",
+  type: 'GET',
+  cache: false,
+  dataType: 'jsonp'
+})
+  .done( function (data) {
+    for (i = 0; i < data.locations.length; i++) {
+      if (data.locations[i].lid === 16733) {
+        for (let key in data.locations[i].weeks[0]) {
+          hours = data.locations[i].weeks[0][key]["rendered"];
+          date = new Date(data.locations[i].weeks[0][key]["date"] + "T00:00:00.000-05:00");
+          today = new Date()
+          const isToday = (today.toDateString() == date.toDateString());
+          if (isToday) {
+            parsed_date = date.toLocaleDateString("en-US", { weekday: 'long', month: 'long', day: 'numeric' });
+            //document.getElementById("hours-content").innerHTML += "The library is currently " + open + "<br />"
+            document.getElementById("hours-content").innerHTML += parsed_date + ": " + hours + "<br />"
+          } 
+        }   
+      }
+    }
+})
+  .fail( function (xhr, status, error) {
+    if (typeof console != "undefined") {
+    console.error("LibCalJSON: HTTP-GET failure. Status: " + status + ", Error: " + error);
+    }
+  });
+});
 
 </script>
