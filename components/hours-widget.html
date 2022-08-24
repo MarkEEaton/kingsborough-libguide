@@ -15,23 +15,35 @@ $.ajax({
       if (data.locations[i].lid === 16733) {
         for (let key in data.locations[i].weeks[0]) {
           hours = data.locations[i].weeks[0][key]["rendered"];
-          date = new Date(data.locations[i].weeks[0][key]["date"] + "T00:00:00.000-05:00");
-          today = new Date()
+          let start_and_end = hours.split(" - ");
+          let date = new Date(data.locations[i].weeks[0][key]["date"]);
+          let today = new Date()
           const isToday = (today.toDateString() == date.toDateString());
           if (isToday) {
-            parsed_date = date.toLocaleDateString("en-US", { weekday: 'long', month: 'long', day: 'numeric' });
-            //document.getElementById("hours-content").innerHTML += "The library is currently " + open + "<br />"
-            document.getElementById("hours-content").innerHTML += parsed_date + ": " + hours + "<br />"
-          } 
+            if (start_and_end.length === 1) {
+              document.getElementById("hours-content").innerHTML += "The library is currently " + start + "<br />"
+            } else {
+              let start = start_and_end[0];
+              let end = start_and_end[1];
+              let start_time = parseInt(start.replace(/\D/g, ""));
+              let start_ampm = start.slice(-2);
+              let end_time = parseInt(end.replace(/\D/g, ""));
+              let end_ampm = end.slice(-2);
+              if (start_ampm ===  "pm" && start_time != 12) { start_time += 12 };
+              if (end_ampm === "pm" && end_time != 12) { end_time += 12 };
+              console.log(today.getHours());
+              let parsed_date = date.toLocaleDateString("en-US", { weekday: 'long', month: 'long', day: 'numeric' });
+              if (start_time <= today.getHours() < end_time) {
+                document.getElementById("hours-content").innerHTML += "The library is currently OPEN. Today's hours are " + hours + ".<br />"
+              } else {
+                document.getElementById("hours-content").innerHTML += "The library is currently CLOSED. Today's hours are " + hours + ".<br />"
+              }
+           }
+         } 
         }   
       }
     }
-})
-  .fail( function (xhr, status, error) {
-    if (typeof console != "undefined") {
-    console.error("LibCalJSON: HTTP-GET failure. Status: " + status + ", Error: " + error);
-    }
-  });
+  })
 });
 
 </script>
