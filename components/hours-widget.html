@@ -30,11 +30,13 @@ $.ajax({
               let start_ampm = start.slice(-2);
               let end_time = parseInt(end.replace(/\D/g, ""));
               let end_ampm = end.slice(-2);
-              if (start_ampm ===  "pm" && start_time != 12) { start_time += 12 };
-              if (end_ampm === "pm" && end_time != 12) { end_time += 12 };
-              console.log(today.getHours());
+              let start_24 = start_time;
+              let end_24 = end_time;
+              if (start_ampm ===  "pm") { start_24 += 12};
+              if (end_ampm === "pm") { end_24 += 12};
+              console.log("system: " + today.getHours(), "start_24: " + start_24, "end_24: " + end_24);
               let parsed_date = date.toLocaleDateString("en-US", { weekday: 'long', month: 'long', day: 'numeric' });
-              if (start_time <= today.getHours() < end_time) {
+              if (start_24 <= today.getHours() && today.getHours() < end_24) {
                 document.getElementById("hours-content").innerHTML += "The library is currently OPEN. Today's hours are " + hours + ".<br />"
               } else {
                 document.getElementById("hours-content").innerHTML += "The library is currently CLOSED. Today's hours are " + hours + ".<br />"
