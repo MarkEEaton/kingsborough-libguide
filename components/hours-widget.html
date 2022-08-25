@@ -1,5 +1,7 @@
-<div id="hours-content"></div>
-<p>More detailed information is available on our <a href="https://library.kbcc.cuny.edu/calendar">hours</a> page.</p>
+<div id="hours-content-container">
+        <div id="hours-content"></div>
+        <p>See our <a href="https://library.kbcc.cuny.edu/calendar">hours</a> page for more info.</p>
+</div>
 
 <script>
 
@@ -22,7 +24,7 @@ $.ajax({
           const isToday = (today.toDateString() == date.toDateString());
           if (isToday) {
             if (start_and_end.length === 1) {
-              document.getElementById("hours-content").innerHTML += "The library is CLOSED today.<br />"
+              document.getElementById("hours-content").innerHTML += "The library is <strong>CLOSED</strong> today.<br />"
             } else {
               let start = start_and_end[0];
               let end = start_and_end[1];
@@ -37,12 +39,12 @@ $.ajax({
               console.log("system: " + today.getHours(), "start_24: " + start_24, "end_24: " + end_24);
               let parsed_date = date.toLocaleDateString("en-US", { weekday: 'long', month: 'long', day: 'numeric' });
               if (start_24 <= today.getHours() && today.getHours() < end_24) {
-                document.getElementById("hours-content").innerHTML += "The library is currently OPEN. Today's hours are " + hours + ".<br />"
+                document.getElementById("hours-content").innerHTML += "The library is currently <strong>OPEN</strong>.<br />Today's hours are <strong>" + hours + "</strong>.<br />"
               } else {
-                document.getElementById("hours-content").innerHTML += "The library is currently CLOSED. Today's hours are " + hours + ".<br />"
+                document.getElementById("hours-content").innerHTML += "The library is currently <strong>CLOSED</strong>.<br />Today's hours are <strong>" + hours + "</strong>.<br />"
               }
-           }
-         } 
+            }
+          } 
         }   
       }
     }
@@ -50,3 +52,13 @@ $.ajax({
 });
 
 </script>
+
+<style>
+
+#hours-content-container {
+       margin-top: -10px;
+        text-align: center;
+        font-size: 1.7em;
+}
+
+</style>
