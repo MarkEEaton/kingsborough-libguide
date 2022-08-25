@@ -7,6 +7,7 @@
         <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
 		<div id="s-lg-index-cols">
                          <div class="row">
+                         <!--<div id="obsolete_browser_alert" class="alert alert-danger obsolete_browser_alert">It looks like you're using Internet Explorer 11 or older. This website works best with modern browsers such as the latest versions of Chrome, Firefox, Safari, and Edge. If you continue with this browser, you may see unexpected results.</div>-->
                                 <div class="col-xs-12" id="header-div">
                                         <div class="dropdown" id="hamburger-container">
                                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="hamburger">
@@ -78,7 +79,7 @@
                          </div>
                          <div class="row" id="hamburger-alternative">
                                 <div class="col-xs-12">
-                                        <nav class="navbar navbar-default yamm">
+                                        <nav class="navbar navbar-default main-nav-container">
                                                 <div class="container-fluid">
                                                         <ul class="nav navbar-nav" id="navbar-center">
                                                                 <li class="dropdown main-nav-dropdown">
@@ -262,7 +263,7 @@
                 <div class="container" style="margin-top:14px;">
 			<div class="row kbcc-background-image">
                                  <div class="col-sm-8">
-				         <form class="form-inline yamm onesearch-jumbotron" name="searchPrimoForm1" role="search" method="get" action="https://cuny-kb.primo.exlibrisgroup.com/discovery/search" onsubmit="addPrimoQuery();" enctype="application/x-www-form-urlencoded; charset=utf-8" id="formToAppendInputsTo">
+				         <form class="form-inline onesearch-jumbotron" name="searchPrimoForm1" role="search" method="get" action="https://cuny-kb.primo.exlibrisgroup.com/discovery/search" onsubmit="addPrimoQuery();" enctype="application/x-www-form-urlencoded; charset=utf-8" id="formToAppendInputsTo">
                                                  <!-- default is "everything"  option suggested from OLS widget builder -->
                                                  <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" />
                                                  <input name="tab" value="Everything" type="hidden" id="tabSetting" />
@@ -283,68 +284,40 @@
                                                  <div class="form-group" id="flex-search-form">
                                                          <div class="dropdown input-group zero-margin" id="blue-border1">
                                                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                                         Define Your Search <span class="caret"></span>
+                                                                         <span id="defineYourSearch">Define Your Search </span><span class="caret"></span>
                                                                  </button>
-                                                                 <ul class="dropdown-menu fade" aria-labelledby="dropdownMenu1">
+                                                                 <ul class="dropdown-menu fade dropdown-margin" aria-labelledby="dropdownMenu1">
                                                                          <li>
-                                                                                 <div class="yamm-content yamm4">
-                                                                                         <div class="row" id="yamm4-margins">
-                                                                                                 <a class="searchmenu" onclick="customizeSearch('Books')">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                 <strong>Books</strong>
-                                                                                                                 <p class="faux-card">Find print books and ebooks using OneSearch</p>
-                                                                                                         </div>
-                                                                                                 </a>
-                                                                                                 <a class="searchmenu" onclick="customizeSearch('Articles')">
-                                                                                                         <div class="col-xs-12 highlight-menu-item"> 
-                                                                                                                 <strong>Articles</strong>
-                                                                                                                  <p class="faux-card">Find articles in journals, newspapers and magazines using OneSearch</p>
-                                                                                                          </div>
-                                                                                                 </a>
-                                                                                                 <a class="searchmenu" onclick="customizeSearch('Videos')">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                 <strong>Videos</strong>
-                                                                                                                 <p class="faux-card">Find DVDs and streaming videos using OneSearch</p>
-                                                                                                         </div>
-                                                                                                 </a>
-                                                                                                 <a class="searchmenu" onclick="customizeSearch('Books & more')">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                 <strong>Books, articles and videos</strong>
-                                                                                                                 <p class="faux-card">Search for books, articles & videos using OneSearch</p>
-                                                                                                         </div>
-                                                                                                 </a>
-                                                                                                 <a href="https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&lang=en&mode=advanced" class="searchmenu">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                 <strong>Advanced Search</strong>
-                                                                                                                 <p class="faux-card">Use OneSearch's advanced interface</p>
-                                                                                                         </div>
-                                                                                                 </a>
-                                                                                                 <a href="https://library.kbcc.cuny.edu/az.php" class="searchmenu">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                 <strong>Databases</strong>
-                                                                                                                 <p class="faux-card">See our A to Z list and find databases by subject</p>
-                                                                                                         </div>
-                                                                                                 </a>
-                                                                                                 <a class="searchmenu" onclick="customizeSearch('Journals')">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                  <strong>Journals</strong>
-                                                                                                                  <p class="faux-card">Find specific scholarly journals (peer reviewed)</p>
-                                                                                                         </div>
-                                                                                                 </a>
-                                                                                                 <a class="searchmenu" onclick="customizeSearch('Newspapers')">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                 <strong>Newspapers and magazines</strong>
-                                                                                                                 <p class="faux-card">Find specific newspapers and magazines</p>
-                                                                                                         </div>
-                                                                                                 </a>
-                                                                                                 <a class="searchmenu" onclick="customizeSearch('Course Reserves')">
-                                                                                                         <div class="col-xs-12 highlight-menu-item">
-                                                                                                                 <strong>Course reserves</strong>
-                                                                                                                 <p class="faux-card">Find reserve materials for your classes</p>
-                                                                                                         </div>
-                                                                                                 </a>
+                                                                                 <a class="searchmenu" onclick="customizeSearch('Books')">
+                                                                                         <div class="highlight-menu-item bigger-fancy-text">
+                                                                                                 <strong>Books</strong>
                                                                                          </div>
-                                                                                 </div>
+                                                                                 </a>
+                                                                                 <a class="searchmenu" onclick="customizeSearch('Articles')">
+                                                                                         <div class="highlight-menu-item bigger-fancy-text"> 
+                                                                                                 <strong>Articles (Peer Reviewed)</strong>
+                                                                                         </div>
+                                                                                 </a>
+                                                                                 <a class="searchmenu" onclick="customizeSearch('Course Reserves')">
+                                                                                         <div class="highlight-menu-item bigger-fancy-text">
+                                                                                                 <strong>Course reserves</strong>
+                                                                                         </div>
+                                                                                 </a>
+                                                                                 <a class="searchmenu" onclick="customizeSearch('Newspapers')">
+                                                                                         <div class="highlight-menu-item bigger-fancy-text">
+                                                                                                 <strong>Newspapers and magazines</strong>
+                                                                                         </div>
+                                                                                 </a>
+                                                                                 <a class="searchmenu" onclick="customizeSearch('Journals')">
+                                                                                         <div class="highlight-menu-item bigger-fancy-text">
+                                                                                                  <strong>Journals</strong>
+                                                                                         </div>
+                                                                                 </a>
+                                                                                 <a href="https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&lang=en&mode=advanced" class="searchmenu">
+                                                                                         <div class="highlight-menu-item bigger-fancy-text">
+                                                                                                 <strong>Advanced Search</strong>
+                                                                                         </div>
+                                                                                 </a>
                                                                          <li>
                                                                  </ul>
                                                          </div>
@@ -403,8 +376,7 @@
                                                                        <ul class="link-list">
                                                                                <li><a href="https://library.kbcc.cuny.edu/ENGLISH24" class="ga-library-links">How to Use the Library</a></li>
                                                                                <li><a href="https://library.kbcc.cuny.edu/ebooks" class="ga-library-links">Find eTextbooks and eBooks</a></li>
-                                                                               <li><a href="https://library.kbcc.cuny.edu/social" class="ga-library-links">Social Media</a></li>
-                                                                               <li><a href="https://library.kbcc.cuny.edu/faq" class="ga-library-links">FAQ</a></li>
+                                                                               <li><a href="https://library.kbcc.cuny.edu/video" class="ga-library-links">Streaming Video</a></li>
                                                                        </ul>
                                                               </div>
                                                               <div class="col-sm-6">
@@ -412,7 +384,6 @@
                                                                                <li><a href="http://kbcc.ezproxy.cuny.edu:2048/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&custid=s9000138&profile=ehost&defaultdb=a9h" target="_blank" class="ga-library-links">Academic Search Complete</a></li>
                                                                                <li><a href="http://kbcc.ezproxy.cuny.edu:2048/login?url=https://search.proquest.com/usmajordailies/advanced/news/fromDatabasesLayer?accountid=38336" target="_blank" class="ga-library-links">US Newspapers</a></li>
                                                                                <li><a href="http://www.nytimes.com/passes" target="_blank" class="ga-library-links">NY Times Free Pass</a></li>
-                                                                               <li><a href="https://library.kbcc.cuny.edu/video" class="ga-library-links">Streaming Video</a></li>
                                                                        </ul>
                                                                </div>
                                                        </div>
@@ -423,36 +394,7 @@
                                                        <span class="panel-title content-panel-title"><h2>Upcoming Library Hours</h2></span>
                                                </div>
                                                <div class="panel-body">
-                                                       <div class="row equal">
-                                                               <div class="col-xs-2 padding-0">
-                                                                        <div class="panel panel-default panel-outline-color">
-                                                                               <div class="panel-body hours-panel-body vertical-align">
-                                                                                      <span id="hours0" class="hours"></span>
-                                                                               </div>
-                                                                       </div>
-                                                               </div>
-                                                               <div class="col-xs-2 padding-0">
-                                                                       <div class="panel panel-default panel-outline-color">
-                                                                               <div class="panel-body hours-panel-body vertical-align">
-                                                                                      <span id="hours1" class="hours"></span>
-                                                                               </div>
-                                                                       </div>
-                                                               </div>
-                                                               <div class="col-xs-2 padding-0">
-                                                                       <div class="panel panel-default panel-outline-color">
-                                                                               <div class="panel-body hours-panel-body vertical-align">
-                                                                                       <span id="hours2" class="hours"></span>
-                                                                               </div>
-                                                                       </div>
-                                                               </div>
-                                                               <div class="col-xs-2 padding-0">
-                                                                       <div class="panel panel-default panel-outline-color">
-                                                                               <div class="panel-body vertical-align">
-                                                                                       <div class="more-link"><a href="https://library.kbcc.cuny.edu/calendar">More Hours</a></div>
-                                                                               </div>
-                                                                       </div>
-                                                               </div>
-                                                        </div>
+                                                      {{content_box_29248590}}
                                                </div>
                                         </div>
                                 </div>
@@ -477,14 +419,14 @@
                                                 <a href="https://www.kbcc.cuny.edu"><img src="https://libapps.s3.amazonaws.com/accounts/16298/images/Orange_Vector_Mac_Building.png" alt="Kingsborough Lighthouse logo" /></a>
                                         </div>
                                         <div class="library-address">
-                                                <div>
+                                                <div class="whiteahrefs">
 			                                <strong>Robert J. Kibbee Library</strong><br />
                                                         2001 Oriental Blvd<br />
                                                         Brooklyn, NY, 11209<br />
-			                                718-368-5632
+			                                <a href="tel:+1-718-368-5632">718-368-5632</a>
                                                 </div>
                                                 <div class="whiteahrefs">
-                                                        <a href="mailto:reference.desk@kbcc.cuny.edu">reference.desk@kbcc.cuny.edu</a>
+                                                        <a href="https://kbcc-cuny.libwizard.com/f/reference">reference.desk@kbcc.cuny.edu</a>
                                                         <br />
                                                         <a aria-label="Twitter" href="https://twitter.com/KBCCLibrary" target="_blank"><i aria-hidden="true" class="fab fa-twitter"></i></a>
                                                         <a aria-label="Instagram" href="https://www.instagram.com/kbcclibrary/" target="_blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>

@@ -65,7 +65,7 @@ body {
 #corona-alert {
         text-align: center;
         background-color: #faf870;
-        padding: 5px 15px;
+        padding: 5px 50px;
         cursor: pointer;
 }
 #corona-alert-text {
@@ -74,7 +74,7 @@ body {
 }
 
 /* style navbar */
-nav.navbar-default.yamm {
+nav.navbar-default.main-nav-container {
         background-color: white;
         border: none;
         font-size: 1.4em;
@@ -94,14 +94,13 @@ nav.navbar-default.yamm {
 .ga-main-navbar { 
         font-size: 1.3em;
 }
-.faux-card {
-        margin-left: 16px;
-}
 #dropdownMenu1 { border-radius: 0; }
-a.searchmenu { color: var(--text); }
-.highlight-menu-item { padding: 2px; }
+a.searchmenu {
+        color: var(--text);
+        text-decoration: none;
+}
+.highlight-menu-item { padding: 5px; }
 .highlight-menu-item:hover {
-        background-color: #eee;
         cursor: pointer;
 }
 
@@ -127,6 +126,27 @@ a.searchmenu { color: var(--text); }
 .zero-margin {
         margin-left: -2px;
         margin-right: -2px;
+}
+
+.zero-margin { margin: -2px; }
+
+/* add flex so that blue box-shadows line up */
+#flex-search-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+}
+.inherit-height-from-flex { height: inherit; }
+ 
+/* shadow for the search bar */
+#blue-border1 {
+        box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
+}
+#blue-border2 {
+        box-shadow: 0 -5px 0 var(--kbccblue), 0 5px 0 var(--kbccblue);
+}
+#blue-border3 {
+        box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), 5px -5px 0 var(--kbccblue), 5px 5px 0 var(--kbccblue);
 }
 
 /* style for nav by the jumbotron */
@@ -227,10 +247,6 @@ a.no-underline { text-decoration: none; }
 .open > a > .fancy-caret { margin-bottom: -4px; vertical-align: -4px; display: inline-block; }
 .open > a > .caret-text { vertical-align: -1px; }
 
-/* additional styling for OneSearch dropdown */
-.yamm4 { max-width: 460px; }
-#yamm4-margins { margin: -15px 0; }
-
 /* style footer */
 #orange-line {
         height:10px; 
@@ -259,9 +275,8 @@ a.no-underline { text-decoration: none; }
                max-width: 100%;
                max-height: 150px;
         }
-        nav.navbar-default.yamm { margin-top: -20px; }
+        nav.navbar-default.main-nav-container { margin-top: -20px; }
         .form-width { width: 210px; }
-        .zero-margin { margin: 7px auto; }
         .nav-by-jumbotron { margin-top: 40px !important; }
         #main-blue-footer { min-height: 450px; }
         .library-address { float: left; }
@@ -278,31 +293,10 @@ a.no-underline { text-decoration: none; }
 
 @media only screen and (max-width: 768px) {
         #login-text { display: none; }
+        #defineYourSearch { display: none; }
 }
 
 @media only screen and (min-width: 768px) {
-        .zero-margin { margin: -2px; }
-
-        /* add flex so that blue box-shadows line up */
-        #flex-search-form {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-        }
-        .inherit-height-from-flex {
-                height: inherit;
-        }
- 
-        /* shadow for the search bar */
-        #blue-border1 {
-                box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
-        }
-        #blue-border2 {
-                box-shadow: 0 -5px 0 var(--kbccblue), 0 5px 0 var(--kbccblue);
-        }
-        #blue-border3 {
-                box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), 5px -5px 0 var(--kbccblue), 5px 5px 0 var(--kbccblue);
-        }
 
         .nav-by-jumbotron { margin-top: 0 !important; }
         #lighthouse-logo {
@@ -328,7 +322,6 @@ a.no-underline { text-decoration: none; }
 
 @media only screen and (min-width: 1px) and (max-width: 992px) {
         #hamburger-alternative { display: none; }
-        #corona-alert { margin-top: 10px; }
 }
 
 @media only screen and (min-width: 992px) {
@@ -344,34 +337,6 @@ a.no-underline { text-decoration: none; }
 @media only screen and (min-width: 1200px)  {
          #library-logo { margin-top: -3px; }
 }
-
-/*!
- * Yamm!3 - Yet another megamenu for Bootstrap 3
- * http://geedmo.github.com/yamm3
- *
- * @geedmo - Licensed under the MIT license
- */
-.yamm .nav,
-.yamm .collapse,
-.yamm .dropup,
-.yamm .dropdown {
-  position: static;
-}
-.yamm .container {
-  position: relative;
-}
-.yamm .dropdown-menu {
-  left: auto;
-}
-.yamm .yamm-content {
-  padding: 20px 30px;
-}
-.yamm .dropdown.yamm-fw .dropdown-menu {
-  left: 0;
-  right: 0;
-}
-/* End of Yamm */
-
 </style>
 
 <!-- trigger menu open when you hover over dropdowns
@@ -401,42 +366,6 @@ $(document).ready(function(){
 jQuery(function(){
    jQuery("#eq_32886, #bookastudyroom").LibCalEquipmentBooking({iid: 5570, gid: 32886, eid: 0, width: 560, height: 680});
 });
-</script>
-
-<!-- the configuration file for the hours widget -->
-<script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/2365/include/hours-babel.js"></script>
-
-<!-- the code for the hours widget -->
-<!-- please forgive the old-timey JS; it is there because we need to support IE10 & IE11 -->
-<script type="text/javascript">
-function hoursFunction() {
-        const h = JSON.parse(hours);
-        const options_weekday = { weekday: 'long' };
-        const options_weekday_short = { weekday: 'short' };
-        const options_date = { month: 'short', day: 'numeric' };
-        for (var i = 0; i < h.length; i++) {
-                let targetDate = new Date(h[i].Date + "T00:00:00.000-05:00");
-                let today = new Date();
-                if (window.innerWidth < 500) {
-                    weekday = targetDate.toLocaleDateString("en-US", options_weekday_short)
-                } else { 
-                    weekday = targetDate.toLocaleDateString("en-US", options_weekday)
-                }
-                if (targetDate.getFullYear() === today.getFullYear() &&
-                    targetDate.getMonth() === today.getMonth() &&
-                    targetDate.getDate() === today.getDate()) {
-                           document.getElementById('hours0').innerHTML = "<p><strong>Today</strong><br />" + targetDate.toLocaleDateString("en-US", options_date) + "<br />" + h[i].Hours + "</p>";
-                           var start = true;
-                           var count = 1;
-                } else if (start === true && count < 3 && h[i].Hours === "Closed" ) {
-                        document.getElementById('hours' + count).innerHTML = "<span style='color:#666;'><p>" + weekday + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "<br />" + h[i].Hours + "</p></span>";
-                        count++;
-               } else if (start === true && count < 3 && h[i].Hours != "Closed") {
-                        document.getElementById('hours' + count).innerHTML = "<p>" + weekday + "<br />" + targetDate.toLocaleDateString("en-US", options_date) + "<br />" + h[i].Hours + "</p>";
-                        count++;
-               }
-        }
-};
 </script>
 
 <!-- polyfills to make .forEach and .includes work in IE10 and IE11 -->
@@ -469,7 +398,7 @@ function customizeSearch(facet) {
         if (facet === "Books") {
                 document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Articles") {
-                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="mfacet" value="rtype,include,newspaper_articles,1" type="hidden" class="deleteWithDropdownChange" />');
+                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Videos") {
                 document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,videos" type="hidden" class="deleteWithDropdownChange" />');
         } else if (facet === "Journals") {
@@ -525,10 +454,9 @@ function addPrimoQuery(e) {
 }
 </script>
 
-<!-- run the hours widget and the sessionStorage stuff on load -->
+<!-- run the sessionStorage stuff on load -->
 <script>
 window.onload = function () {
-        hoursFunction()
         sessionFunction()
 }
 </script>
