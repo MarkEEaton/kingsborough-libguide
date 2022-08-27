@@ -8,6 +8,7 @@
 		<div id="s-lg-index-cols">
                          <div class="row">
                          <!--<div id="obsolete_browser_alert" class="alert alert-danger obsolete_browser_alert">It looks like you're using Internet Explorer 11 or older. This website works best with modern browsers such as the latest versions of Chrome, Firefox, Safari, and Edge. If you continue with this browser, you may see unexpected results.</div>-->
+                         <div id="app">
                                 <div class="col-xs-12" id="header-div">
                                         <div class="dropdown" id="hamburger-container">
                                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="hamburger">
@@ -88,43 +89,7 @@
                                                                                 <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
                                                                         </a>
                                                                         <ul class="dropdown-menu fade dropdown-margin">
-                                                                                <li>
-                                                                                        <a class="searchmenu" aria-label="Databases A to Z" href="https://library.kbcc.cuny.edu/az.php">
-                                                                                                <div class="bigger-fancy-text">
-                                                                                                        <i class="fas fa-database fa-fw bigger-icon" aria-hidden="true"></i> 
-                                                                                                        <strong>Databases A-Z</strong> 
-                                                                                                </div>
-                                                                                        </a>
-                                                                                        <a class="searchmenu" aria-label="Newspaper Search" href="https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch?vid=01CUNY_KB:CUNY_KB&search_scope=all">
-                                                                                                <div class="bigger-fancy-text">
-                                                                                                        <i class="fas fa-newspaper fa-fw bigger-icon" aria-hidden="true"></i>
-                                                                                                        <strong>Newspaper Search</strong> 
-                                                                                                </div>
-                                                                                        </a>
-                                                                                        <a class="searchmenu" aria-label="Course Reserves" href="https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&tab=CourseReserves&search_scope=CourseReserves">
-                                                                                               <div class="bigger-fancy-text">
-                                                                                                        <i class="fas fa-cloud-download-alt fa-fw bigger-icon" aria-hidden="true"></i>
-                                                                                                        <strong>Course Reserves</strong>
-                                                                                                </div>
-                                                                                        </a>
-                                                                                        <a class="searchmenu" aria-label="Journal Search" href="https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch?vid=01CUNY_KB:CUNY_KB">
-                                                                                                <div class="bigger-fancy-text">
-                                                                                                        <i class="fas fa-book fa-fw bigger-icon" aria-hidden="true"></i>
-                                                                                                        <strong>Search for Specific Journals</strong>
-                                                                                                </div>
-                                                                                        </a>
-                                                                                        <a class="searchmenu" aria-label="CUNY Academic Works" href="https://library.kbcc.cuny.edu/academicworks" target="_blank">
-                                                                                                <div class="bigger-fancy-text">
-                                                                                                        <i class="fas fa-archive fa-fw bigger-icon" aria-hidden="true"></i>
-                                                                                                        <strong>CUNY Academic Works</strong>
-                                                                                                </div>
-                                                                                        </a>
-                                                                                        <a class="searchmenu" aria-label="KBCC Bookstore" href="https://www.bkstr.com/kingsboroughccstore/home" target="_blank">
-                                                                                                <div class="bigger-fancy-text">
-                                                                                                        <i class="fas fa-cash-register fa-fw bigger-icon" aria-hidden="true"></i>
-                                                                                                        <strong>KBCC Bookstore</strong>
-                                                                                                </div>
-                                                                                        </a>
+                                                                                <li v-for="item in findIt">
                                                                                 </li>
                                                                         </ul>
                                                                 </li>
@@ -258,6 +223,7 @@
                                                 </div>
                                         </nav>
                                 </div>
+                        </div><!-- end Vue app -->
                         </div>
                 </div>
                 <div class="container" style="margin-top:14px;">
@@ -404,7 +370,7 @@
                                                        <span class="panel-title content-panel-title"><h2>Featured in the Library</h2></span>
                                                </div>
                                                <div class="panel-body">
-                                                       {{content_box_25912431}}
+                                                       {{content_box_25912431}}                             
                                                </div>
                                         </div>
                                 </div>
@@ -470,4 +436,10 @@
 	<!-- END: Custom Footer -->
         <!-- LibChat widget script -->
         <script src="https://kbcc-cuny.libanswers.com/load_chat.php?hash=f7d1629a91e178fd0f799322e803b6e7"></script>
+
+        <!-- add Vue scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+        <script type="text/javascript" src="https://libapps.s3.amazonaws.com/sites/2365/include/seed.js"></script>
+        <script type="text/javascript" src="https://libapps.s3.amazonaws.com/sites/2365/include/main.js"></script>
+
 </body>
