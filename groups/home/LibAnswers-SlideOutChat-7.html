@@ -75,8 +75,10 @@
                                          </div>
                                  </div>
                                  <!-- End modal -->
-
                          </div>
+
+                         <div id="app"><!-- vue app -->
+
                          <div class="row" id="hamburger-alternative">
                                 <div class="col-xs-12">
                                         <nav class="navbar navbar-default main-nav-container">
@@ -87,16 +89,13 @@
                                                                                 <div class="caret-text">Find It</div>
                                                                                 <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
                                                                         </a>
-                         <div id="app">
                                                                         <ul class="dropdown-menu fade dropdown-margin">
                                                                                 <li>
-                                                                                        <div v-for="item in menus" v-bind:key="item.id">
+                                                                                        <a v-for="item in menus" v-bind:key="item.id" class="searchmenu" v-bind:aria-label="item.description" v-bind:href="item.link">
                                                                                              <menus-component v-bind:item="item"></menus-component>
-                                                                                        </div>
+                                                                                        </a>
                                                                                 </li>
                                                                         </ul>
-
-                        </div><!-- end Vue app -->
                                                                 </li>
                                                                 <li class="dropdown main-nav-dropdown">
                                                                         <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -228,6 +227,9 @@
                                                 </div>
                                         </nav>
                                 </div>
+
+                        </div><!-- end Vue app -->
+
                         </div>
                 </div>
                 <div class="container" style="margin-top:14px;">
