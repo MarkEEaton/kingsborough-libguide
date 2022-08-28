@@ -5,17 +5,14 @@ const menusComponent = {
         <i v-bind:class="item.icon" aria-hidden="true"></i>
         <strong>{{ item.description }}</strong>
      </div>
-   </a>`
+   </a>`,
+   props: ['item'] 
 }
 
 new Vue({
   el: '#app',
   data: {
-    findIt: Seed.findItMenu,
-    services: Seed.servicesMenu,
-    aboutUs: Seed.aboutUsMenu,
-    locationAndHours: Seed.locationAndHoursMenu,
-    help: Seed.helpMenu
+    menus: Seed.findItMenu
   },
   components: {
     'menus-component': menusComponent
