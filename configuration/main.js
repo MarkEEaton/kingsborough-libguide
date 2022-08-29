@@ -10,7 +10,11 @@ const menusComponent = {
 new Vue({
   el: '#app',
   data: {
-    menus: Seed.findItMenu
+    findIt: Seed.findItMenu,
+    services: Seed.servicesMenu,
+    aboutUs: Seed.aboutUsMenu,
+    locationAndHours: Seed.locationAndHoursMenu,
+    help: Seed.helpMenu
   },
   components: {
     'menus-component': menusComponent
