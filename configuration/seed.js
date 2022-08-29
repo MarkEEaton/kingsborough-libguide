@@ -1,4 +1,49 @@
 window.Seed = (function () {
+  const hamburgerMenu = [
+    {
+      link: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search?tab=Everything&vid=01CUNY_KB:CUNY_KB&lang=en",
+      icon: "fas fa-search fa-fw bigger-icon",
+      description: "OneSearch",
+      target_blank: "",
+      id: 1
+    },
+    {
+      link: "https://library.kbcc.cuny.edu/az.php",
+      icon: "fas fa-database fa-fw bigger-icon",
+      description: "Databases A to Z",
+      target_blank: "",
+      id: 2
+    },
+    {
+      link: "https://library.kbcc.cuny.edu/guides",
+      icon: "fas fa-telescope fa-fw bigger-icon",
+      description: "Research Guides",
+      target_blank: "",
+      id: 3
+    },
+    {
+      link: "https://library.kbcc.cuny.edu/faq",
+      icon: "fas fa-question-circle fa-fw bigger-icon",
+      description: "FAQ",
+      target_blank: "",
+      id: 4
+    },
+    {
+      link: "https://library.kbcc.cuny.edu/calendar",
+      icon: "fas fa-clock fa-fw bigger-icon",
+      description: "Library Hours",
+      target_blank: "",
+      id: 5
+    },
+    {
+      link: "https://library.kbcc.cuny.edu/sitemap",
+      icon: "fas fa-location-arrow fa-fw bigger-icon",
+      description: "Site Map",
+      target_blank: "",
+      id: 6
+    }
+  ]
+
   const findItMenu = [
     {
       link: "https://library.kbcc.cuny.edu/az.php",
@@ -148,7 +193,7 @@ window.Seed = (function () {
     {
       link: "https://library.kbcc.cuny.edu/guides",
       icon: "fas fa-telescope fa-fw bigger-icon",
-      desciption: "Research Guides and Tutorials",
+      description: "Research Guides and Tutorials",
       target_blank: "",
       id: 3
     },
@@ -161,6 +206,7 @@ window.Seed = (function () {
     }
   ]
   return {
+    hamburgerMenu: hamburgerMenu,
     findItMenu: findItMenu,
     servicesMenu: servicesMenu, 
     aboutUsMenu: aboutUsMenu,

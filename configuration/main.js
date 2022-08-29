@@ -10,6 +10,7 @@ const menusComponent = {
 new Vue({
   el: '#app',
   data: {
+    hamburger: Seed.hamburgerMenu,
     findIt: Seed.findItMenu,
     services: Seed.servicesMenu,
     aboutUs: Seed.aboutUsMenu,
