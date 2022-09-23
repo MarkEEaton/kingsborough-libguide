@@ -48,70 +48,8 @@
                          <div class="row" id="hamburger-alternative">
                                 <div class="col-xs-12">
                                         <nav class="navbar navbar-default main-nav-container">
-                                                <div class="container-fluid">
-                                                        <ul class="nav navbar-nav" id="navbar-center">
-                                                                <li class="dropdown main-nav-dropdown">
-                                                                        <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                                                <div class="caret-text">Find It</div>
-                                                                                <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
-                                                                        </a>
-                                                                        <ul class="dropdown-menu fade dropdown-margin">
-                                                                                <li>
-                                                                                        <a v-for="item in findIt" v-bind:key="item.id" class="searchmenu" v-bind:aria-label="item.description" v-bind:href="item.link" v-bind:target="item.target_blank">
-                                                                                             <menus-component v-bind:item="item"></menus-component>
-                                                                                        </a>
-                                                                                </li>
-                                                                        </ul>
-                                                                </li>
-                                                                <li class="dropdown main-nav-dropdown">
-                                                                        <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                                                <div class="caret-text">Services </div>
-                                                                                <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div></a>
-                                                                        <ul class="dropdown-menu fade dropdown-margin">
-                                                                                <li>
-                                                                                        <a v-for="item in services" v-bind:key="item.id" class="searchmenu" v-bind:aria-label="item.description" v-bind:href="item.link" v-bind:target="item.target_blank">
-                                                                                             <menus-component v-bind:item="item"></menus-component>
-                                                                                         </a>
-                                                                                </li>
-                                                                        </ul>
-                                                                </li>
-                                                                <li class="dropdown main-nav-dropdown">
-                                                                        <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                                                <div class="caret-text">About Us </div>
-                                                                                <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div></a>
-                                                                        <ul class="dropdown-menu fade dropdown-margin">
-                                                                                <li>
-                                                                                        <a v-for="item in aboutUs" v-bind:key="item.id" class="searchmenu" v-bind:aria-label="item.description" v-bind:href="item.link" v-bind:target="item.target_blank">
-                                                                                             <menus-component v-bind:item="item"></menus-component>
-                                                                                         </a>
-                                                                                </li>
-                                                                        </ul>      
-                                                                </li>
-                                                                <li class="dropdown main-nav-dropdown">
-                                                                        <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                                                <div class="caret-text">Location & Hours </div>
-                                                                                <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div></a>
-                                                                        <ul class="dropdown-menu fade dropdown-margin">
-                                                                                <li>
-                                                                                       <a v-for="item in locationAndHours" v-bind:key="item.id" class="searchmenu" v-bind:aria-label="item.description" v-bind:href="item.link" v-bind:target="item.target_blank">
-                                                                                             <menus-component v-bind:item="item"></menus-component>
-                                                                                       </a>
-                                                                                </li>
-                                                                        </ul>
-                                                                </li>
-                                                                <li class="dropdown main-nav-dropdown">
-                                                                        <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                                                <div class="caret-text">Help </div>
-                                                                                <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div></a>
-                                                                        <ul class="dropdown-menu fade dropdown-margin">
-                                                                                <li>
-                                                                                        <a v-for="item in help" v-bind:key="item.id" class="searchmenu" v-bind:aria-label="item.description" v-bind:href="item.link" v-bind:target="item.target_blank">
-                                                                                             <menus-component v-bind:item="item"></menus-component>
-                                                                                        </a>
-                                                                                 </li>
-                                                                        </ul>
-                                                                </li>
-                                                        </ul><!-- end of navbar-center -->
+                                                <div class="container-fluid" v-for="navmenu in navListOfMenus">
+                                                        <nav-component v-bind:navmenu="navmenu"></nav-component>
                                                 </div><!-- end of container-fluid -->
                                         </nav><!-- end of main-nav-container -->
                                 </div><!-- end of col-xs-12 -->
