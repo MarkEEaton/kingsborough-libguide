@@ -3,7 +3,7 @@ const navComponent = {
   `<ul class="nav navbar-nav" id="navbar-center">
     <li class="dropdown main-nav-dropdown">
       <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-        <div class="caret-text">{{ navmenu }}</div>
+        <div class="caret-text">{{ navkey }}</div>
         <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
       </a>
       <ul class="dropdown-menu fade dropdown-margin">
@@ -18,7 +18,7 @@ const navComponent = {
       </ul>
     </li>
   </ul>`,
-  props: ['navmenu']
+  props: ['navmenu', 'navkey']
 }
 
 const menusComponent = {
