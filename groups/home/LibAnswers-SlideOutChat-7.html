@@ -24,7 +24,7 @@
                                                        </li>
                                                </ul>
                                         </div><!-- end of hamburger container -->
-                                        <a href="https://cuny-kb.primo.exlibrisgroup.com/discovery/account?vid=01CUNY_KB:CUNY_KB" id="login-div" class="no-underline">
+                                        <a href="https://cuny-kb.primo.exlibrisgroup.com/discovery/account?vid=01CUNY_KB:CUNY_KB" id="login-div">
                                                <div id="login-text">Login</div>
                                                <div id="login-icon"><i class="fas fa-user"></i></div>
                                         </a>
@@ -48,8 +48,12 @@
                          <div class="row" id="hamburger-alternative">
                                 <div class="col-xs-12">
                                         <nav class="navbar navbar-default main-nav-container">
-                                                <div class="container-fluid" v-for="(navmenu, navkey) in navListOfMenus">
-                                                        <nav-component v-bind:navmenu="navmenu" v-bind:navkey="navkey"></nav-component>
+                                                <div class="container-fluid">
+                                                        <ul class="nav navbar-nav" id="navbar-center">
+                                                                <li v-for="(navmenu, navkey) in navListOfMenus" class="dropdown main-nav-dropdown">
+                                                                        <nav-component v-bind:navmenu="navmenu" v-bind:navkey="navkey"></nav-component>
+                                                                </li>
+                                                        </ul>
                                                 </div><!-- end of container-fluid -->
                                         </nav><!-- end of main-nav-container -->
                                 </div><!-- end of col-xs-12 -->
@@ -131,27 +135,27 @@
                                  <div class="col-sm-4">
                                          <div class="nav-by-jumbotron">
                                                  <a class="ga-by-jumbotron">
-                                                         <div class="nav-divs-by-jumbotron no-underline" id="bookastudyroom">
+                                                         <div class="nav-divs-by-jumbotron" id="bookastudyroom">
                                                                  <h2><button id="eq_32886">Book A Study Room</button></h2>
                                                          </div>
                                                  </a>
-                                                 <a href="https://library.kbcc.cuny.edu/az.php" class="no-underline ga-by-jumbotron">
+                                                 <a href="https://library.kbcc.cuny.edu/az.php" class="ga-by-jumbotron">
                                                          <div class="nav-divs-by-jumbotron">
                                                                  <h2>Databases</h2>
                                                          </div>
                                                  </a>
-                                                 <a href="https://library.kbcc.cuny.edu/guides" class="no-underline ga-by-jumbotron">
+                                                 <a href="https://library.kbcc.cuny.edu/guides" class="ga-by-jumbotron">
                                                          <div class="nav-divs-by-jumbotron">
                                                                  <h2>Research Guides</h2>
                                                          </div>
                                                  </a>
-                                                 <a href="https://kbcc-cuny.libwizard.com/f/feedback" class="no-underline ga-by-jumbotron">
+                                                 <a href="https://kbcc-cuny.libwizard.com/f/feedback" class="ga-by-jumbotron">
                                                          <div class="nav-divs-by-jumbotron">
                                                                  <h2>Send Us Feedback</h2>
                                                          </div>
                                                  </a>
                                                  <!-- hide chat with a librarian 
-                                                 <a class="no-underline chat2" style="cursor: pointer;" onclick="(function() {if (window.document.documentMode || navigator.userAgent.indexOf('Edge/') > -1) { window.location.href = 'http://library.kbcc.cuny.edu/oldbrowser'; return false; } else {window.open('https://kbcc-cuny.libanswers.com/chat/widget/f7d1629a91e178fd0f799322e803b6e7', 'newwindow', 'width=500, height=400, top=100, left=100'); return false;};})()">
+                                                 <a class="chat2" style="cursor: pointer;" onclick="(function() {if (window.document.documentMode || navigator.userAgent.indexOf('Edge/') > -1) { window.location.href = 'http://library.kbcc.cuny.edu/oldbrowser'; return false; } else {window.open('https://kbcc-cuny.libanswers.com/chat/widget/f7d1629a91e178fd0f799322e803b6e7', 'newwindow', 'width=500, height=400, top=100, left=100'); return false;};})()">
                                                          <div class="nav-divs-by-jumbotron">
                                                                  <h2>Chat with a Librarian!</h2>
                                                          </div>

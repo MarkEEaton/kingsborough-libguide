@@ -1,7 +1,6 @@
 const navComponent = {
   template:
-  `<ul class="nav navbar-nav" id="navbar-center">
-    <li class="dropdown main-nav-dropdown">
+    `<a>
       <a class="dropdown-toggle ga-main-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         <div class="caret-text">{{ navkey }}</div>
         <div class="fancy-caret"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
@@ -16,8 +15,7 @@ const navComponent = {
           </a>
         </li>
       </ul>
-    </li>
-  </ul>`,
+    </a>`,
   props: ['navmenu', 'navkey']
 }
 
@@ -84,7 +82,7 @@ new Vue({
         }
       ],
       navListOfMenus: { 
-        findIt: [
+        "Find It": [
           {
             link: "https://library.kbcc.cuny.edu/az.php",
             icon: "fas fa-database fa-fw bigger-icon",
@@ -128,7 +126,7 @@ new Vue({
             id: 6
           }
         ],
-        services: [
+        "Services": [
           {
             link: "http://kbcc.cuny.illiad.oclc.org/illiad/logon.html",
             icon: "fas fa-books fa-fw bigger-icon",
@@ -165,7 +163,7 @@ new Vue({
             id: 5
           }
         ],
-        aboutUs: [
+        "About Us": [
           {
             link: "https://library.kbcc.cuny.edu/about-us/directory",
             icon: "fas fa-address-book fa-fw bigger-icon",
@@ -195,7 +193,7 @@ new Vue({
             id: 4
           }
         ],
-        locationAndHours: [
+        "Location & Hours": [
           {
             link: "https://tour.kingsborough.edu/",
             icon: "fas fa-map-marked-alt fa-fw bigger-icon",
@@ -211,7 +209,7 @@ new Vue({
             id: 2
           }
         ],
-        help: [
+        "Help": [
           {
             link: "https://library.kbcc.cuny.edu/askalibrarian",
             icon: "fas fa-book-reader fa-fw bigger-icon",
