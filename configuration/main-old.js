@@ -28,9 +28,9 @@ const menusComponent = {
    props: ['item'] 
 }
 
-const { createApp } = Vue
 
-createApp({
+new Vue({
+  el: '#app',
   components: {
     'nav-component': navComponent,
     'menus-component': menusComponent
@@ -242,4 +242,4 @@ createApp({
   	  }
     }
   }
-}).mount('#app');
+});
