@@ -410,15 +410,43 @@ function addPrimoQuery(e) {
 }
 </script>
 
-<!-- run the sessionStorage stuff on load -->
-<!-- If browser is IE, show a warning-->
+<!-- If browser is pre-ES6, show a warning-->
+<script>
+      window.isES6 = false;
+</script>
+<script><!-- test ES6 functionality -->
+      // Arrow functions support
+      () => { };
+  
+      // Class support
+      class __ES6FeatureDetectionTest { };
+  
+      // Object initializer property and method shorthands
+      let es6a = true;
+      let es6b = { 
+          es6a,
+          es6c() { return true; },
+          es6d: [1,2,3],
+      };
+  
+      // Object destructuring
+      let { es6c, es6d } = es6b;
+  
+      // Spread operator
+      let es6e = [...es6d, 4];
+
+      window.isES6 = true;
+</script>
+
 <script type="text/javascript">
 window.onload = function () {
 
+        <!-- run the sessionStorage stuff on load -->
         sessionFunction();
 
-        if (window.document.documentMode) {
-          document.getElementById('obsolete_browser_alert').innerHTML = '<div class="alert alert-danger" style="text-align: center;"><strong>WARNING! Unsupported browser!</strong><br />It looks like you\'re using Internet Explorer 11 or older.<br />This website works best with modern browsers such as the latest versions of Chrome, Firefox, Safari, and Edge.<br />If you continue with this browser, many parts of this site will not work and you will see unexpected results.</div>';
+        <!-- display the error message if feature detection flags old browser -->
+        if (window.isES6 == false) {
+          document.getElementById('obsolete_browser_alert').innerHTML = '<div class="alert alert-danger" style="text-align: center;"><strong>WARNING! Unsupported browser!</strong><br />It looks like you\'re using and old browser.<br />This website works best with modern browsers such as the latest versions of Chrome, Firefox, Safari, and Edge.<br />If you continue with this browser, many parts of this site will not work and you will see unexpected results.</div>';
        }
 }
 </script>
