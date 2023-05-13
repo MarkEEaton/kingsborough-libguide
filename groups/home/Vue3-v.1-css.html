@@ -1,461 +1,637 @@
 <style>
+  :root {
+    --kbccblue: #003466;
+    --kbccorange: #ff4e00;
+    --text: #111;
+  }
 
-:root {
-        --kbccblue: #003466;
-        --kbccorange: #ff4e00;
-        --text: #111;
-}
+  body {
+    color: var(--text);
+    overflow-x: hidden;
+  }
 
-body {
-        color: var(--text);
-        overflow-x: hidden;
-}
+  a,
+  a:hover {
+    text-decoration: none;
+  }
 
-a, a:hover { text-decoration: none; }
+  /* style slide out chat */
+  #lcs_slide_out_button-21944 {
+    font-size: 1.5em;
+  }
 
-/* style slide out chat */
-#lcs_slide_out_button-21944 { font-size: 1.5em; }
+  /* style header */
+  #header-div {
+    padding: 30px;
+  }
 
-/* style header */
-#header-div {
-        padding: 30px;
-}
+  /* style the hamburger menu */
+  #hamburger-container {
+    float: left;
+  }
+  #hamburger,
+  #hamburger:active {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: var(--kbccblue);
+  }
+  #hamburger-ul > li > .searchmenu {
+    background-color: #fff;
+  }
+  #hamburger-ul {
+    padding: 25px 0;
+  }
 
-/* style the hamburger menu */
-#hamburger-container { float: left; }
-#hamburger, #hamburger:active { 
-        border: none;
-        outline: none;
-        background-color: #fff;
-        color: var(--kbccblue)
-}
-#hamburger-ul > li > .searchmenu { background-color: #fff; }
-#hamburger-ul { padding: 25px 0; }
+  /* have bootstrap dropdowns fade in and out */
+  .dropdown-menu.fade {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .open > .dropdown-menu.fade {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  .fade {
+    -webkit-transition-duration: 5s; /* Safari */
+    transition-duration: 0.5s;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 
-/* have bootstrap dropdowns fade in and out */
-.dropdown-menu.fade {
-        display: block;
-        opacity: 0;
-        pointer-events: none;
-}
-.open > .dropdown-menu.fade {
-        pointer-events: auto;
-        opacity: 1;
-}
-.fade {
-        -webkit-transition-duration: 5s; /* Safari */
-        transition-duration: 0.5s;
-}
-.dropdown:hover .dropdown-menu {
-        display: block;
-}
+  /* style the login at the top right */
+  #login-div {
+    float: right;
+    padding: 8px 15px 0 0;
+    color: var(--kbccblue);
+    font-size: 1.5em;
+  }
+  #login-text {
+    display: inline-block;
+    vertical-align: -2px;
+  }
+  #login-icon {
+    display: inline-block;
+    margin-left: 5px;
+  }
 
-/* style the login at the top right */
-#login-div {
-        float: right;
-        padding: 8px 15px 0 0;
-        color:var(--kbccblue);
-        font-size:1.5em;
-}
-#login-text {
-        display: inline-block;
-        vertical-align: -2px;
-}
-#login-icon {
-        display: inline-block;
-        margin-left: 5px;
-}
+  /* style alert */
+  #corona-alert {
+    text-align: center;
+    background-color: #faf870;
+    padding: 5px 50px;
+    cursor: pointer;
+  }
+  #corona-alert-text {
+    color: var(--text);
+    font-size: 1.5em;
+  }
 
-/* style alert */
-#corona-alert {
-        text-align: center;
-        background-color: #faf870;
-        padding: 5px 50px;
-        cursor: pointer;
-}
-#corona-alert-text {
-        color: var(--text);
-        font-size: 1.5em;
-}
+  /* style navbar */
+  nav.navbar-default.main-nav-container {
+    background-color: white;
+    border: none;
+    font-size: 1.4em;
+    color: var(--text);
+    border-radius: 0;
+  }
+  .nav .open > a,
+  .nav .open > a:focus,
+  .nav .open > a:hover {
+    background-color: #fff;
+  }
+  .nav > li > a:hover {
+    outline: none;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: var(--text);
+  }
+  #navbar-center {
+    display: flex;
+    justify-content: left;
+    float: none;
+  }
+  .ga-main-navbar {
+    font-size: 1.3em;
+  }
+  #dropdownMenu1 {
+    border-radius: 0;
+  }
+  a.searchmenu {
+    color: var(--text);
+  }
+  .highlight-menu-item {
+    padding: 5px;
+  }
+  .highlight-menu-item:hover {
+    cursor: pointer;
+  }
 
-/* style navbar */
-nav.navbar-default.main-nav-container {
-        background-color: white;
-        border: none;
-        font-size: 1.4em;
-        color: var(--text);
-        border-radius: 0;
-}
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-        background-color: #fff;
-}
-.nav > li > a:hover {
-        outline: none;
-}
-.navbar-default .navbar-nav > li > a { color: var(--text); }
-#navbar-center {
-        display: flex;
-        justify-content: left;
-        float: none;
-}
-.ga-main-navbar { 
-        font-size: 1.3em;
-}
-#dropdownMenu1 { border-radius: 0; }
-a.searchmenu {
-        color: var(--text);
-}
-.highlight-menu-item { padding: 5px; }
-.highlight-menu-item:hover {
-        cursor: pointer;
-}
+  /* style background image */
+  .kbcc-background-image {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0.6) 100%
+      ),
+      url("https://libapps.s3.amazonaws.com/accounts/16298/images/library_front_view.jpg");
+    background-position: 50% 71%;
+    padding: 20px 0;
+    border-radius: 5px;
+    background-size: cover;
+    margin: -30px 0 30px 0;
+  }
 
-/* style background image */
-.kbcc-background-image {
-        background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) 100%), url("https://libapps.s3.amazonaws.com/accounts/16298/images/library_front_view.jpg");
-        background-position: 50% 71%;
-        padding: 20px 0;
-        border-radius: 5px;
-        background-size: cover;
-        margin: -30px 0 30px 0;
-}
+  /* style jumbotron */
+  .onesearch-jumbotron {
+    text-align: center;
+    margin-top: -40px;
+  }
+  #onesearch-header {
+    font-size: 10em;
+    margin-bottom: 0;
+  }
+  .zero-margin {
+    margin-left: -2px;
+    margin-right: -2px;
+  }
 
-/* style jumbotron */
-.onesearch-jumbotron {
-        text-align: center;
-        margin-top: -40px;
-}
-#onesearch-header {
-        font-size: 10em;
-        margin-bottom: 0;
-}
-.zero-margin {
-        margin-left: -2px;
-        margin-right: -2px;
-}
+  .zero-margin {
+    margin: -2px;
+  }
 
-.zero-margin { margin: -2px; }
+  /* add flex so that blue box-shadows line up */
+  #flex-search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .inherit-height-from-flex {
+    height: inherit;
+  }
 
-/* add flex so that blue box-shadows line up */
-#flex-search-form {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-}
-.inherit-height-from-flex { height: inherit; }
- 
-/* shadow for the search bar */
-#blue-border1 {
-        box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
-}
-#blue-border2 {
-        box-shadow: 0 -5px 0 var(--kbccblue), 0 5px 0 var(--kbccblue);
-}
-#blue-border3 {
-        box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue), 5px -5px 0 var(--kbccblue), 5px 5px 0 var(--kbccblue);
-}
+  /* shadow for the search bar */
+  #blue-border1 {
+    box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue),
+      -5px -5px 0 var(--kbccblue), -5px 5px 0 var(--kbccblue);
+  }
+  #blue-border2 {
+    box-shadow: 0 -5px 0 var(--kbccblue), 0 5px 0 var(--kbccblue);
+  }
+  #blue-border3 {
+    box-shadow: 0 5px 0 var(--kbccblue), 0 -5px 0 var(--kbccblue),
+      5px -5px 0 var(--kbccblue), 5px 5px 0 var(--kbccblue);
+  }
 
-/* style for nav by the jumbotron */
-.nav-divs-by-jumbotron {
-        text-align: center;
-        padding: 6px;
-        margin: 6px 0;
-        color: white;
-        background-color: var(--kbccblue);
-        border-radius: 3px;
-}
-.nav-divs-by-jumbotron > h2 {
-        font-size: 1.5em;
-        margin-bottom: 4px;
-        margin-top: 4px;
-}
-.nav-divs-by-jumbotron:hover { background-color: #444; }
-#eq_32886 { 
-        background-color: var(--kbccblue);
-        border: none;
-}
-.nav-divs-by-jumbotron:hover > h2 > #eq_32886, #eq_32886:hover { background-color: #444; }
-#bookastudyroom { cursor: pointer; }
+  /* style for nav by the jumbotron */
+  .nav-divs-by-jumbotron {
+    text-align: center;
+    padding: 6px;
+    margin: 6px 0;
+    color: white;
+    background-color: var(--kbccblue);
+    border-radius: 3px;
+  }
+  .nav-divs-by-jumbotron > h2 {
+    font-size: 1.5em;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+  .nav-divs-by-jumbotron:hover {
+    background-color: #444;
+  }
+  #eq_32886 {
+    background-color: var(--kbccblue);
+    border: none;
+  }
+  .nav-divs-by-jumbotron:hover > h2 > #eq_32886,
+  #eq_32886:hover {
+    background-color: #444;
+  }
+  #bookastudyroom {
+    cursor: pointer;
+  }
 
-/* style link list */
-.link-list { font-size: 1.7em; }
+  /* style link list */
+  .link-list {
+    font-size: 1.7em;
+  }
 
-/* style the panels with the text content */
-.panel > .show-panel {
-        background-color: var(--kbccblue);
-        text-align: center;
-}
-.hide-body-border {
-       border: none;
-       box-shadow: none;
-}
-.glyphicon-panel-title { font-size: 2em; }
-.content-panel-title {
-        color: white;
-        font-size: 2em;
-}
-.content-panel-title > h2 {
-        margin: 7px 0;
-        font-size: 1em;
-}
-.panel-heading { padding: 2px; }
+  /* style the panels with the text content */
+  .panel > .show-panel {
+    background-color: var(--kbccblue);
+    text-align: center;
+  }
+  .hide-body-border {
+    border: none;
+    box-shadow: none;
+  }
+  .glyphicon-panel-title {
+    font-size: 2em;
+  }
+  .content-panel-title {
+    color: white;
+    font-size: 2em;
+  }
+  .content-panel-title > h2 {
+    margin: 7px 0;
+    font-size: 1em;
+  }
+  .panel-heading {
+    padding: 2px;
+  }
 
-/* style the gallery */
-.slick-slide img {
-        padding: 2px;
-        max-height: 350px !important;
-        object-fit: contain;
-        margin: 0;
-}
-.s-lib-public-side-header { display: none; }
-.slick-active { outline: 0; }
+  /* style the gallery */
+  .slick-slide img {
+    padding: 2px;
+    max-height: 350px !important;
+    object-fit: contain;
+    margin: 0;
+  }
+  .s-lib-public-side-header {
+    display: none;
+  }
+  .slick-active {
+    outline: 0;
+  }
 
-/* style to make all imported boxes floating */
-.s-lib-box-title {display: none;}
- .s-lg-box {box-shadow: none !important;}
-.s-lib-box .s-lib-box-title {display: none;}
-.s-lib-box {box-shadow: none !important; border: 0 !important;}
+  /* style to make all imported boxes floating */
+  .s-lib-box-title {
+    display: none;
+  }
+  .s-lg-box {
+    box-shadow: none !important;
+  }
+  .s-lib-box .s-lib-box-title {
+    display: none;
+  }
+  .s-lib-box {
+    box-shadow: none !important;
+    border: 0 !important;
+  }
 
-/* style the dropdown menus */
-.dropdown-margin { padding: 20px 0; }
-.bigger-fancy-text { font-size: 1.2em; padding: 5px; }
-.bigger-icon { font-size: 1.5em; margin-right: 8px; }
-.caret-text { display: inline-block; color: var(--kbccblue); font-weight: bold; }
-.fancy-caret { display: inline-block; margin-left: 8px; color: var(--kbccblue); }
-.open > a > .fancy-caret { margin-bottom: -4px; vertical-align: -4px; display: inline-block; }
-.open > a > .caret-text { vertical-align: -1px; }
+  /* style the dropdown menus */
+  .dropdown-margin {
+    padding: 20px 0;
+  }
+  .bigger-fancy-text {
+    font-size: 1.2em;
+    padding: 5px;
+  }
+  .bigger-icon {
+    font-size: 1.5em;
+    margin-right: 8px;
+  }
+  .caret-text {
+    display: inline-block;
+    color: var(--kbccblue);
+    font-weight: bold;
+  }
+  .fancy-caret {
+    display: inline-block;
+    margin-left: 8px;
+    color: var(--kbccblue);
+  }
+  .open > a > .fancy-caret {
+    margin-bottom: -4px;
+    vertical-align: -4px;
+    display: inline-block;
+  }
+  .open > a > .caret-text {
+    vertical-align: -1px;
+  }
 
-/* style footer */
-#orange-line {
-        height:10px; 
-        background-color: var(--kbccorange);
-}
-#main-blue-footer {
-        background-color: var(--kbccblue);
-        color: white; 
-        padding: 30px;
-}
-.whiteahrefs a:link, .whiteahrefs a:hover, .whiteahrefs a:visited, .whiteahrefs a:active { 
-        color: white;
-}
-.whiteahrefs a i {
-        margin: 4px 5px 0 0;
-        font-size: 1.5em
-}
-.whiteahrefs { margin-top: 10px; }
-#lighthouse-logo > a > img { max-width: 150px; }
+  /* style footer */
+  #orange-line {
+    height: 10px;
+    background-color: var(--kbccorange);
+  }
+  #main-blue-footer {
+    background-color: var(--kbccblue);
+    color: white;
+    padding: 30px;
+  }
+  .whiteahrefs a:link,
+  .whiteahrefs a:hover,
+  .whiteahrefs a:visited,
+  .whiteahrefs a:active {
+    color: white;
+  }
+  .whiteahrefs a i {
+    margin: 4px 5px 0 0;
+    font-size: 1.5em;
+  }
+  .whiteahrefs {
+    margin-top: 10px;
+  }
+  #lighthouse-logo > a > img {
+    max-width: 150px;
+  }
 
-/* media queries */
+  /* media queries */
 
-@media only screen and (min-width: 1px)  {
-        #library-logo {
-               max-width: 100%;
-               max-height: 150px;
-        }
-        nav.navbar-default.main-nav-container { margin-top: -20px; }
-        .form-width { width: 40%; }
-        .nav-by-jumbotron { margin-top: 40px !important; }
-        #main-blue-footer { min-height: 450px; }
-        .library-address { float: left; }
-        #cuny-logo {
-                float: left;
-                clear: both;
-                margin-top: 10px;
-        }
-        .libapps {
-                float: left; 
-                clear: left;
-        }
-}
+  @media only screen and (min-width: 1px) {
+    #library-logo {
+      max-width: 100%;
+      max-height: 150px;
+    }
+    nav.navbar-default.main-nav-container {
+      margin-top: -20px;
+    }
+    .form-width {
+      width: 40%;
+    }
+    .nav-by-jumbotron {
+      margin-top: 40px !important;
+    }
+    #main-blue-footer {
+      min-height: 450px;
+    }
+    .library-address {
+      float: left;
+    }
+    #cuny-logo {
+      float: left;
+      clear: both;
+      margin-top: 10px;
+    }
+    .libapps {
+      float: left;
+      clear: left;
+    }
+  }
 
-@media only screen and (max-width: 768px) {
-        #login-text { display: none; }
-        #defineYourSearch { display: none; }
-}
+  @media only screen and (max-width: 768px) {
+    #login-text {
+      display: none;
+    }
+    #defineYourSearch {
+      display: none;
+    }
+  }
 
-@media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
+    .nav-by-jumbotron {
+      margin-top: 0 !important;
+    }
+    #lighthouse-logo {
+      display: inline-block;
+      float: left;
+    }
+    #main-blue-footer {
+      min-height: 210px;
+    }
+    .library-address {
+      display: inline-block;
+      margin: -10px 30px;
+      font-size: 1.1em;
+    }
+    #cuny-logo {
+      float: right;
+      clear: none;
+      margin: -10px 0;
+    }
+    .libapps {
+      float: right;
+      clear: both;
+    }
+  }
 
-        .nav-by-jumbotron { margin-top: 0 !important; }
-        #lighthouse-logo {
-                display: inline-block;
-                float: left;
-        }
-        #main-blue-footer { min-height: 210px; }
-        .library-address {
-                display: inline-block;
-                margin: -10px 30px;
-                font-size: 1.1em;
-        }
-        #cuny-logo {
-                float: right;
-                clear: none;
-                margin: -10px 0;
-        }
-        .libapps {
-                float: right; 
-                clear: both;
-        }
-}
+  @media only screen and (min-width: 1px) and (max-width: 992px) {
+    #hamburger-alternative {
+      display: none;
+    }
+  }
 
-@media only screen and (min-width: 1px) and (max-width: 992px) {
-        #hamburger-alternative { display: none; }
-}
+  @media only screen and (min-width: 992px) {
+    #header-div {
+      text-align: center;
+    }
+    #hamburger,
+    #hamburger-ul {
+      display: none;
+    }
+    #library-logo {
+      max-width: 100%;
+      max-height: 350px;
+    }
+    .form-width {
+      width: 340px;
+    }
+  }
 
-@media only screen and (min-width: 992px) {
-        #header-div { text-align: center; }
-        #hamburger, #hamburger-ul { display: none; }
-        #library-logo {
-               max-width: 100%;
-               max-height: 350px;
-        }
-       .form-width { width: 340px; }
-}
-
-@media only screen and (min-width: 1200px)  {
-         #library-logo { margin-top: -3px; }
-}
+  @media only screen and (min-width: 1200px) {
+    #library-logo {
+      margin-top: -3px;
+    }
+  }
 </style>
 
 <!-- scripts to make the Book a Study Room widget run -->
 <script src="https://kbcc-cuny.libcal.com/js/equipment.min.js"></script>
 <script>
-jQuery(function(){
-   jQuery("#eq_32886, #bookastudyroom").LibCalEquipmentBooking({iid: 5570, gid: 32886, eid: 0, width: 560, height: 680});
-});
+  jQuery(function () {
+    jQuery("#eq_32886, #bookastudyroom").LibCalEquipmentBooking({
+      iid: 5570,
+      gid: 32886,
+      eid: 0,
+      width: 560,
+      height: 680,
+    });
+  });
 </script>
 
 <!-- polyfills to make .forEach and .includes work in IE10 and IE11 -->
 <script type="text/javascript">
-if (window.NodeList && !NodeList.prototype.forEach) {
+  if (window.NodeList && !NodeList.prototype.forEach) {
     NodeList.prototype.forEach = Array.prototype.forEach;
-}
+  }
 
-String.prototype.includes = function(match) {
+  String.prototype.includes = function (match) {
     return this.indexOf(match) !== -1;
-}
+  };
 </script>
-
 
 <!-- script to make OneSearch dropdown work -->
 <!-- please forgive the old-timey JS; it is there because we need to support IE10 & IE11 -->
 <script type="text/javascript">
-function customizeSearch(facet) {
-        // re-render the dropdown menu with the current pick
-        document.getElementById('dropdownMenu1').innerHTML = facet + ' <span class="caret"></span>';
-        document.getElementById("primoQueryTemp").setAttribute("placeholder", "Enter search term here");      
-        
-        // reset any previously selected facets
-        document.querySelectorAll('.deleteWithDropdownChange').forEach( function(e) { e.remove(); });
-        document.getElementById("formToAppendInputsTo").setAttribute("action", "https://cuny-kb.primo.exlibrisgroup.com/discovery/search");
-        document.getElementById("tabSetting").setAttribute("value", "Everything");
-        document.getElementById("SearchScopeSetting").setAttribute("value", "IZ_CI_AW");
+  function customizeSearch(facet) {
+    // re-render the dropdown menu with the current pick
+    document.getElementById("dropdownMenu1").innerHTML =
+      facet + ' <span class="caret"></span>';
+    document
+      .getElementById("primoQueryTemp")
+      .setAttribute("placeholder", "Enter search term here");
 
-        // add the facet that matches the user's dropdown selection
-        if (facet === "Books") {
-                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />');
-        } else if (facet === "Articles") {
-                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" class="deleteWithDropdownChange" />');
-        } else if (facet === "Videos") {
-                document.getElementById("formToAppendInputsTo").insertAdjacentHTML('afterbegin', '<input name="facet" value="rtype,include,videos" type="hidden" class="deleteWithDropdownChange" />');
-        } else if (facet === "Journals") {
-                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch');
-                document.getElementById("tabSetting").setAttribute("value", "jsearch_slot");
-        } else if (facet === "Newspapers") {
-                document.getElementById("formToAppendInputsTo").setAttribute('action', 'https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch');
-        } else if (facet === "Reserves") {
-                document.getElementById("tabSetting").setAttribute("value", "CourseReserves");
-                document.getElementById("SearchScopeSetting").setAttribute("value", "CourseReserves");
-        } else {
-                console.log("no match");
-        }
+    // reset any previously selected facets
+    document
+      .querySelectorAll(".deleteWithDropdownChange")
+      .forEach(function (e) {
+        e.remove();
+      });
+    document
+      .getElementById("formToAppendInputsTo")
+      .setAttribute(
+        "action",
+        "https://cuny-kb.primo.exlibrisgroup.com/discovery/search"
+      );
+    document.getElementById("tabSetting").setAttribute("value", "Everything");
+    document
+      .getElementById("SearchScopeSetting")
+      .setAttribute("value", "IZ_CI_AW");
 
-        // store the facet, for use on page reload
-        sessionStorage.facet = facet;
-}
+    // add the facet that matches the user's dropdown selection
+    if (facet === "Books") {
+      document
+        .getElementById("formToAppendInputsTo")
+        .insertAdjacentHTML(
+          "afterbegin",
+          '<input name="facet" value="rtype,include,books" type="hidden" class="deleteWithDropdownChange" />'
+        );
+    } else if (facet === "Articles") {
+      document
+        .getElementById("formToAppendInputsTo")
+        .insertAdjacentHTML(
+          "afterbegin",
+          '<input name="mfacet" value="rtype,include,articles,1" type="hidden" class="deleteWithDropdownChange"/><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" class="deleteWithDropdownChange" />'
+        );
+    } else if (facet === "Videos") {
+      document
+        .getElementById("formToAppendInputsTo")
+        .insertAdjacentHTML(
+          "afterbegin",
+          '<input name="facet" value="rtype,include,videos" type="hidden" class="deleteWithDropdownChange" />'
+        );
+    } else if (facet === "Journals") {
+      document
+        .getElementById("formToAppendInputsTo")
+        .setAttribute(
+          "action",
+          "https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch"
+        );
+      document
+        .getElementById("tabSetting")
+        .setAttribute("value", "jsearch_slot");
+    } else if (facet === "Newspapers") {
+      document
+        .getElementById("formToAppendInputsTo")
+        .setAttribute(
+          "action",
+          "https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch"
+        );
+    } else if (facet === "Reserves") {
+      document
+        .getElementById("tabSetting")
+        .setAttribute("value", "CourseReserves");
+      document
+        .getElementById("SearchScopeSetting")
+        .setAttribute("value", "CourseReserves");
+    } else {
+      console.log("no match");
+    }
 
-// if the stored facet exists on page load, render the dropdown with that facet, then clear the stored facet
-function sessionFunction() {
-        if (sessionStorage.facet && sessionStorage.searchTerms) {
-               stored_terms = sessionStorage.searchTerms;
-               document.getElementById("primoQueryTemp").value = stored_terms;
-               stored_facet = sessionStorage.facet;
-               customizeSearch(stored_facet);
-        }
-        sessionStorage.clear();
-};
+    // store the facet, for use on page reload
+    sessionStorage.facet = facet;
+  }
+
+  // if the stored facet exists on page load, render the dropdown with that facet, then clear the stored facet
+  function sessionFunction() {
+    if (sessionStorage.facet && sessionStorage.searchTerms) {
+      stored_terms = sessionStorage.searchTerms;
+      document.getElementById("primoQueryTemp").value = stored_terms;
+      stored_facet = sessionStorage.facet;
+      customizeSearch(stored_facet);
+    }
+    sessionStorage.clear();
+  }
 </script>
 
 <!-- OneSearch widget script from OLS, modified -->
 <!-- please forgive the old-timey JS; it is there because we need to support IE10 & IE11 -->
 <script type="text/javascript">
+  function addPrimoQuery(e) {
+    // prevent the user from submitting the form if no dropdown item has been selected. Added by ME.
+    e.preventDefault();
+    e.stopPropagation();
+    if (
+      document.getElementById("dropdownMenu1").innerHTML.includes("Define") ===
+      true
+    ) {
+      $("#dropdownMenu1").trigger("click.bs.dropdown.data-api");
+      document.getElementById("primoQueryTemp").value = "";
+      document
+        .getElementById("primoQueryTemp")
+        .setAttribute("placeholder", "Please make a selection");
+      return true;
+    }
 
-function addPrimoQuery(e) {
-        // prevent the user from submitting the form if no dropdown item has been selected. Added by ME.
-        e.preventDefault();
-        e.stopPropagation();
-        if (document.getElementById("dropdownMenu1").innerHTML.includes('Define') === true) {
-                $("#dropdownMenu1").trigger('click.bs.dropdown.data-api');
-                document.getElementById("primoQueryTemp").value = "";
-                document.getElementById("primoQueryTemp").setAttribute("placeholder", "Please make a selection");
-                return true;
-        };
+    // save the search terms, for use on page reload
+    sessionStorage.searchTerms =
+      document.getElementById("primoQueryTemp").value;
 
-       // save the search terms, for use on page reload
-       sessionStorage.searchTerms = document.getElementById("primoQueryTemp").value;
-
-       // original OLS widget
-       document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-       // If you changed the form name at the top, change it below to match
-       document.forms.searchPrimoForm1.submit();
-}
+    // original OLS widget
+    document.getElementById("primoQuery").value =
+      "any,contains," +
+      document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+    // If you changed the form name at the top, change it below to match
+    document.forms.searchPrimoForm1.submit();
+  }
 </script>
 
 <!-- If browser is pre-ES6, show a warning-->
 <script>
-      window.isES6 = false;
+  window.isES6 = false;
 </script>
-<script><!-- test ES6 functionality -->
-      // Arrow functions support
-      () => { };
-  
-      // Class support
-      class __ES6FeatureDetectionTest { };
-  
-      // Object initializer property and method shorthands
-      let es6a = true;
-      let es6b = { 
-          es6a,
-          es6c() { return true; },
-          es6d: [1,2,3],
-      };
-  
-      // Object destructuring
-      let { es6c, es6d } = es6b;
-  
-      // Spread operator
-      let es6e = [...es6d, 4];
+<script>
+  <!-- test ES6 functionality -->
+  // Arrow functions support
+  () => {};
 
-      // ternary operator
-      let es6f = es6a ? "ternary" : "no ternary";
+  // Class support
+  class __ES6FeatureDetectionTest {}
 
-      // nullish coalescing
-      es6a ??= 10;
+  // Object initializer property and method shorthands
+  let es6a = true;
+  let es6b = {
+    es6a,
+    es6c() {
+      return true;
+    },
+    es6d: [1, 2, 3],
+  };
 
-      window.isES6 = true;
+  // Object destructuring
+  let { es6c, es6d } = es6b;
+
+  // Spread operator
+  let es6e = [...es6d, 4];
+
+  // ternary operator
+  let es6f = es6a ? "ternary" : "no ternary";
+
+  // nullish coalescing
+  es6a ??= 10;
+
+  window.isES6 = true;
 </script>
 
 <script type="text/javascript">
-window.onload = function () {
+  window.onload = function () {
+    <!-- run the sessionStorage stuff on load -->
+    sessionFunction();
 
-        <!-- run the sessionStorage stuff on load -->
-        sessionFunction();
-
-        <!-- display the error message if feature detection flags old browser -->
-        if (window.isES6 == false) {
-          document.getElementById('obsolete_browser_alert').innerHTML = '<div class="alert alert-danger" style="text-align: center;"><strong>WARNING! Unsupported browser!</strong><br />It looks like you\'re using an old browser.<br />This website works best with modern browsers such as the latest versions of Chrome, Firefox, Safari, and Edge.<br />If you continue with this browser, many parts of this site will not work and you will see unexpected results.</div>';
-       }
-}
+    <!-- display the error message if feature detection flags old browser -->
+    if (window.isES6 == false) {
+      document.getElementById("obsolete_browser_alert").innerHTML =
+        '<div class="alert alert-danger" style="text-align: center;"><strong>WARNING! Unsupported browser!</strong><br />It looks like you\'re using an old browser.<br />This website works best with modern browsers such as the latest versions of Chrome, Firefox, Safari, and Edge.<br />If you continue with this browser, many parts of this site will not work and you will see unexpected results.</div>';
+    }
+  };
 </script>
 
 <!-- FontAwesome -->
-<script src="https://kit.fontawesome.com/4c28f38a07.js" crossorigin="anonymous"></script>
+<script
+  src="https://kit.fontawesome.com/4c28f38a07.js"
+  crossorigin="anonymous"
+></script>
