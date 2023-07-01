@@ -257,6 +257,25 @@
     outline: 0;
   }
 
+  /* make the slick arrows bigger; adjust margin and padding around big arrows */
+  .slick-prev:before, .slick-next:before {
+    font-size: 40px !important;
+  }
+  .slick-prev:before {
+    margin-left: -30px;
+  }
+  button.slick-next.slick-arrow, button.slick-prev.slick-arrow {
+    height: 40px !important;
+    width: 40px !important;
+  }
+  button.slick-next.slick-arrow {
+    padding-top: 3px;
+  }
+  button.slick-prev.slick-arrow {
+    padding: 3px;
+    padding-left: 30px;
+  }
+
   /* style to make all imported boxes floating */
   .s-lib-box-title {
     display: none;
