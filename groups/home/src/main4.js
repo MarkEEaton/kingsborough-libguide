@@ -1,15 +1,13 @@
 const hamburgerComponent = {
-  template:
-  `<div class="bigger-fancy-text">
+  template: `<div class="bigger-fancy-text">
     <i v-bind:class="item.icon" aria-hidden="true"></i>
     <strong>{{ item.description }}</strong>
   </div>`,
-  props: ['item']
-}
+  props: ["item"],
+};
 
 const navigComponent = {
-  template:
-  `<nav class="navbar navbar-default main-nav-container">
+  template: `<nav class="navbar navbar-default main-nav-container">
     <div class="container-fluid">
       <ul class="nav navbar-nav" id="navbar-center">
         <li v-for="(navmenu, navkey) in navlistofmenus"
@@ -47,12 +45,11 @@ const navigComponent = {
       </ul>
     </div>
   </nav>`,
-  props: ['navlistofmenus']
-}
+  props: ["navlistofmenus"],
+};
 
 const onesearchComponent = {
-  template:
-  `<form class="form-inline onesearch-jumbotron"
+  template: `<form class="form-inline onesearch-jumbotron"
       name="searchPrimoForm1"
       ref="oneSearchForm"
       role="search"
@@ -135,17 +132,21 @@ const onesearchComponent = {
     selectdropdown(item, itemName) {
       this.displayeditem = itemName; // swap in current item at the top of the dropdown
       this.selecteditem = item; // store the data from the dropdown selection
-      this.placeholderstring = 'Enter search term here';
+      this.placeholderstring = "Enter search term here";
     },
     submitSearch() {
-      if (this.displayeditem === 'Define Your Search') {
-        this.placeholderstring = 'Please make a selection';
-        this.searchstring = ''; // remove the search string
-        if (!this.$refs.blueBorder1.classList.contains('open')) { // if the dropdown is not open
+      if (this.displayeditem === "Define Your Search") {
+        this.placeholderstring = "Please make a selection";
+        this.searchstring = ""; // remove the search string
+        if (!this.$refs.blueBorder1.classList.contains("open")) {
+          // if the dropdown is not open
           this.$refs.oneSearchMenu.click(); // open the dropdown
         }
       } else {
-        this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(/[,]/g, ' ')}`; // vueified OLS widget code
+        this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(
+          /[,]/g,
+          " "
+        )}`; // vueified OLS widget code
         this.$refs.oneSearchForm.submit(); // submit the form
       }
     },
@@ -153,61 +154,63 @@ const onesearchComponent = {
   data() {
     return {
       selecteditem: {}, // initialize the data from the dropdown selection
-      searchstring: '', // initialize an empty search string
-      placeholderstring: 'Enter search term here', // initialize the placeholder
-      displayeditem: 'Define Your Search', // the text displayed a the top of the OneSearch dropdown
+      searchstring: "", // initialize an empty search string
+      placeholderstring: "Enter search term here", // initialize the placeholder
+      displayeditem: "Define Your Search", // the text displayed a the top of the OneSearch dropdown
       materialtype: {
         Books: {
-          fullName: 'Books',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
-          tab: 'Everything',
-          searchScope: 'IZ_CI_AW',
-          input: '<input name="facet" value="rtype,include,books" type="hidden" />',
+          fullName: "Books",
+          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search",
+          tab: "Everything",
+          searchScope: "IZ_CI_AW",
+          input:
+            '<input name="facet" value="rtype,include,books" type="hidden" />',
           id: 1,
         },
         Articles: {
-          fullName: 'Articles (Peer reviewed)',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
-          tab: 'Everything',
-          searchScope: 'IZ_CI_AW',
-          input: '<input name="mfacet" value="rtype,include,articles,1" type="hidden" /><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" />',
+          fullName: "Articles (Peer reviewed)",
+          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search",
+          tab: "Everything",
+          searchScope: "IZ_CI_AW",
+          input:
+            '<input name="mfacet" value="rtype,include,articles,1" type="hidden" /><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" />',
           id: 2,
         },
         Reserves: {
-          fullName: 'Course reserves',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
-          tab: 'CourseReserves',
-          searchScope: 'CourseReserves',
-          input: '',
+          fullName: "Course reserves",
+          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search",
+          tab: "CourseReserves",
+          searchScope: "CourseReserves",
+          input: "",
           id: 3,
         },
         Newspapers: {
-          fullName: 'Newspapers and Magazines',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch',
-          tab: 'Everything',
-          searchScope: 'IZ_CI_AW',
-          input: '',
+          fullName: "Newspapers and Magazines",
+          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch",
+          tab: "Everything",
+          searchScope: "IZ_CI_AW",
+          input: "",
           id: 4,
         },
         Journals: {
-          fullName: 'Journals',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch',
-          tab: 'jsearch_slot',
-          searchScope: 'IZ_CI_AW',
-          input: '',
+          fullName: "Journals",
+          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch",
+          tab: "jsearch_slot",
+          searchScope: "IZ_CI_AW",
+          input: "",
           id: 5,
-        }
-      }
-    }  
-  }
-}
+        },
+      },
+    };
+  },
+};
 
-const { createApp } = Vue
+const { createApp } = Vue;
 
 const app1 = createApp({
   components: {
-    'navig-component': navigComponent,
-    'hamburger-component': hamburgerComponent
+    "navig-component": navigComponent,
+    "hamburger-component": hamburgerComponent,
   },
   data() {
     return {
@@ -217,88 +220,88 @@ const app1 = createApp({
           icon: "fas fa-search fa-fw bigger-icon",
           description: "OneSearch",
           target_blank: "",
-          id: 1
+          id: 1,
         },
         {
           link: "https://library.kbcc.cuny.edu/az.php",
           icon: "fas fa-database fa-fw bigger-icon",
           description: "Databases A to Z",
           target_blank: "",
-          id: 2
+          id: 2,
         },
         {
           link: "https://library.kbcc.cuny.edu/guides",
           icon: "fas fa-telescope fa-fw bigger-icon",
           description: "Research Guides",
           target_blank: "",
-          id: 3
+          id: 3,
         },
         {
           link: "https://library.kbcc.cuny.edu/faq",
           icon: "fas fa-question-circle fa-fw bigger-icon",
           description: "FAQ",
           target_blank: "",
-          id: 4
+          id: 4,
         },
         {
           link: "https://library.kbcc.cuny.edu/calendar",
           icon: "fas fa-clock fa-fw bigger-icon",
           description: "Library Hours",
           target_blank: "",
-          id: 5
+          id: 5,
         },
         {
           link: "https://library.kbcc.cuny.edu/sitemap",
           icon: "fas fa-location-arrow fa-fw bigger-icon",
           description: "Site Map",
           target_blank: "",
-          id: 6
-        }
+          id: 6,
+        },
       ],
       navlistofmenus: {
-        'Find It': {
+        "Find It": {
           id: 1,
           data: [
             {
-              link: 'https://library.kbcc.cuny.edu/az.php',
-              icon: 'fas fa-database fa-fw bigger-icon',
-              description: 'Databases A to Z',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/az.php",
+              icon: "fas fa-database fa-fw bigger-icon",
+              description: "Databases A to Z",
+              target_blank: "",
               id: 1,
             },
             {
-              link: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch?vid=01CUNY_KB:CUNY_KB&search_scope=all',
-              icon: 'fas fa-newspaper fa-fw bigger-icon',
-              description: 'Newspaper Search',
-              target_blank: '',
+              link: "https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch?vid=01CUNY_KB:CUNY_KB&search_scope=all",
+              icon: "fas fa-newspaper fa-fw bigger-icon",
+              description: "Newspaper Search",
+              target_blank: "",
               id: 2,
             },
             {
-              link: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&tab=CourseReserves&search_scope=CourseReserves',
-              icon: 'fas fa-cloud-download-alt fa-fw bigger-icon',
-              description: 'Course Reserves',
-              target_blank: '',
+              link: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&tab=CourseReserves&search_scope=CourseReserves",
+              icon: "fas fa-cloud-download-alt fa-fw bigger-icon",
+              description: "Course Reserves",
+              target_blank: "",
               id: 3,
             },
             {
-              link: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch?vid=01CUNY_KB:CUNY_KB',
-              icon: 'fas fa-book fa-fw bigger-icon',
-              description: 'Search for Specific Journals',
-              target_blank: '',
+              link: "https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch?vid=01CUNY_KB:CUNY_KB",
+              icon: "fas fa-book fa-fw bigger-icon",
+              description: "Search for Specific Journals",
+              target_blank: "",
               id: 4,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/academicworks',
-              icon: 'fas fa-archive fa-fw bigger-icon',
-              description: 'CUNY Academic Works',
-              target_blank: '_blank',
+              link: "https://library.kbcc.cuny.edu/academicworks",
+              icon: "fas fa-archive fa-fw bigger-icon",
+              description: "CUNY Academic Works",
+              target_blank: "_blank",
               id: 5,
             },
             {
-              link: 'https://www.bkstr.com/kingsboroughccstore/home',
-              icon: 'fas fa-cash-register fa-fw bigger-icon',
-              description: 'KBCC Bookstore',
-              target_blank: '_blank',
+              link: "https://www.bkstr.com/kingsboroughccstore/home",
+              icon: "fas fa-cash-register fa-fw bigger-icon",
+              description: "KBCC Bookstore",
+              target_blank: "_blank",
               id: 6,
             },
           ],
@@ -307,90 +310,90 @@ const app1 = createApp({
           id: 2,
           data: [
             {
-              link: 'http://kbcc.cuny.illiad.oclc.org/illiad/logon.html',
-              icon: 'fas fa-books fa-fw bigger-icon',
-              description: 'Interlibrary Loan',
-              target_blank: '_blank',
+              link: "http://kbcc.cuny.illiad.oclc.org/illiad/logon.html",
+              icon: "fas fa-books fa-fw bigger-icon",
+              description: "Interlibrary Loan",
+              target_blank: "_blank",
               id: 1,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/libraryservices/informationliteracy',
-              icon: 'fas fa-chalkboard-teacher fa-fw bigger-icon',
-              description: 'Book a Library Instruction Session',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/libraryservices/informationliteracy",
+              icon: "fas fa-chalkboard-teacher fa-fw bigger-icon",
+              description: "Book a Library Instruction Session",
+              target_blank: "",
               id: 2,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/mediaservices',
-              icon: 'fas fa-photo-video fa-fw bigger-icon',
-              description: 'Media Services',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/mediaservices",
+              icon: "fas fa-photo-video fa-fw bigger-icon",
+              description: "Media Services",
+              target_blank: "",
               id: 3,
             },
             {
-              link: 'https://kbcc-cuny.libwizard.com/f/bookrequest',
-              icon: 'fas fa-shopping-basket fa-fw bigger-icon',
-              description: 'Suggest a Book for Purchase',
-              target_blank: '',
+              link: "https://kbcc-cuny.libwizard.com/f/bookrequest",
+              icon: "fas fa-shopping-basket fa-fw bigger-icon",
+              description: "Suggest a Book for Purchase",
+              target_blank: "",
               id: 4,
             },
             {
-              link: 'https://kbcc-cuny.libwizard.com/id/8cdb3f1a787de3c307a8cf5d75cad406',
-              icon: 'fas fa-bookmark fa-fw bigger-icon',
-              description: 'Suggest an Item to Add to Reserves',
-              target_blank: '',
+              link: "https://kbcc-cuny.libwizard.com/id/8cdb3f1a787de3c307a8cf5d75cad406",
+              icon: "fas fa-bookmark fa-fw bigger-icon",
+              description: "Suggest an Item to Add to Reserves",
+              target_blank: "",
               id: 5,
             },
           ],
         },
-        'About Us': {
+        "About Us": {
           id: 3,
           data: [
             {
-              link: 'https://library.kbcc.cuny.edu/about-us/directory',
-              icon: 'fas fa-address-book fa-fw bigger-icon',
-              description: 'Faculty & Staff Directory',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/about-us/directory",
+              icon: "fas fa-address-book fa-fw bigger-icon",
+              description: "Faculty & Staff Directory",
+              target_blank: "",
               id: 1,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/newarrivals',
-              icon: 'far fa-mail-bulk fa-fw bigger-icon',
-              description: 'New Arrivals',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/newarrivals",
+              icon: "far fa-mail-bulk fa-fw bigger-icon",
+              description: "New Arrivals",
+              target_blank: "",
               id: 2,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/about-us/liaisons',
-              icon: 'fas fa-theater-masks fa-fw bigger-icon',
-              description: 'Subject Liaisons',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/about-us/liaisons",
+              icon: "fas fa-theater-masks fa-fw bigger-icon",
+              description: "Subject Liaisons",
+              target_blank: "",
               id: 3,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/social',
-              icon: 'far fa-hashtag fa-fw bigger-icon',
-              description: 'Social Media',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/social",
+              icon: "far fa-hashtag fa-fw bigger-icon",
+              description: "Social Media",
+              target_blank: "",
               id: 4,
             },
           ],
         },
-        'Location & Hours': {
+        "Location & Hours": {
           id: 4,
           data: [
             {
-              link: 'https://tour.kingsborough.edu/',
-              icon: 'fas fa-map-marked-alt fa-fw bigger-icon',
-              description: 'Campus Map',
-              target_blank: '',
+              link: "https://tour.kingsborough.edu/",
+              icon: "fas fa-map-marked-alt fa-fw bigger-icon",
+              description: "Campus Map",
+              target_blank: "",
               id: 1,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/calendar',
-              icon: 'fas fa-clock fa-fw bigger-icon',
-              description: 'Library Hours',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/calendar",
+              icon: "fas fa-clock fa-fw bigger-icon",
+              description: "Library Hours",
+              target_blank: "",
               id: 2,
             },
           ],
@@ -399,44 +402,44 @@ const app1 = createApp({
           id: 5,
           data: [
             {
-              link: 'https://library.kbcc.cuny.edu/askalibrarian',
-              icon: 'fas fa-book-reader fa-fw bigger-icon',
-              description: 'Ask A Librarian',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/askalibrarian",
+              icon: "fas fa-book-reader fa-fw bigger-icon",
+              description: "Ask A Librarian",
+              target_blank: "",
               id: 1,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/faq',
-              icon: 'fas fa-question-circle fa-fw bigger-icon',
-              description: 'FAQ',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/faq",
+              icon: "fas fa-question-circle fa-fw bigger-icon",
+              description: "FAQ",
+              target_blank: "",
               id: 2,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/guides',
-              icon: 'fas fa-telescope fa-fw bigger-icon',
-              description: 'Research Guides and Tutorials',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/guides",
+              icon: "fas fa-telescope fa-fw bigger-icon",
+              description: "Research Guides and Tutorials",
+              target_blank: "",
               id: 3,
             },
             {
-              link: 'https://library.kbcc.cuny.edu/ENGLISH24',
-              icon: 'fas fa-question fa-fw bigger-icon',
-              description: 'How to Use the Library',
-              target_blank: '',
+              link: "https://library.kbcc.cuny.edu/ENGLISH24",
+              icon: "fas fa-question fa-fw bigger-icon",
+              description: "How to Use the Library",
+              target_blank: "",
               id: 4,
             },
           ],
         },
-      }
-    }
-  }
-})
-app1.mount('#app1');
+      },
+    };
+  },
+});
+app1.mount("#app1");
 
 const app2 = createApp({
   components: {
-    'onesearch-component': onesearchComponent
+    "onesearch-component": onesearchComponent,
   },
-})
-app2.mount('#app2');
+});
+app2.mount("#app2");
