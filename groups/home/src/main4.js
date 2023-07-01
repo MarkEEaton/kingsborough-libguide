@@ -48,7 +48,6 @@ const navigComponent = {
     </div>
   </nav>`,
   props: ['navlistofmenus']
-
 }
 
 const onesearchComponent = {
@@ -58,14 +57,14 @@ const onesearchComponent = {
       ref="oneSearchForm"
       role="search"
       method="get"
-      :action="selectedItem.baseUrl"
+      :action="selecteditem.baseUrl"
       enctype="application/x-www-form-urlencoded; charset=utf-8"
   >
     <!-- default is "everything"  option suggested from OLS widget builder -->
-    <div v-if="selectedItem.input" v-html="selectedItem.input"></div>
+    <div v-if="selecteditem.input" v-html="selecteditem.input"></div>
     <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" />
-    <input name="tab" :value="selectedItem.tab" type="hidden" />
-    <input name="search_scope" :value="selectedItem.searchScope" type="hidden" />
+    <input name="tab" :value="selecteditem.tab" type="hidden" />
+    <input name="search_scope" :value="selecteditem.searchScope" type="hidden" />
     <input name="mode" value="basic" type="hidden" />
     <input name="highlight" value="true" type="hidden" />
     <input name="displayMode" value="full" type="hidden" />
@@ -90,12 +89,12 @@ const onesearchComponent = {
                     aria-expanded="true"
                     aria-label="Define Your Search"
             >
-                <span id="defineYourSearch">{{ displayedItem }}&nbsp;</span>
+                <span id="defineYourSearch">{{ displayeditem }}&nbsp;</span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu fade dropdown-margin" aria-labelledby="dropdownMenu1">
                 <li>
-                    <a v-for="(item, itemName) in materialType"
+                    <a v-for="(item, itemName) in materialtype"
                        :key="item.id"
                        class="searchmenu"
                        @click="selectDropdown(item, itemName)"
@@ -119,8 +118,8 @@ const onesearchComponent = {
                    id="primoQueryTemp"
                    ref="primoQueryTempString"
                    type="search"
-                   v-model="searchString"
-                   :placeholder="placeholderString"
+                   v-model="searchstring"
+                   :placeholder="placeholderstring"
              />
         </div>
         <div class="input-group zero-margin" id="blue-border3">
@@ -132,12 +131,12 @@ const onesearchComponent = {
         </div>
     </div>
 </form>`,
-  props: ['selectedItem']
+  props: ['selecteditem', 'searchstring', 'placeholderstring', 'displayeditem', 'materialtype']
 }
 
 const { createApp } = Vue
 
-createApp({
+const app1 = createApp({
   components: {
     'navig-component': navigComponent,
     'hamburger-component': hamburgerComponent
@@ -364,22 +363,23 @@ createApp({
       }
     }
   }
-}).mount('#app1');
+})
+app1.mount('#app1');
 
-createApp({
+const app2 = createApp({
   components: {
     'onesearch-component': onesearchComponent
   },
   methods: {
     selectDropdown(item, itemName) {
-      this.displayedItem = itemName; // swap in current item at the top of the dropdown
-      this.selectedItem = item; // store the data from the dropdown selection
-      this.placeholderString = 'Enter search term here';
+      this.displayeditem = itemName; // swap in current item at the top of the dropdown
+      this.selecteditem = item; // store the data from the dropdown selection
+      this.placeholderstring = 'Enter search term here';
     },
     submitSearch() {
-      if (this.displayedItem === 'Define Your Search') {
-        this.placeholderString = 'Please make a selection';
-        this.searchString = ''; // remove the search string
+      if (this.displayeditem === 'Define Your Search') {
+        this.placeholderstring = 'Please make a selection';
+        this.searchstring = ''; // remove the search string
         if (!this.$refs.blueBorder1.classList.contains('open')) { // if the dropdown is not open
           this.$refs.oneSearchMenu.click(); // open the dropdown
         }
@@ -391,11 +391,11 @@ createApp({
   },
   data() {
     return {
-      selectedItem: {}, // initialize the data from the dropdown selection
-      searchString: '', // initialize an empty search string
-      placeholderString: 'Enter search term here', // initialize the placeholder
-      displayedItem: 'Define Your Search', // the text displayed a the top of the OneSearch dropdown
-      materialType: {
+      selecteditem: {}, // initialize the data from the dropdown selection
+      searchstring: '', // initialize an empty search string
+      placeholderstring: 'Enter search term here', // initialize the placeholder
+      displayeditem: 'Define Your Search', // the text displayed a the top of the OneSearch dropdown
+      materialtype: {
         Books: {
           fullName: 'Books',
           baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
@@ -439,4 +439,5 @@ createApp({
       }
     }  
   }
-}).mount('#app2');
+})
+app2.mount('#app2');
