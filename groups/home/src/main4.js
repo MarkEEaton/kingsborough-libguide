@@ -49,15 +49,16 @@ const navigComponent = {
   </nav>`
 }
 
-const onesearchComponent {
-`<form class="form-inline onesearch-jumbotron"
+const onesearchComponent = {
+  template:
+  `<form class="form-inline onesearch-jumbotron"
       name="searchPrimoForm1"
       ref="oneSearchForm"
       role="search"
       method="get"
       :action="selectedItem.baseUrl"
       enctype="application/x-www-form-urlencoded; charset=utf-8"
->
+  >
     <!-- default is "everything"  option suggested from OLS widget builder -->
     <div v-if="selectedItem.input" v-html="selectedItem.input"></div>
     <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" />
@@ -137,7 +138,7 @@ createApp({
   components: {
     'navig-component': navigComponent,
     'hamburger-component': hamburgerComponent,
-    'onesearch-componet': onesearchComponent
+    'onesearch-component': onesearchComponent
   },
   methods: {
     selectDropdown(item, itemName) {
