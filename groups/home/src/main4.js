@@ -137,76 +137,10 @@ const { createApp } = Vue
 createApp({
   components: {
     'navig-component': navigComponent,
-    'hamburger-component': hamburgerComponent,
-    'onesearch-component': onesearchComponent
-  },
-  methods: {
-    selectDropdown(item, itemName) {
-      this.displayedItem = itemName; // swap in current item at the top of the dropdown
-      this.selectedItem = item; // store the data from the dropdown selection
-      this.placeholderString = 'Enter search term here';
-    },
-    submitSearch() {
-      if (this.displayedItem === 'Define Your Search') {
-        this.placeholderString = 'Please make a selection';
-        this.searchString = ''; // remove the search string
-        if (!this.$refs.blueBorder1.classList.contains('open')) { // if the dropdown is not open
-          this.$refs.oneSearchMenu.click(); // open the dropdown
-        }
-      } else {
-        this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(/[,]/g, ' ')}`; // vueified OLS widget code
-        this.$refs.oneSearchForm.submit(); // submit the form
-      }
-    },
+    'hamburger-component': hamburgerComponent
   },
   data() {
     return {
-      selectedItem: {}, // initialize the data from the dropdown selection
-      searchString: '', // initialize an empty search string
-      placeholderString: 'Enter search term here', // initialize the placeholder
-      displayedItem: 'Define Your Search', // the text displayed a the top of the OneSearch dropdown
-      materialType: {
-        Books: {
-          fullName: 'Books',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
-          tab: 'Everything',
-          searchScope: 'IZ_CI_AW',
-          input: '<input name="facet" value="rtype,include,books" type="hidden" />',
-          id: 1,
-        },
-        Articles: {
-          fullName: 'Articles (Peer reviewed)',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
-          tab: 'Everything',
-          searchScope: 'IZ_CI_AW',
-          input: '<input name="mfacet" value="rtype,include,articles,1" type="hidden" /><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" />',
-          id: 2,
-        },
-        Reserves: {
-          fullName: 'Course reserves',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
-          tab: 'CourseReserves',
-          searchScope: 'CourseReserves',
-          input: '',
-          id: 3,
-        },
-        Newspapers: {
-          fullName: 'Newspapers and Magazines',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch',
-          tab: 'Everything',
-          searchScope: 'IZ_CI_AW',
-          input: '',
-          id: 4,
-        },
-        Journals: {
-          fullName: 'Journals',
-          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch',
-          tab: 'jsearch_slot',
-          searchScope: 'IZ_CI_AW',
-          input: '',
-          id: 5,
-        },
-      },
       hamburger: [
         {
           link: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search?tab=Everything&vid=01CUNY_KB:CUNY_KB&lang=en",
@@ -412,4 +346,79 @@ createApp({
   	  }
     }
   }
-}).mount('#app');
+}).mount('#app1');
+
+createApp({
+  components: {
+    'onesearch-component': onesearchComponent
+  },
+  methods: {
+    selectDropdown(item, itemName) {
+      this.displayedItem = itemName; // swap in current item at the top of the dropdown
+      this.selectedItem = item; // store the data from the dropdown selection
+      this.placeholderString = 'Enter search term here';
+    },
+    submitSearch() {
+      if (this.displayedItem === 'Define Your Search') {
+        this.placeholderString = 'Please make a selection';
+        this.searchString = ''; // remove the search string
+        if (!this.$refs.blueBorder1.classList.contains('open')) { // if the dropdown is not open
+          this.$refs.oneSearchMenu.click(); // open the dropdown
+        }
+      } else {
+        this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(/[,]/g, ' ')}`; // vueified OLS widget code
+        this.$refs.oneSearchForm.submit(); // submit the form
+      }
+    },
+  },
+  data() {
+    return {
+      selectedItem: {}, // initialize the data from the dropdown selection
+      searchString: '', // initialize an empty search string
+      placeholderString: 'Enter search term here', // initialize the placeholder
+      displayedItem: 'Define Your Search', // the text displayed a the top of the OneSearch dropdown
+      materialType: {
+        Books: {
+          fullName: 'Books',
+          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
+          tab: 'Everything',
+          searchScope: 'IZ_CI_AW',
+          input: '<input name="facet" value="rtype,include,books" type="hidden" />',
+          id: 1,
+        },
+        Articles: {
+          fullName: 'Articles (Peer reviewed)',
+          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
+          tab: 'Everything',
+          searchScope: 'IZ_CI_AW',
+          input: '<input name="mfacet" value="rtype,include,articles,1" type="hidden" /><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" />',
+          id: 2,
+        },
+        Reserves: {
+          fullName: 'Course reserves',
+          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/search',
+          tab: 'CourseReserves',
+          searchScope: 'CourseReserves',
+          input: '',
+          id: 3,
+        },
+        Newspapers: {
+          fullName: 'Newspapers and Magazines',
+          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch',
+          tab: 'Everything',
+          searchScope: 'IZ_CI_AW',
+          input: '',
+          id: 4,
+        },
+        Journals: {
+          fullName: 'Journals',
+          baseUrl: 'https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch',
+          tab: 'jsearch_slot',
+          searchScope: 'IZ_CI_AW',
+          input: '',
+          id: 5,
+        }
+      }
+    }  
+  }
+}).mount('#app2');
