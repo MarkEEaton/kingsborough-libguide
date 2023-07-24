@@ -43,9 +43,7 @@
                     v-bind:href="item.link"
                     v-bind:target="item.target_blank"
                   >
-                    <hamburger-component
-                      v-bind:item="item"
-                    ></hamburger-component>
+                    <hamburger-component v-bind:item="item"></hamburger-component>
                   </a>
                 </li>
               </ul>
@@ -111,9 +109,7 @@
         <!-- end of row -->
         <div class="row" id="hamburger-alternative">
           <div class="col-xs-12">
-            <navig-component
-              v-bind:navlistofmenus="navlistofmenus"
-            ></navig-component>
+            <navig-component v-bind:navlistofmenus="navlistofmenus"></navig-component>
           </div>
           <!-- end of col-xs-12 -->
         </div>
@@ -126,8 +122,7 @@
         <div class="col-sm-8">
           <div id="app2">
             <onesearch-component></onesearch-component>
-          </div>
-          <!-- end of Vue app2 -->
+          </div><!-- end of Vue app2 -->
         </div>
         <div class="col-sm-4">
           <div class="nav-by-jumbotron">
@@ -400,11 +395,10 @@
   </div>
 
   <!-- LibChat widget script -->
-  <script src="https://kbcc-cuny.libanswers.com/load_chat.php?hash=212334892d13e5887f44a2763092678b"></script>
+  <script src="https://kbcc-cuny.libanswers.com/load_chat.php?hash=f7d1629a91e178fd0f799322e803b6e7"></script>
 
   <!-- add Vue scripts -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <!-- development -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!-- development -->
   <!-- <script src="https://unpkg.com/vue/dist/vue.global.prod.js"></script> -->
   <!--production -->
   <script
