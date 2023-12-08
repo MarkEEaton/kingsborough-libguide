@@ -377,6 +377,13 @@ const app1 = createApp({
               target_blank: "",
               id: 4,
             },
+            {
+              link: "https://cuny-kb.alma.exlibrisgroup.com/discovery/collectionDiscovery?vid=01CUNY_KB:CUNY_KB",
+              icon: "fa-solid fa-star fa-fw bigger-icon",
+              description: "Featured Collections",
+              target_blank: "",
+              id: 5,
+            },
           ],
         },
         "Location & Hours": {
