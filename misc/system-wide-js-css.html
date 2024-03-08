@@ -142,16 +142,16 @@ a[href^="/az.php"].btn.btn-info.s-lg-hp-btn-section {
 </style>
 
 <!-- scripts to replace Email Me buttons in profiles with LibAnswers widgets -->
-<script src="https://kbcc-cuny.libanswers.com/1.0/widgets/19393"></script>
 <script>
 $(document).ready(function() { 
   try {
-    document.getElementsByClassName("s-lib-profile-email")[0].innerHTML = "<div id='s-la-widget-19393'></div>"
+    document.querySelector("[id^='s-lib-profile-email-']").innerHTML = "<div id='s-la-widget-19393'></div>"
   } catch (error) {
-    console.log(error);
+    console.log("Email Me button not found on this page. This is just a warning...")
   };
 });
 </script>
+<script src="https://kbcc-cuny.libanswers.com/1.0/widgets/19393"></script>
 
 <!-- global style to replace Email Me buttons in profiles with LibAnswers widgets -->
 <style>
