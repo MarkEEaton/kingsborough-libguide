@@ -298,7 +298,7 @@ const app1 = createApp({
               id: 5,
             },
             {
-              link: "https://www.bkstr.com/kingsboroughccstore/home",
+              link: "https://kbcc.textbookx.com/institutional/index.php",
               icon: "fas fa-cash-register fa-fw bigger-icon",
               description: "KBCC Bookstore",
               target_blank: "_blank",
