@@ -1,134 +1,167 @@
-<style>
-  /* Fix the color of the "Search" button on the subject pages */
-  form .btn.btn-info {
-    background-color: #003466;
-    border: 1px solid #003466;
-  }
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXHWQX3');</script>
+<!-- End Google Tag Manager -->
 
-  /* Make the badges KBCC blue so they doesn't clash
+<style>
+
+/* Fix the color of the "Search" button on the subject pages */
+form .btn.btn-info {
+    background-color:#003466;
+    border:1px solid #003466;
+}
+
+/* Make the badges KBCC blue so they doesn't clash
 .s-lg-az-result-badge-new, .s-lg-az-result-badge-popular, .s-lg-az-result-badge-featured {
     background-color:#003466;
 } */
 
-  /* CSS to target buttons on the LibGuides homepage more specifically.
+
+/* CSS to target buttons on the LibGuides homepage more specifically.
     These had been broken by a LibGuides update, 9/6/2016 */
 
-  .s-lg-hp-btn-section,
-  .s-lg-hp-btn-section:hover,
-  .s-lg-hp-btn-section:focus {
-    background-color: #003466;
-    border: 1px solid #003466;
-  }
+.s-lg-hp-btn-section, .s-lg-hp-btn-section:hover, .s-lg-hp-btn-section:focus {
+    background-color:#003466;
+    border:1px solid #003466;
+}
 
-  /* temporary rule to keep non-working links to librarians pages from displaying on the guides -> course guides page */
-  .s-lg-guide-info-account {
-    display: none;
-  }
+/* temporary rule to keep non-working links to librarians pages from displaying on the guides -> course guides page */
+.s-lg-guide-info-account {
+    display:none;
+}
 
-  /* styling the header on the main page */
-  #s-lg-hp-nav {
-    background: url(https://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg); /* does not seem to work well with .png files */
-    background-color: #258;
-    background-size: 100%;
-    height: 190px;
-  }
+/* styling the header on the main page */
+#s-lg-hp-nav {     
+    background:url(https://www1.kingsborough.edu/photo_album/kcc_campus_06/images/KG_Kibbee_3_jpg.jpg); /* does not seem to work well with .png files */ 
+    background-color:#258;     
+    background-size:100%;     
+    height:190px;
+}
 
-  #s-lg-hp-nav-bottom {
-    background-color: rgba(255, 255, 255, 0.55);
-    border-radius: 0;
-  }
+#s-lg-hp-nav-bottom {
+    background-color:rgba(255,255,255,0.55); 
+    border-radius:0;
+} 
 
-  #nav-spacer {
-    height: 55px;
-    width: 400px;
-  }
+#nav-spacer {
+    height:55px;
+    width:400px;
+}
 
-  #nav-title-spacer {
-    height: 42px;
-    width: 400px;
-    padding: 0px 0px 0px 20px;
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.65);
-    color: white;
-  }
+#nav-title-spacer {
+    height:42px; 
+    width:400px; 
+    padding:0px 0px 0px 20px; 
+    margin-bottom:10px;
+    background-color:rgba(0,0,0,0.65);
+    color:white;
+}
 
-  /* makes the heading smaller on very small screens */
+/* makes the heading smaller on very small screens */
 
-  @media (max-width: 455px) {
+@media (max-width: 455px) {
     h1 {
-      font-size: 25px;
+        font-size: 25px;
     }
-    #nav-title-spacer {
-      width: inherit;
+   #nav-title-spacer {
+        width: inherit;
     }
-  }
+}
 
-  /* Making the pills the right color */
+/* Making the pills the right color */
 
-  a.label.label-info:hover {
-    background-color: #003466;
-  }
+a.label.label-info:hover {
+    background-color:#003466;
+} 
 
-  .label-info {
-    background-color: #003466;
-  }
+.label-info {
+   background-color:#003466;
+}
 
-  /* new nav pills styling (11/17/2016) */
+/* new nav pills styling (11/17/2016) */
 
-  .s-lg-index-nav-btn.active > .btn {
-    background-color: #003466;
-  }
+.s-lg-index-nav-btn.active > .btn {
+   background-color:#003466;
+}
 
-  .s-lg-index-nav-btn.active > .btn:focus {
-    background-color: #003466;
-  }
+.s-lg-index-nav-btn.active > .btn:focus {
+   background-color:#003466;
+}
 
-  .s-lg-index-nav-btn.active > .btn:hover {
-    background-color: #003466;
-  }
+.s-lg-index-nav-btn.active > .btn:hover {
+   background-color:#003466;
+}
 
-  ul.nav.nav-pills > .s-lg-index-nav-btn.active > button.btn:focus {
+ul.nav.nav-pills > .s-lg-index-nav-btn.active > button.btn:focus {
     outline: none;
-  }
+}
 
-  /* not sure what these are for */
-  #spacer {
-    height: 30px;
-  }
+/* not sure what these are for */
+#spacer {
+        height:30px;
+}
 
-  #s-lib-bc {
-    clear: both;
-  }
+#s-lib-bc {
+       clear:both;
+}
 
-  /* alternate fonts included to accommodate computers that do not have the defaults */
-  body {
-    font-family: arial, sans-serif;
-  }
+/* alternate fonts included to accommodate computers that do not have the defaults */
+body {
+        font-family: arial, sans-serif;
+}
 
-  /* add a bit of space above the blue "Go To A-Z List" button on the LibGuides homepage*/
-  a[href^="/az.php"].btn.btn-info.s-lg-hp-btn-section {
-    margin-top: 9px;
-  }
+/* add a bit of space above the blue "Go To A-Z List" button on the LibGuides homepage*/
+a[href^="/az.php"].btn.btn-info.s-lg-hp-btn-section {
+       margin-top:9px;
+}
 
-  /* new banner 6/27/2021 */
-  #bannercontainer {
-    width: %100;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
+/* new banner 6/27/2021 */
+#bannercontainer {
+        width: %100;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+}
 
-  @media only screen and (min-width: 1px) {
-    #newbanner {
-      width: 80%;
-    }
-  }
+@media only screen and (min-width: 1px) {
+        #newbanner {
+                width: 80%;
+        }
+} 
 
-  @media only screen and (min-width: 992px) {
-    #newbanner {
-      width: 60%;
-    }
-  }
+@media only screen and (min-width: 992px) {
+        #newbanner {
+                width: 60%;
+        }
+}
+</style>
+
+<!-- scripts to replace Email Me buttons in profiles with LibAnswers widgets -->
+<script>
+$(document).ready(function() { 
+  try {
+    document.querySelector("[id^='s-lib-profile-email-']").innerHTML = "<div id='s-la-widget-19393'></div>"
+  } catch (error) {
+    console.log("Email Me button not found on this page. No action taken. This is just a warning...")
+  };
+});
+</script>
+<script src="https://kbcc-cuny.libanswers.com/1.0/widgets/19393"></script>
+
+<!-- global style to replace Email Me buttons in profiles with LibAnswers widgets -->
+<style>
+#s-la-widget-19393 { 
+       margin-bottom: 8px; 
+}
+
+#s-la-widget-19393 > button {
+       background-color: #003466;
+       border: #003466;
+       color: #fff;
+}
 </style>
