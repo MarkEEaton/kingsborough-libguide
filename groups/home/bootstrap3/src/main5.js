@@ -122,7 +122,7 @@ const onesearchComponent = {
                    ref="primoQueryTempString"
                    type="search"
                    v-model="searchstring"
-                   :placeholder="placeholderstring"
+                   placeholder="Enter search term here"
              />
         </div>
         <div class="input-group zero-margin" id="blue-border3">
@@ -138,7 +138,6 @@ const onesearchComponent = {
     selectdropdown(item, itemName) {
       this.displayeditem = itemName; // swap in current item at the top of the dropdown
       this.selecteditem = item; // store the data from the dropdown selection
-      this.placeholderstring = "Enter search term here";
     },
     submitSearch() {
       this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(
@@ -152,50 +151,17 @@ const onesearchComponent = {
     return {
       selecteditem: {}, // initialize the data from the dropdown selection
       searchstring: "", // initialize an empty search string
-      placeholderstring: "Enter search term here", // initialize the placeholder
       displayeditem: "Define Your Search", // the text displayed a the top of the OneSearch dropdown
       materialtype: {
         Books: {
-          fullName: "Books",
-          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search",
-          tab: "Everything",
-          searchScope: "IZ_CI_AW",
           input:
             '<input name="facet" value="rtype,include,books" type="hidden" />',
           id: 1,
         },
         Articles: {
-          fullName: "Articles (Peer reviewed)",
-          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search",
-          tab: "Everything",
-          searchScope: "IZ_CI_AW",
           input:
             '<input name="mfacet" value="rtype,include,articles,1" type="hidden" /><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" />',
           id: 2,
-        },
-        Reserves: {
-          fullName: "Course reserves",
-          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/search",
-          tab: "CourseReserves",
-          searchScope: "CourseReserves",
-          input: "",
-          id: 3,
-        },
-        Newspapers: {
-          fullName: "Newspapers and Magazines",
-          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/npsearch",
-          tab: "Everything",
-          searchScope: "IZ_CI_AW",
-          input: "",
-          id: 4,
-        },
-        Journals: {
-          fullName: "Journals",
-          baseUrl: "https://cuny-kb.primo.exlibrisgroup.com/discovery/jsearch",
-          tab: "jsearch_slot",
-          searchScope: "IZ_CI_AW",
-          input: "",
-          id: 5,
         },
       },
     };
