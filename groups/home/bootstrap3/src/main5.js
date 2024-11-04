@@ -58,7 +58,7 @@ const onesearchComponent = {
       enctype="application/x-www-form-urlencoded; charset=utf-8"
   >
     <!-- default is "everything"  option suggested from OLS widget builder -->
-    <div v-if="selecteditem" v-html="selecteditem"</div>
+    <input name='facet' :value="selecteditem" type="hidden"/>
     <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" />
     <input name="tab" value="Everything" type="hidden" />
     <input name="search_scope" value="IZ_CI_AW" type="hidden" />
@@ -76,42 +76,6 @@ const onesearchComponent = {
         </a>
     </h1>
     <div class="form-group" id="flex-search-form">
-
-
-        <!-- to delete
-        <div class="dropdown input-group zero-margin" id="blue-border1" ref="blueBorder1">
-            <button class="btn btn-default dropdown-toggle"
-                    type="button"
-                    id="dropdownMenu1"
-                    ref="oneSearchMenu"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="true"
-                    aria-label="Define Your Search"
-            >
-                <span id="defineYourSearch">{{ displayeditem }}&nbsp;</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu fade dropdown-margin" aria-labelledby="dropdownMenu1">
-                <li>
-                    <a v-for="(item, itemName) in materialtype"
-                       :key="item.id"
-                       class="searchmenu"
-                       @click="selectdropdown(item, itemName)"
-                    >
-                        <div class="highlight-menu-item bigger-fancy-text">
-                            <strong>{{ item.fullName }}</strong>
-                        </div>
-                    </a>
-                    <a href="https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&lang=en&mode=advanced" class="searchmenu">
-                        <div class="highlight-menu-item bigger-fancy-text">
-                            <strong>Advanced Search</strong>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        -->
 
 
         <label class="sr-only" for="primoQueryTemp">Search terms</label>
@@ -136,13 +100,13 @@ const onesearchComponent = {
             <input type="radio" 
                    id="booksradio"
                    name="radio1"
-                   @click="selectradio('books')"
+                   @click="selectradio('rtype,include,books')"
             >
             <label for="booksradio">Books</label>
             <input type="radio"
                    id="articlesradio"
                    name="radio1"
-                   @click="selectradio('articles')"
+                   @click="selectradio('rtype,include,articles')"
             >
             <label for="articlesradio">Articles</label>
         </div>
@@ -150,7 +114,7 @@ const onesearchComponent = {
 </form>`,
   methods: {
     selectradio(radiooutput) {
-      this.selecteditem = "<input name='facet' value='rtype,include," + radiooutput + "' type='hidden' />"; // store the data from the dropdown selection
+      this.selecteditem = radiooutput; // store the data from the dropdown selection
     },
     submitSearch() {
       this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(
