@@ -76,8 +76,6 @@ const onesearchComponent = {
         </a>
     </h1>
     <div class="form-group" id="flex-search-form">
-
-
         <label class="sr-only" for="primoQueryTemp">Search terms</label>
         <div class="input-group zero-margin form-width" id="blue-border2">
             <input class="form-control form-width inherit-height-from-flex"
@@ -96,20 +94,20 @@ const onesearchComponent = {
                    @click.stop.prevent="submitSearch"
             />
         </div>
-        <div>
-            <input type="radio" 
-                   id="booksradio"
-                   name="radio1"
-                   @click="selectradio('rtype,include,books')"
-            >
-            <label for="booksradio">Books</label>
-            <input type="radio"
-                   id="articlesradio"
-                   name="radio1"
-                   @click="selectradio('rtype,include,articles')"
-            >
-            <label for="articlesradio">Articles</label>
-        </div>
+    </div>
+    <div id="radios">
+        <input type="radio" 
+               id="booksradio"
+               name="radio1"
+               @click="selectradio('rtype,include,books')"
+        >
+        <label for="booksradio">Books</label>
+        <input type="radio"
+               id="articlesradio"
+               name="radio1"
+               @click="selectradio('rtype,include,articles')"
+        >
+        <label for="articlesradio">Articles</label>
     </div>
 </form>`,
   methods: {
@@ -126,9 +124,7 @@ const onesearchComponent = {
   },
   data() {
     return {
-      selecteditem: {}, // initialize the data from the dropdown selection
-      searchstring: "", // initialize an empty search string
-      displayeditem: "Define Your Search", // the text displayed a the top of the OneSearch dropdown
+      selecteditem: "", // initialize the data from the dropdown selection
     };
   },
 };
