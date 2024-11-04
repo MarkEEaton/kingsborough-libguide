@@ -54,14 +54,14 @@ const onesearchComponent = {
       ref="oneSearchForm"
       role="search"
       method="get"
-      :action="selecteditem.baseUrl"
+      action="https://cuny-kb.primo.exlibrisgroup.com/discovery/search"
       enctype="application/x-www-form-urlencoded; charset=utf-8"
   >
     <!-- default is "everything"  option suggested from OLS widget builder -->
     <div v-if="selecteditem.input" v-html="selecteditem.input"></div>
     <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" />
-    <input name="tab" :value="selecteditem.tab" type="hidden" />
-    <input name="search_scope" :value="selecteditem.searchScope" type="hidden" />
+    <input name="tab" value="Everything" type="hidden" />
+    <input name="search_scope" value="IZ_CI_AW" type="hidden" />
     <input name="mode" value="basic" type="hidden" />
     <input name="highlight" value="true" type="hidden" />
     <input name="displayMode" value="full" type="hidden" />
