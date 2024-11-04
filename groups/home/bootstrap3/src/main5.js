@@ -58,7 +58,7 @@ const onesearchComponent = {
       enctype="application/x-www-form-urlencoded; charset=utf-8"
   >
     <!-- default is "everything"  option suggested from OLS widget builder -->
-    <div v-if="selecteditem.input" v-html="selecteditem.input"></div>
+    <div v-if="selecteditem" v-html="selecteditem"</div>
     <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" />
     <input name="tab" value="Everything" type="hidden" />
     <input name="search_scope" value="IZ_CI_AW" type="hidden" />
@@ -132,12 +132,25 @@ const onesearchComponent = {
                    @click.stop.prevent="submitSearch"
             />
         </div>
+        <div>
+            <input type="radio" 
+                   id="booksradio"
+                   name="radio1"
+                   @click="selectradio('books')"
+            >
+            <label for="booksradio">Books</label>
+            <input type="radio"
+                   id="articlesradio"
+                   name="radio1"
+                   @click="selectradio('articles')"
+            >
+            <label for="articlesradio">Articles</label>
+        </div>
     </div>
 </form>`,
   methods: {
-    selectdropdown(item, itemName) {
-      this.displayeditem = itemName; // swap in current item at the top of the dropdown
-      this.selecteditem = item; // store the data from the dropdown selection
+    selectradio(radiooutput) {
+      this.selecteditem = "<input name='facet' value='rtype,include," + radiooutput + "' type='hidden' />"; // store the data from the dropdown selection
     },
     submitSearch() {
       this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(
@@ -152,18 +165,6 @@ const onesearchComponent = {
       selecteditem: {}, // initialize the data from the dropdown selection
       searchstring: "", // initialize an empty search string
       displayeditem: "Define Your Search", // the text displayed a the top of the OneSearch dropdown
-      materialtype: {
-        Books: {
-          input:
-            '<input name="facet" value="rtype,include,books" type="hidden" />',
-          id: 1,
-        },
-        Articles: {
-          input:
-            '<input name="mfacet" value="rtype,include,articles,1" type="hidden" /><input name="facet" value="tlevel,include,peer_reviewed" type="hidden" />',
-          id: 2,
-        },
-      },
     };
   },
 };
