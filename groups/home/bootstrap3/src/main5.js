@@ -109,6 +109,11 @@ const onesearchComponent = {
         >
         <label for="articlesradio">Articles</label>
     </div>
+    <div id="advanced">
+        <strong>
+            <a href="https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&lang=en&mode=advanced">Advanced</a>
+        </strong>
+    </div>
 </form>`,
   methods: {
     selectradio(radiooutput) {
