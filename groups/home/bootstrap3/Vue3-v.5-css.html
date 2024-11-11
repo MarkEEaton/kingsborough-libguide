@@ -164,7 +164,6 @@
     margin: -2px;
   }
   #radios {
-    margin-top: 8px;
     float: left;
   }
   #articlesradio {
@@ -401,12 +400,18 @@
     #login-text, #advanced {
       display: none;
     }
+    #radios {
+      margin-top: -8px;
+   }
     #defineYourSearch {
       display: none;
     }
   }
 
   @media only screen and (min-width: 768px) {
+    #radios {
+      margin-top: 8px;
+    }
     .nav-by-jumbotron {
       margin-top: 0 !important;
     }
