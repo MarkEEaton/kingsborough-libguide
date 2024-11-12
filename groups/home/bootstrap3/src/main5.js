@@ -77,7 +77,7 @@ const onesearchComponent = {
     </h1>
     <div class="form-group" id="flex-search-form">
         <label class="sr-only" for="primoQueryTemp">Search terms</label>
-        <div class="input-group zero-margin" id="blue-border2">
+        <div class="input-group zero-margin form-width" id="blue-border2">
             <input class="form-control inherit-height-from-flex"
                    name="queryTemp"
                    id="primoQueryTemp"
