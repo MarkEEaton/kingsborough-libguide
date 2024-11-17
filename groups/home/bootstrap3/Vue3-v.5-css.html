@@ -406,11 +406,17 @@
     #radios > label { margin-bottom: -5px; }
   }
 
+  @media only screen and (max-width: 600px) {
+    #advanced {
+      display: none; 
+    }
+  }
+
   @media only screen and (max-width: 768px) {
-    #login-text, #advanced {
+    #login-text {
       display: none;
     }
-    #radios {
+    #radios, #advanced {
       margin-top: -8px;
    }
     #defineYourSearch {
