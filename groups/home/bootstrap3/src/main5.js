@@ -58,7 +58,8 @@ const onesearchComponent = {
       enctype="application/x-www-form-urlencoded; charset=utf-8"
   >
     <!-- default is "everything"  option suggested from OLS widget builder -->
-    <input name='facet' :value="selecteditem" type="hidden"/>
+    <input name="facet" :value="facet" type="hidden"/>
+    <input name="mfacet" :value="mfacet" type="hidden" />
     <input name="vid" value="01CUNY_KB:CUNY_KB" type="hidden" />
     <input name="tab" value="Everything" type="hidden" />
     <input name="search_scope" value="IZ_CI_AW" type="hidden" />
@@ -99,15 +100,15 @@ const onesearchComponent = {
         <input type="radio" 
                id="booksradio"
                name="radio1"
-               @click="selectradio('rtype,include,books')"
+               @click="selectradio('rtype,include,books', '')"
         >
         <label for="booksradio">Books</label>
         <input type="radio"
                id="articlesradio"
                name="radio1"
-               @click="selectradio('rtype,include,articles')"
+               @click="selectradio('tlevel,include,peer_reviewed', 'rtype,include,articles,1')"
         >
-        <label for="articlesradio">Articles</label>
+        <label for="articlesradio">Articles (Peer reviewed)</label>
     </div>
     <div id="advanced">
         <strong>
@@ -116,8 +117,9 @@ const onesearchComponent = {
     </div>
 </form>`,
   methods: {
-    selectradio(radiooutput) {
-      this.selecteditem = radiooutput; // store the data from the dropdown selection
+    selectradio(radiooutputfacet, radiooutputmfacet) {
+      this.facet = radiooutputfacet; // store the data from the radio selection
+      this.mfacet = radiooutputmfacet;
     },
     submitSearch() {
       this.$refs.primoQueryString.value = `any,contains,${this.$refs.primoQueryTempString.value.replace(
@@ -129,7 +131,8 @@ const onesearchComponent = {
   },
   data() {
     return {
-      selecteditem: "", // initialize the data from the dropdown selection
+      facet: "", // initialize the data from the radio selection
+      mfacet: "",
     };
   },
 };
