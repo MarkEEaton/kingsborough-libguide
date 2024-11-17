@@ -103,12 +103,14 @@ const onesearchComponent = {
                @click="selectradio('rtype,include,books', '')"
         >
         <label for="booksradio">Books</label>
-        <input type="radio"
-               id="articlesradio"
-               name="radio1"
-               @click="selectradio('tlevel,include,peer_reviewed', 'rtype,include,articles,1')"
-        >
-        <label for="articlesradio">Articles (Peer reviewed)</label>
+        <div id="articlesradiocontainer">
+            <input type="radio"
+                   id="articlesradio"
+                   name="radio1"
+                   @click="selectradio('tlevel,include,peer_reviewed', 'rtype,include,articles,1')"
+            >
+            <label for="articlesradio">Articles (Peer reviewed)</label>
+        </div>
     </div>
     <div id="advanced">
         <strong>
