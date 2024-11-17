@@ -171,6 +171,9 @@
   #articlesradio {
      margin-left: 10px;
   }
+  #articlesradiocontainer {
+    display: inline-block;
+  }
   #booksradio, #articlesradio {
     margin-right: 3px;
   }
@@ -396,6 +399,11 @@
       float: left;
       clear: left;
     }
+  }
+
+  @media only screen and (max-width: 360px) {
+    #app2 { margin-bottom: 65px; }
+    #radios > label { margin-bottom: -5px; }
   }
 
   @media only screen and (max-width: 768px) {
