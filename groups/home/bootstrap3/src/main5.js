@@ -98,18 +98,26 @@ const onesearchComponent = {
     </div>
     <div id="radios">
         <input type="radio" 
-               id="booksradio"
                name="radio1"
+               id="booksradio"
                @click="selectradio('rtype,include,books', '')"
         >
         <label for="booksradio">Books</label>
-        <div id="articlesradiocontainer">
+        <div class="radiocontainer">
             <input type="radio"
-                   id="articlesradio"
                    name="radio1"
+                   id="articlesradio"
                    @click="selectradio('tlevel,include,peer_reviewed', 'rtype,include,articles,1')"
             >
             <label for="articlesradio">Articles (Peer reviewed)</label>
+        </div>
+        <div class="radiocontainer">
+            <input type="radio"
+                   name="radio1"
+                   id="everythingradio"
+                   @click="selectradio('', '')"
+            >
+            <label for="everythingradio">Everything</label>
         </div>
     </div>
     <div id="advanced">
@@ -384,3 +392,4 @@ const app2 = createApp({
   },
 });
 app2.mount("#app2");
+
