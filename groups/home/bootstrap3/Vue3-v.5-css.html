@@ -174,7 +174,7 @@
   .radiocontainer {
     display: inline-block;
   }
-  #booksradio, #articlesradio {
+  #booksradio, #articlesradio, #everythingradio {
     margin-right: 3px;
   }
   #advanced {
@@ -402,14 +402,16 @@
   }
 
   @media only screen and (max-width: 360px) {
-    #app2 { margin-bottom: 65px; }
-    #radios > label { margin-bottom: -5px; }
+    #app2 { margin-bottom: 85px; }
+    #radios > label, #radios > div > label { margin-bottom: -5px; }
   }
-  @media only screen and (max-width: 600px) {
+
+  @media only screen and (max-width: 992px) {
     #advanced {
-      display: none; 
+      display: none;
     }
   }
+
   @media only screen and (max-width: 768px) {
     #login-text {
       display: none;
