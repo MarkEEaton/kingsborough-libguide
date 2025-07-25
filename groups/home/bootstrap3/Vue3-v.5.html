@@ -34,10 +34,11 @@
                 aria-labelledby="hamburger"
                 id="hamburger-ul"
               >
-                <li>
+                <li
+                  v-for="item in hamburger"
+                  v-bind:key="item.id"
+                >
                   <a
-                    v-for="item in hamburger"
-                    v-bind:key="item.id"
                     class="searchmenu"
                     v-bind:aria-label="item.description"
                     v-bind:href="item.link"
@@ -87,9 +88,15 @@
         </div>
         <div class="col-sm-4">
           <div class="nav-by-jumbotron">
-            <a class="ga-by-jumbotron ga-by-jumbotron-rooms">
+            <a
+              id="eq_32886"
+              href="#"
+              class="ga-by-jumbotron ga-by-jumbotron-rooms nav-jumbotron-link"
+              aria-label="Book A Study Room"
+              role="button"
+            >
               <div class="nav-divs-by-jumbotron" id="bookastudyroom">
-                <h2><button id="eq_32886">Book A Study Room</button></h2>
+                <h2>Book A Study Room</h2>
               </div>
             </a>
             <a
