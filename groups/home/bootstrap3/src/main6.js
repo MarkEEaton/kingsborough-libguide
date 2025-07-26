@@ -85,6 +85,7 @@ const onesearchComponent = {
                    ref="primoQueryTempString"
                    type="search"
                    v-model="searchstring"
+                   aria-label="Search terms"
                    placeholder="Enter search term here"
              />
         </div>
