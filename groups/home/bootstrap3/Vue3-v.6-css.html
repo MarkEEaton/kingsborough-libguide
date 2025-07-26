@@ -77,6 +77,24 @@
     margin-left: 5px;
   }
 
+  /* Accessible focus indicators for primary navigation elements */
+  #hamburger:focus,
+  #hamburger:focus-visible,
+  #login-div:focus,
+  #login-div:focus-visible,
+  .searchmenu:focus,
+  .searchmenu:focus-visible,
+  .nav-jumbotron-link:focus,
+  .nav-jumbotron-link:focus-visible,
+  /* OneSearch widget (central search form) */
+  .onesearch-jumbotron input:focus,
+  .onesearch-jumbotron input:focus-visible,
+  .onesearch-jumbotron button:focus,
+  .onesearch-jumbotron button:focus-visible {
+    outline: 3px solid #0056b3; /* high-contrast blue */
+    outline-offset: 2px;
+  }
+
   /* style alert */
   #hours-content-container {    /* this id comes from the components libguide */
     background-color: var(--kbccblue);
@@ -234,6 +252,17 @@
   }
   #bookastudyroom {
     cursor: pointer;
+  }
+
+  /* Ensure nav-jumbotron buttons match link width */
+  .nav-jumbotron-link.btn-link {
+    display: block;
+    width: 100%;
+  }
+
+  /* Remove default heading margin for uniform button height */
+  #bookastudyroom-heading {
+    margin: 0px;
   }
 
   /* style link list */
