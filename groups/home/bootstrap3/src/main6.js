@@ -97,13 +97,16 @@ const onesearchComponent = {
             />
         </div>
     </div>
-    <div id="radios">
+    <fieldset id="radios">
+        <legend class="sr-only">Limit search to</legend>
+
         <input type="radio" 
                name="radio1"
                id="booksradio"
                @click="selectradio('rtype,include,books', '')"
         >
         <label for="booksradio">Books</label>
+
         <div class="radiocontainer">
             <input type="radio"
                    name="radio1"
@@ -112,6 +115,7 @@ const onesearchComponent = {
             >
             <label for="articlesradio">Articles (Peer reviewed)</label>
         </div>
+
         <div class="radiocontainer">
             <input type="radio"
                    name="radio1"
@@ -120,7 +124,7 @@ const onesearchComponent = {
             >
             <label for="everythingradio">Everything</label>
         </div>
-    </div>
+    </fieldset>
     <div id="advanced">
         <strong>
             <a href="https://cuny-kb.primo.exlibrisgroup.com/discovery/search?vid=01CUNY_KB:CUNY_KB&lang=en&mode=advanced">Advanced</a>
