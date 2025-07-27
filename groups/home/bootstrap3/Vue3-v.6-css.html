@@ -258,6 +258,9 @@
   .nav-jumbotron-link.btn-link {
     display: block;
     width: 100%;
+    padding: 0;        /* remove default Bootstrap padding */
+    border: none;      /* ensure no extra border height */
+    background: none;  /* keep background controlled by inner div */
   }
 
   /* Remove default heading margin for uniform button height */
